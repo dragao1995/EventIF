@@ -7,11 +7,12 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-import javax.swing.JOptionPane;
+import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
 
 public class TelaLogin {
 
@@ -85,16 +86,11 @@ public class TelaLogin {
 		JRadioButton rdbtnParticipante = new JRadioButton("Participante");
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frame.getContentPane().add(rdbtnParticipante);
-	
 
-		if(rdbtnGerente.isSelected()){
-			rdbtnGerente.setSelected(true);
-			
-		}else if( rdbtnMonitor.isSelected()){
-			rdbtnGerente.setSelected(true);
-		}else if( rdbtnParticipante.isSelected()){
-			rdbtnGerente.setSelected(true);
-		}
+		ButtonGroup radioGroup = new ButtonGroup();  
+		radioGroup.add(rdbtnGerente);  
+		radioGroup.add(rdbtnMonitor);  
+		radioGroup.add(rdbtnParticipante); 
 		
 		
 		JLabel lblIcon = new JLabel(" ");
@@ -104,7 +100,12 @@ public class TelaLogin {
 		
 		JButton btnLogin = new JButton("");
 		btnLogin.setIcon(new ImageIcon(TelaLogin.class.getResource("/view/Symbol_-_Check.png")));
-		btnLogin.setBounds(409, 280, 88, 67);
+		btnLogin.setBounds(337, 282, 88, 67);
 		frame.getContentPane().add(btnLogin);
+		
+		JButton btnCadastro = new JButton("Cadastro");
+		btnCadastro.setFont(new Font("Tahoma", Font.ITALIC, 19));
+		btnCadastro.setBounds(472, 282, 108, 67);
+		frame.getContentPane().add(btnCadastro);
 	}
 }
