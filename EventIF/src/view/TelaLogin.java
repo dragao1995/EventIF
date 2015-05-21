@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
@@ -110,5 +112,15 @@ public class TelaLogin {
 		btnCadastro.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCadastro.setBounds(472, 282, 108, 67);
 		frame.getContentPane().add(btnCadastro);
+		btnCadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							TelaCadastro window = new TelaCadastro();
+							window.getFrame().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}}});} });
 	}
 }
