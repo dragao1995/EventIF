@@ -74,7 +74,7 @@ public class TelaLogin {
 		frame.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);
 		
-		
+		//
 		JRadioButton rdbtnGerente = new JRadioButton("Gerente");
 		rdbtnGerente.setBackground(new Color(0, 128, 0));
 		rdbtnGerente.setBounds(324, 227, 76, 23);
