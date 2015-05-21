@@ -50,6 +50,7 @@ public class TelaLogin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(new Color(0, 128, 0));
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setBounds(100, 100, 691, 417);
@@ -67,11 +68,13 @@ public class TelaLogin {
 		frame.getContentPane().add(lblSenha);
 		
 		txtUsuario = new JTextField();
+		txtUsuario.setBackground(Color.RED);
 		txtUsuario.setBounds(324, 149, 260, 31);
 		frame.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		txtSenha = new JTextField();
+		txtSenha.setBackground(Color.RED);
 		txtSenha.setBounds(324, 189, 260, 31);
 		frame.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);

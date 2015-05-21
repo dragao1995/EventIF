@@ -61,6 +61,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblNome);
 		
 		txtNome = new JTextField();
+		txtNome.setBackground(Color.RED);
 		txtNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNome.setBounds(160, 224, 485, 23);
 		frmEventif.getContentPane().add(txtNome);
@@ -72,6 +73,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblRg);
 		
 		txtRg = new JTextField();
+		txtRg.setBackground(Color.RED);
 		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtRg.setBounds(160, 254, 169, 26);
 		frmEventif.getContentPane().add(txtRg);
@@ -83,6 +85,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCpf);
 		
 		txtCpf = new JTextField();
+		txtCpf.setBackground(Color.RED);
 		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCpf.setBounds(390, 254, 255, 25);
 		frmEventif.getContentPane().add(txtCpf);
@@ -94,6 +97,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblEmail);
 		
 		txtEmail = new JTextField();
+		txtEmail.setBackground(Color.RED);
 		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEmail.setBounds(400, 285, 245, 24);
 		frmEventif.getContentPane().add(txtEmail);
@@ -105,6 +109,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblTelefone);
 		
 		txtTelefone = new JTextField();
+		txtTelefone.setBackground(Color.RED);
 		txtTelefone.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtTelefone.setBounds(160, 288, 169, 26);
 		frmEventif.getContentPane().add(txtTelefone);
@@ -116,6 +121,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCep);
 		
 		txtCep = new JTextField();
+		txtCep.setBackground(Color.RED);
 		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCep.setBounds(160, 321, 169, 26);
 		frmEventif.getContentPane().add(txtCep);
@@ -127,6 +133,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblEndereco);
 		
 		txtEndereco = new JTextField();
+		txtEndereco.setBackground(Color.RED);
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEndereco.setBounds(160, 355, 347, 26);
 		frmEventif.getContentPane().add(txtEndereco);
@@ -138,6 +145,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblNumero);
 		
 		txtNumero = new JTextField();
+		txtNumero.setBackground(Color.RED);
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtNumero.setBounds(550, 355, 95, 29);
 		frmEventif.getContentPane().add(txtNumero);
@@ -149,6 +157,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblBairro);
 		
 		txtBairro = new JTextField();
+		txtBairro.setBackground(Color.RED);
 		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtBairro.setBounds(160, 389, 133, 28);
 		frmEventif.getContentPane().add(txtBairro);
@@ -160,6 +169,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCidade);
 		
 		txtCidade = new JTextField();
+		txtCidade.setBackground(Color.RED);
 		txtCidade.setBounds(375, 392, 132, 27);
 		frmEventif.getContentPane().add(txtCidade);
 		txtCidade.setColumns(10);
@@ -170,19 +180,20 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblUf);
 		
 		txtUf = new JTextField();
+		txtUf.setBackground(Color.RED);
 		txtUf.setBounds(560, 395, 85, 24);
 		frmEventif.getContentPane().add(txtUf);
 		txtUf.setColumns(10);
 		
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.setForeground(Color.BLACK);
-		btnConfirmar.setBackground(Color.RED);
+		btnConfirmar.setBackground(Color.WHITE);
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
 		frmEventif.getContentPane().add(btnConfirmar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBackground(Color.RED);
+		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCancelar.setBounds(410, 488, 122, 48);
 		frmEventif.getContentPane().add(btnCancelar);
@@ -194,6 +205,7 @@ public class TelaCadastro {
 
 	public void setFrame(JFrame frame) {
 		this.frmEventif = frame;
+		frmEventif.setResizable(false);
 		frmEventif.setTitle("EventIF");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/view/if.png")));
 		frame.getContentPane().setFont(new Font("Tahoma", Font.ITALIC, 19));
