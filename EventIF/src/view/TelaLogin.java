@@ -76,14 +76,17 @@ public class TelaLogin {
 		
 		
 		JRadioButton rdbtnGerente = new JRadioButton("Gerente");
+		rdbtnGerente.setBackground(new Color(0, 128, 0));
 		rdbtnGerente.setBounds(324, 227, 76, 23);
 		frame.getContentPane().add(rdbtnGerente);
 		
 		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
+		rdbtnMonitor.setBackground(new Color(0, 128, 0));
 		rdbtnMonitor.setBounds(406, 227, 76, 23);
 		frame.getContentPane().add(rdbtnMonitor);
 		
 		JRadioButton rdbtnParticipante = new JRadioButton("Participante");
+		rdbtnParticipante.setBackground(new Color(0, 128, 0));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frame.getContentPane().add(rdbtnParticipante);
 
