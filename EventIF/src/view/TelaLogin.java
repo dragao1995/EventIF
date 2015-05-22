@@ -122,6 +122,7 @@ public class TelaLogin {
 						try {
 							TelaCadastro window = new TelaCadastro();
 							window.getFrame().setVisible(true);
+							frame.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}}});} });
