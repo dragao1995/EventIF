@@ -3,7 +3,7 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-
+ 
 public class TelaEventos {
 
 	private JFrame frame;
