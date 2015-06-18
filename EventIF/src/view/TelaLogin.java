@@ -102,12 +102,12 @@ public class TelaLogin {
 		rdbtnParticipante.setBackground(new Color(0, 128, 0));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frame.getContentPane().add(rdbtnParticipante);
- 
+  
 		ButtonGroup radioGroup = new ButtonGroup();
 		radioGroup.add(rdbtnGerente);
 		radioGroup.add(rdbtnMonitor);
 		radioGroup.add(rdbtnParticipante);
-  
+        
 		JLabel lblIcon = new JLabel(" ");
 		lblIcon.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/if.png")));

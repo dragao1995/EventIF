@@ -138,7 +138,7 @@ public class TelaCadastro {
 		txtEndereco.setBounds(160, 355, 347, 26);
 		frmEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
-		
+		 
 		JLabel lblNumero = new JLabel("N\u00B0: ");
 		lblNumero.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblNumero.setBounds(517, 355, 35, 30);
