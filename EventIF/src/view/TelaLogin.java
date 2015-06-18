@@ -25,11 +25,9 @@ public class TelaLogin {
 	private JTextField txtUsuario;
 	private JTextField txtSenha;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) throws SQLException {
-		Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto","postgres","12345");
+	
+	public static void main(String[] args) throws SQLException  {
+		Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto","postgres","123");
 		System.out.println(" Conectado");
 		conexao.close();
 		
@@ -104,12 +102,12 @@ public class TelaLogin {
 		rdbtnParticipante.setBackground(new Color(0, 128, 0));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frame.getContentPane().add(rdbtnParticipante);
-
+  
 		ButtonGroup radioGroup = new ButtonGroup();
 		radioGroup.add(rdbtnGerente);
 		radioGroup.add(rdbtnMonitor);
 		radioGroup.add(rdbtnParticipante);
-
+        
 		JLabel lblIcon = new JLabel(" ");
 		lblIcon.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/if.png")));

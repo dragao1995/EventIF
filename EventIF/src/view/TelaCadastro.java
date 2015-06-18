@@ -18,7 +18,7 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 
 public class TelaCadastro {
-
+ 
 	private JFrame frmEventif;
 	private JTextField txtNome;
 	private JTextField txtRg;
@@ -138,7 +138,7 @@ public class TelaCadastro {
 		txtEndereco.setBounds(160, 355, 347, 26);
 		frmEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
-		
+		 
 		JLabel lblNumero = new JLabel("N\u00B0: ");
 		lblNumero.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblNumero.setBounds(517, 355, 35, 30);
@@ -191,7 +191,7 @@ public class TelaCadastro {
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
 		frmEventif.getContentPane().add(btnConfirmar);
-		  
+		    
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
