@@ -82,7 +82,7 @@ public class TelaEventos {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(36, 103, 610, 424);
 		frmEventos.getContentPane().add(scrollPane);
-		
+		 
 		table = new JTable();
 		table.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(255, 0, 0)));
 		table.setForeground(Color.BLACK);

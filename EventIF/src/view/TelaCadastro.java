@@ -191,7 +191,7 @@ public class TelaCadastro {
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
 		frmEventif.getContentPane().add(btnConfirmar);
-		  
+		   
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
