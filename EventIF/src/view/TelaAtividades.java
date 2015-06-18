@@ -45,7 +45,7 @@ public class TelaAtividades {
 	public TelaAtividades() {
 		initialize();
 	}
- 
+  
 	/**
 	 * Initialize the contents of the frame.
 	 */
