@@ -23,14 +23,7 @@ public class TelaEventos {
 	private JFrame frmEventos;
 	private JTextField txtPesquisa;
 	private JTable table;
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> branch 'master' of https://github.com/dragao1995/EventIF
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
