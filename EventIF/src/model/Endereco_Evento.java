@@ -3,7 +3,7 @@ package model;
 public class Endereco_Evento {
 	
 	private long id;
-	private String logradouro;
+	private String logradouro;//
 	private String bairro;
 	private String numero;
 	private String complemento;

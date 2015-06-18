@@ -3,7 +3,7 @@ package model;
 public class Tipo {
 	
 	private long id;
-	private String tipo_Atividade;
+	private String tipo_Atividade;//
 	public long getId() {
 		return id;
 	}

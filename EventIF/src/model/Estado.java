@@ -3,7 +3,7 @@ package model;
 public class Estado {
 	
 	private long id;
-	private String nome;
+	private String nome;//
 	private String uf;
 	public long getId() {
 		return id;

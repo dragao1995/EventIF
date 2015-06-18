@@ -3,7 +3,7 @@ package model;
 public class Evento {
 	
 	private long id;
-	private String nome;
+	private String nome;//
 	private String data_Inicio;
 	private String data_Fim;
 	private String organizador;

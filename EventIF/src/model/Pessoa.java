@@ -2,11 +2,11 @@ package model;
 
 public class Pessoa {
 	
-	private long id;
+	private long id;//Long assim ou assim long ??
 	private String nome;
 	private String cpf;
 	private String rg;
-	private String senha;
+	private String senha;// como fazer essa senha ??
 	
 	public long getId() {
 		return id;

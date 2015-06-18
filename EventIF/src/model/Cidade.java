@@ -2,7 +2,7 @@ package model;
 
 public class Cidade {
 	
-	private long id;
+	private long id;//
 	private String nome;
 	public long getId() {
 		return id;
