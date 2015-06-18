@@ -18,7 +18,7 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 
 public class TelaCadastro {
-
+ 
 	private JFrame frmEventif;
 	private JTextField txtNome;
 	private JTextField txtRg;

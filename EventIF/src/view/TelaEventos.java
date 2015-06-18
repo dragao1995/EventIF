@@ -89,7 +89,7 @@ public class TelaEventos {
 		table.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		table.setShowVerticalLines(false);
 		table.setBackground(new Color(0, 128, 0));
-		table.setModel(new DefaultTableModel(
+		table.setModel(new DefaultTableModel( 
 			new Object[][] {
 				{null, null, null, null, null},
 				{null, null, null, null, null},
