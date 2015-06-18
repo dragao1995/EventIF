@@ -12,11 +12,17 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.border.TitledBorder;
+import javax.swing.UIManager;
  
 public class TelaEventos {
 
 	private JFrame frmEventos;
 	private JTextField txtPesquisa;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -56,25 +62,87 @@ public class TelaEventos {
 		frmEventos.getContentPane().setLayout(null);
 		
 		txtPesquisa = new JTextField();
-		txtPesquisa.setBackground(new Color(255, 0, 0));
 		txtPesquisa.setBounds(153, 36, 493, 34);
+		txtPesquisa.setBackground(new Color(255, 0, 0));
 		frmEventos.getContentPane().add(txtPesquisa);
 		txtPesquisa.setColumns(10);
 		
 		JLabel lblPesquisa = new JLabel("Pesquisa :");
-		lblPesquisa.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 19));
 		lblPesquisa.setBounds(36, 36, 107, 34);
+		lblPesquisa.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 19));
 		frmEventos.getContentPane().add(lblPesquisa);
 		
 		JButton btnPesquisarok = new JButton("");
+		btnPesquisarok.setBounds(656, 36, 83, 34);
 		btnPesquisarok.setBackground(Color.WHITE);
 		btnPesquisarok.setForeground(Color.WHITE);
 		btnPesquisarok.setIcon(new ImageIcon(TelaEventos.class.getResource("/view/Symbol_-_Check.png")));
-		btnPesquisarok.setBounds(656, 36, 83, 34);
 		frmEventos.getContentPane().add(btnPesquisarok);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(337, 25, 5, 5);
-		frmEventos.getContentPane().add(tabbedPane);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(36, 103, 610, 424);
+		frmEventos.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		table.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(255, 0, 0)));
+		table.setForeground(Color.BLACK);
+		table.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		table.setShowVerticalLines(false);
+		table.setBackground(new Color(0, 128, 0));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Nome Evento", "Horario", "Data", "Local", "Palestrante"
+			}
+		));
+		table.getColumnModel().getColumn(0).setPreferredWidth(137);
+		table.getColumnModel().getColumn(4).setPreferredWidth(97);
+		scrollPane.setViewportView(table);
+		
+		JButton btnAdicionar = new JButton("ADD");
+		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnAdicionar.setBounds(656, 129, 83, 34);
+		frmEventos.getContentPane().add(btnAdicionar);
+		
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnEditar.setBounds(656, 184, 83, 34);
+		frmEventos.getContentPane().add(btnEditar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnExcluir.setBounds(656, 233, 83, 34);
+		frmEventos.getContentPane().add(btnExcluir);
+		
+		JButton btnAtividades = new JButton("Atividades");
+		btnAtividades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnAtividades.setBounds(656, 492, 107, 35);
+		frmEventos.getContentPane().add(btnAtividades);
 	}
 }
