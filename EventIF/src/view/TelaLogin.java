@@ -107,7 +107,7 @@ public class TelaLogin {
 		radioGroup.add(rdbtnGerente);
 		radioGroup.add(rdbtnMonitor);
 		radioGroup.add(rdbtnParticipante);
- 
+  
 		JLabel lblIcon = new JLabel(" ");
 		lblIcon.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/if.png")));
