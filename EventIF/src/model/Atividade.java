@@ -8,6 +8,7 @@ public class Atividade {
 	private String data_Fim;// todos vão ficar com String ???
 	private String carga_Horaria;// colocar horario de inicio e fim ?
 	private String numero_Vagas;
+	
 	public long getId() {
 		return id;
 	}

@@ -1,7 +1,7 @@
 package model;
 
 public class Endereco_Pessoa {
-	
+	 
 	private long id;
 	private String logradouro;//
 	private String bairro;

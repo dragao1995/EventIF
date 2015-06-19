@@ -7,6 +7,7 @@ public class Endereco_Evento {
 	private String bairro;
 	private String numero;
 	private String complemento;
+	
 	public long getId() {
 		return id;
 	}

@@ -1,7 +1,7 @@
 package model;
 
 public class Contato {
-	
+	 
 	private long id;
 	private String telefone;//
 	private String email;

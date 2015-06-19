@@ -12,7 +12,7 @@ public class Tipo {
 	}
 	public String getTipo_Atividade() {
 		return tipo_Atividade;
-	}
+	} 
 	public void setTipo_Atividade(String tipo_Atividade) {
 		this.tipo_Atividade = tipo_Atividade;
 	}
