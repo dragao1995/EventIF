@@ -3,7 +3,6 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JTextField;
@@ -11,12 +10,10 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
-import javax.swing.JTabbedPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.border.TitledBorder;
-import javax.swing.UIManager;
  
 public class TelaEventos {
 
@@ -50,7 +47,7 @@ public class TelaEventos {
 	private void initialize() {
 		frmEventos = new JFrame();
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaEventos.class.getResource("/view/if.png")));
-		frmEventos.setTitle("Eventos");
+		frmEventos.setTitle("EventIF");
 		frmEventos.getContentPane().setBackground(new Color(0, 128, 0));
 		frmEventos.getContentPane().setForeground(new Color(0, 0, 0));
 		frmEventos.setBackground(new Color(0, 128, 0));

@@ -107,17 +107,17 @@ public class TelaAtividades {
 		
 		JButton btnAdicionar = new JButton("ADD");
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnAdicionar.setBounds(656, 186, 83, 34);
+		btnAdicionar.setBounds(656, 186, 89, 34);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnEditar.setBounds(656, 254, 83, 34);
+		btnEditar.setBounds(656, 254, 89, 34);
 		frmEventos.getContentPane().add(btnEditar);
 		
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		btnExcluir.setBounds(656, 322, 83, 34);
+		btnExcluir.setBounds(656, 322, 89, 34);
 		frmEventos.getContentPane().add(btnExcluir);
 		
 		JButton btnVoltar = new JButton("Voltar");

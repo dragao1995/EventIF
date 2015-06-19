@@ -92,38 +92,44 @@ public class ADDEvento {
 		frmEventif.getContentPane().add(lblDescrio);
 		
 		txtNomeev = new JTextField();
+		txtNomeev.setBackground(new Color(255, 0, 0));
 		txtNomeev.setBounds(139, 50, 539, 31);
 		frmEventif.getContentPane().add(txtNomeev);
 		txtNomeev.setColumns(10);
 		
 		txtEndereco = new JTextField();
+		txtEndereco.setBackground(new Color(255, 0, 0));
 		txtEndereco.setBounds(139, 97, 539, 31);
 		frmEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
 		txtDatainicial = new JTextField();
+		txtDatainicial.setBackground(new Color(255, 0, 0));
 		txtDatainicial.setBounds(139, 145, 200, 33);
 		frmEventif.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
 		
 		txtDataf = new JTextField();
+		txtDataf.setBackground(new Color(255, 0, 0));
 		txtDataf.setBounds(429, 150, 249, 29);
 		frmEventif.getContentPane().add(txtDataf);
 		txtDataf.setColumns(10);
 		
 		textField = new JTextField();
+		textField.setBackground(new Color(255, 0, 0));
 		textField.setBounds(139, 199, 539, 35);
 		frmEventif.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		txtDescricao = new JTextField();
+		txtDescricao.setBackground(new Color(255, 0, 0));
 		txtDescricao.setBounds(139, 252, 539, 119);
 		frmEventif.getContentPane().add(txtDescricao);
 		txtDescricao.setColumns(10);
 		
 		JButton btnConfirmar = new JButton("");
 		btnConfirmar.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/Symbol_-_Check.png")));
-		btnConfirmar.setBounds(221, 382, 89, 59);
+		btnConfirmar.setBounds(218, 388, 89, 59);
 		frmEventif.getContentPane().add(btnConfirmar);
 		
 		JButton btnCancelar = new JButton("");
@@ -132,7 +138,7 @@ public class ADDEvento {
 			}
 		});
 		btnCancelar.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/X.png")));
-		btnCancelar.setBounds(518, 382, 89, 59);
+		btnCancelar.setBounds(515, 388, 89, 59);
 		frmEventif.getContentPane().add(btnCancelar);
 		frmEventif.setBounds(100, 100, 800, 509);
 		frmEventif.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

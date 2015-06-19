@@ -28,7 +28,8 @@ public class TelaLogin {
 	
 	public static void main(String[] args) throws SQLException  {
 		Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto","postgres","123");
-		System.out.println(" Conectado");
+		
+		System.out.println(conexao);
 		conexao.close();
 		
 		

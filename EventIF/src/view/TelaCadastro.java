@@ -1,18 +1,10 @@
 package view;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.JList;
-import javax.swing.JScrollBar;
-import java.awt.event.MouseWheelListener;
-import java.awt.event.MouseWheelEvent;
 import javax.swing.JTextField;
 import java.awt.Toolkit;
 import javax.swing.JButton;
