@@ -185,14 +185,16 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(txtUf);
 		txtUf.setColumns(10);
 		
-		JButton btnConfirmar = new JButton("Confirmar");
+		JButton btnConfirmar = new JButton("");
+		btnConfirmar.setIcon(new ImageIcon(TelaCadastro.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setForeground(Color.BLACK);
 		btnConfirmar.setBackground(Color.WHITE);
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
 		frmEventif.getContentPane().add(btnConfirmar);
 		    
-		JButton btnCancelar = new JButton("Cancelar");
+		JButton btnCancelar = new JButton("");
+		btnCancelar.setIcon(new ImageIcon(TelaCadastro.class.getResource("/view/X.png")));
 		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCancelar.setBounds(410, 488, 122, 48);
@@ -201,7 +203,7 @@ public class TelaCadastro {
 
 	public JFrame getFrame() {
 		return frmEventif;
-	}
+	} 
 
 	public void setFrame(JFrame frame) {
 		this.frmEventif = frame;

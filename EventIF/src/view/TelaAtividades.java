@@ -71,38 +71,38 @@ public class TelaAtividades {
 		table.setBackground(new Color(0, 128, 0));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
 			},
 			new String[] {
-				"Atividade", "Horario", "Data", "Local", "Monitor"
+				"Atividade", "Tema", "Horario", "Data", "Local", "Ministrante"
 			}
 		));
 		table.getColumnModel().getColumn(0).setPreferredWidth(137);
-		table.getColumnModel().getColumn(4).setPreferredWidth(97);
+		table.getColumnModel().getColumn(5).setPreferredWidth(97);
 		scrollPane.setViewportView(table);
 		
 		JButton btnAdicionar = new JButton("ADD");
@@ -128,7 +128,7 @@ public class TelaAtividades {
 		JLabel lblAtividades = new JLabel("Atividades");
 		lblAtividades.setForeground(new Color(255, 0, 0));
 		lblAtividades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 29));
-		lblAtividades.setBounds(272, 25, 168, 49);
+		lblAtividades.setBounds(261, 27, 168, 49);
 		frmEventos.getContentPane().add(lblAtividades);
 		
 		JButton btnInscrever = new JButton("Inscrever");
