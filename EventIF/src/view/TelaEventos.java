@@ -48,7 +48,7 @@ public class TelaEventos {
 		frmEventos = new JFrame();
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaEventos.class.getResource("/view/if.png")));
 		frmEventos.setTitle("EventIF");
-		frmEventos.getContentPane().setBackground(new Color(0, 128, 0));
+		frmEventos.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventos.getContentPane().setForeground(new Color(0, 0, 0));
 		frmEventos.setBackground(new Color(0, 128, 0));
 		frmEventos.setBounds(100, 100, 800, 600);
@@ -57,7 +57,7 @@ public class TelaEventos {
 		
 		txtPesquisa = new JTextField();
 		txtPesquisa.setBounds(153, 36, 493, 34);
-		txtPesquisa.setBackground(new Color(255, 0, 0));
+		txtPesquisa.setBackground(new Color(255, 255, 255));
 		frmEventos.getContentPane().add(txtPesquisa);
 		txtPesquisa.setColumns(10);
 		
@@ -82,7 +82,7 @@ public class TelaEventos {
 		table.setForeground(Color.BLACK);
 		table.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		table.setShowVerticalLines(false);
-		table.setBackground(new Color(0, 128, 0));
+		table.setBackground(new Color(102, 204, 102));
 		table.setModel(new DefaultTableModel( 
 			new Object[][] {
 				{null, null, null, null, null},

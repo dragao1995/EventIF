@@ -51,7 +51,7 @@ public class ADDAtividades {
 		frmEventif = new JFrame();
 		frmEventif.setIconImage(Toolkit.getDefaultToolkit().getImage(ADDAtividades.class.getResource("/view/if.png")));
 		frmEventif.setTitle("EventIF");
-		frmEventif.getContentPane().setBackground(new Color(0, 128, 0));
+		frmEventif.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventif.getContentPane().setLayout(null);
 		
 		JLabel lblCadastrarAtividade = new JLabel("Cadastrar Atividade");
@@ -90,37 +90,37 @@ public class ADDAtividades {
 		frmEventif.getContentPane().add(lblDescrio);
 		
 		txtNomeativ = new JTextField();
-		txtNomeativ.setBackground(new Color(255, 0, 0));
+		txtNomeativ.setBackground(Color.WHITE);
 		txtNomeativ.setBounds(182, 72, 522, 31);
 		frmEventif.getContentPane().add(txtNomeativ);
 		txtNomeativ.setColumns(10);
 		
 		txtHorainicial = new JTextField();
-		txtHorainicial.setBackground(new Color(255, 0, 0));
+		txtHorainicial.setBackground(Color.WHITE);
 		txtHorainicial.setBounds(182, 118, 188, 31);
 		frmEventif.getContentPane().add(txtHorainicial);
 		txtHorainicial.setColumns(10);
 		
 		txtHorafinal = new JTextField();
-		txtHorafinal.setBackground(new Color(255, 0, 0));
+		txtHorafinal.setBackground(Color.WHITE);
 		txtHorafinal.setBounds(470, 120, 234, 29);
 		frmEventif.getContentPane().add(txtHorafinal);
 		txtHorafinal.setColumns(10);
 		
 		txtCargahor = new JTextField();
-		txtCargahor.setBackground(new Color(255, 0, 0));
+		txtCargahor.setBackground(Color.WHITE);
 		txtCargahor.setBounds(182, 165, 188, 31);
 		frmEventif.getContentPane().add(txtCargahor);
 		txtCargahor.setColumns(10);
 		
 		txtNvagas = new JTextField();
-		txtNvagas.setBackground(new Color(255, 0, 0));
+		txtNvagas.setBackground(Color.WHITE);
 		txtNvagas.setColumns(10);
 		txtNvagas.setBounds(470, 167, 234, 29);
 		frmEventif.getContentPane().add(txtNvagas);
 		
 		txtDescrativ = new JTextField();
-		txtDescrativ.setBackground(new Color(255, 0, 0));
+		txtDescrativ.setBackground(Color.WHITE);
 		txtDescrativ.setBounds(182, 213, 522, 124);
 		frmEventif.getContentPane().add(txtDescrativ);
 		txtDescrativ.setColumns(10);
@@ -134,6 +134,11 @@ public class ADDAtividades {
 		btnCancelar.setIcon(new ImageIcon(ADDAtividades.class.getResource("/view/X.png")));
 		btnCancelar.setBounds(569, 365, 89, 59);
 		frmEventif.getContentPane().add(btnCancelar);
+		
+		JLabel lblicon = new JLabel("");
+		lblicon.setIcon(new ImageIcon(ADDAtividades.class.getResource("/view/if.png")));
+		lblicon.setBounds(29, 245, 125, 186);
+		frmEventif.getContentPane().add(lblicon);
 		frmEventif.setBounds(100, 100, 800, 483);
 		frmEventif.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

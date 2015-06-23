@@ -59,7 +59,7 @@ public class TelaLogin {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.getContentPane().setBackground(new Color(0, 128, 0));
+		frame.getContentPane().setBackground(new Color(102, 204, 102));
 		frame.getContentPane().setForeground(Color.WHITE);
 		frame.setBounds(100, 100, 691, 417);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,29 +78,29 @@ public class TelaLogin {
 		frame.getContentPane().add(lblSenha);
 
 		txtUsuario = new JTextField();
-		txtUsuario.setBackground(Color.RED);
+		txtUsuario.setBackground(new Color(255, 255, 255));
 		txtUsuario.setBounds(324, 149, 260, 31);
 		frame.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 
 		txtSenha = new JTextField();
-		txtSenha.setBackground(Color.RED);
+		txtSenha.setBackground(new Color(255, 255, 255));
 		txtSenha.setBounds(324, 189, 260, 31);
 		frame.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);
 
 		JRadioButton rdbtnGerente = new JRadioButton("Gerente");
-		rdbtnGerente.setBackground(new Color(0, 128, 0));
+		rdbtnGerente.setBackground(new Color(102, 204, 102));
 		rdbtnGerente.setBounds(324, 227, 76, 23);
 		frame.getContentPane().add(rdbtnGerente);
 
 		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
-		rdbtnMonitor.setBackground(new Color(0, 128, 0));
+		rdbtnMonitor.setBackground(new Color(102, 204, 102));
 		rdbtnMonitor.setBounds(406, 227, 76, 23);
 		frame.getContentPane().add(rdbtnMonitor);
 
 		JRadioButton rdbtnParticipante = new JRadioButton("Participante");
-		rdbtnParticipante.setBackground(new Color(0, 128, 0));
+		rdbtnParticipante.setBackground(new Color(102, 204, 102));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frame.getContentPane().add(rdbtnParticipante);
   

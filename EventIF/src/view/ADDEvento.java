@@ -53,7 +53,7 @@ public class ADDEvento {
 		frmEventif = new JFrame();
 		frmEventif.setIconImage(Toolkit.getDefaultToolkit().getImage(ADDEvento.class.getResource("/view/if.png")));
 		frmEventif.setTitle("EventIF");
-		frmEventif.getContentPane().setBackground(new Color(0, 128, 0));
+		frmEventif.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventif.getContentPane().setLayout(null);
 		
 		JLabel lblCadastrarEvento = new JLabel("Cadastrar Evento");
@@ -92,37 +92,37 @@ public class ADDEvento {
 		frmEventif.getContentPane().add(lblDescrio);
 		
 		txtNomeev = new JTextField();
-		txtNomeev.setBackground(new Color(255, 0, 0));
+		txtNomeev.setBackground(Color.WHITE);
 		txtNomeev.setBounds(139, 50, 539, 31);
 		frmEventif.getContentPane().add(txtNomeev);
 		txtNomeev.setColumns(10);
 		
 		txtEndereco = new JTextField();
-		txtEndereco.setBackground(new Color(255, 0, 0));
+		txtEndereco.setBackground(Color.WHITE);
 		txtEndereco.setBounds(139, 97, 539, 31);
 		frmEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
 		txtDatainicial = new JTextField();
-		txtDatainicial.setBackground(new Color(255, 0, 0));
+		txtDatainicial.setBackground(Color.WHITE);
 		txtDatainicial.setBounds(139, 145, 200, 33);
 		frmEventif.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
 		
 		txtDataf = new JTextField();
-		txtDataf.setBackground(new Color(255, 0, 0));
+		txtDataf.setBackground(Color.WHITE);
 		txtDataf.setBounds(429, 150, 249, 29);
 		frmEventif.getContentPane().add(txtDataf);
 		txtDataf.setColumns(10);
 		
 		textField = new JTextField();
-		textField.setBackground(new Color(255, 0, 0));
+		textField.setBackground(Color.WHITE);
 		textField.setBounds(139, 199, 539, 35);
 		frmEventif.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		txtDescricao = new JTextField();
-		txtDescricao.setBackground(new Color(255, 0, 0));
+		txtDescricao.setBackground(Color.WHITE);
 		txtDescricao.setBounds(139, 252, 539, 119);
 		frmEventif.getContentPane().add(txtDescricao);
 		txtDescricao.setColumns(10);
@@ -140,6 +140,11 @@ public class ADDEvento {
 		btnCancelar.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/X.png")));
 		btnCancelar.setBounds(515, 388, 89, 59);
 		frmEventif.getContentPane().add(btnCancelar);
+		
+		JLabel lblIcon = new JLabel("");
+		lblIcon.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/if.png")));
+		lblIcon.setBounds(0, 309, 154, 138);
+		frmEventif.getContentPane().add(lblIcon);
 		frmEventif.setBounds(100, 100, 800, 509);
 		frmEventif.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

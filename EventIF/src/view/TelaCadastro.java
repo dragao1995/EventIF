@@ -30,7 +30,7 @@ public class TelaCadastro {
 
 	private void initialize() {
 		setFrame(new JFrame());
-		getFrame().getContentPane().setBackground(new Color(0, 128, 0));
+		getFrame().getContentPane().setBackground(new Color(102, 204, 102));
 		getFrame().getContentPane().setForeground(Color.WHITE);
 		getFrame().setBounds(100, 100, 800, 600);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +53,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblNome);
 		
 		txtNome = new JTextField();
-		txtNome.setBackground(Color.RED);
+		txtNome.setBackground(new Color(255, 255, 255));
 		txtNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNome.setBounds(160, 224, 485, 23);
 		frmEventif.getContentPane().add(txtNome);
@@ -65,7 +65,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblRg);
 		
 		txtRg = new JTextField();
-		txtRg.setBackground(Color.RED);
+		txtRg.setBackground(new Color(255, 255, 255));
 		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtRg.setBounds(160, 254, 169, 26);
 		frmEventif.getContentPane().add(txtRg);
@@ -77,7 +77,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCpf);
 		
 		txtCpf = new JTextField();
-		txtCpf.setBackground(Color.RED);
+		txtCpf.setBackground(new Color(255, 255, 255));
 		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCpf.setBounds(390, 254, 255, 25);
 		frmEventif.getContentPane().add(txtCpf);
@@ -89,7 +89,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblEmail);
 		
 		txtEmail = new JTextField();
-		txtEmail.setBackground(Color.RED);
+		txtEmail.setBackground(new Color(255, 255, 255));
 		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEmail.setBounds(400, 285, 245, 24);
 		frmEventif.getContentPane().add(txtEmail);
@@ -101,7 +101,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblTelefone);
 		
 		txtTelefone = new JTextField();
-		txtTelefone.setBackground(Color.RED);
+		txtTelefone.setBackground(new Color(255, 255, 255));
 		txtTelefone.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtTelefone.setBounds(160, 288, 169, 26);
 		frmEventif.getContentPane().add(txtTelefone);
@@ -113,7 +113,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCep);
 		
 		txtCep = new JTextField();
-		txtCep.setBackground(Color.RED);
+		txtCep.setBackground(new Color(255, 255, 255));
 		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCep.setBounds(160, 321, 169, 26);
 		frmEventif.getContentPane().add(txtCep);
@@ -125,7 +125,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblEndereco);
 		
 		txtEndereco = new JTextField();
-		txtEndereco.setBackground(Color.RED);
+		txtEndereco.setBackground(new Color(255, 255, 255));
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEndereco.setBounds(160, 355, 347, 26);
 		frmEventif.getContentPane().add(txtEndereco);
@@ -137,7 +137,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblNumero);
 		
 		txtNumero = new JTextField();
-		txtNumero.setBackground(Color.RED);
+		txtNumero.setBackground(new Color(255, 255, 255));
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtNumero.setBounds(550, 355, 95, 29);
 		frmEventif.getContentPane().add(txtNumero);
@@ -149,7 +149,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblBairro);
 		
 		txtBairro = new JTextField();
-		txtBairro.setBackground(Color.RED);
+		txtBairro.setBackground(new Color(255, 255, 255));
 		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtBairro.setBounds(160, 389, 133, 28);
 		frmEventif.getContentPane().add(txtBairro);
@@ -161,7 +161,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblCidade);
 		
 		txtCidade = new JTextField();
-		txtCidade.setBackground(Color.RED);
+		txtCidade.setBackground(new Color(255, 255, 255));
 		txtCidade.setBounds(375, 392, 132, 27);
 		frmEventif.getContentPane().add(txtCidade);
 		txtCidade.setColumns(10);
@@ -172,7 +172,7 @@ public class TelaCadastro {
 		frmEventif.getContentPane().add(lblUf);
 		
 		txtUf = new JTextField();
-		txtUf.setBackground(Color.RED);
+		txtUf.setBackground(new Color(255, 255, 255));
 		txtUf.setBounds(560, 395, 85, 24);
 		frmEventif.getContentPane().add(txtUf);
 		txtUf.setColumns(10);
