@@ -2,16 +2,18 @@ package model;
 
 public class Evento {
 	
-	private long id;
-	private String nome;//
+	private long idEvento;
+	private String nome;
 	private String data_Inicio;
 	private String data_Fim;
 	private String organizador;
-	public long getId() {
-		return id;
+	private Endereco_Evento endereco_eve;
+	
+	public long getIdEvento() {
+		return idEvento;
 	} 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdEvento(long idEvento) {
+		this.idEvento = idEvento;
 	}
 	public String getNome() {
 		return nome;
@@ -36,6 +38,12 @@ public class Evento {
 	}
 	public void setOrganizador(String organizador) {
 		this.organizador = organizador;
+	}
+	public Endereco_Evento getEndereco_eve() {
+		return endereco_eve;
+	}
+	public void setEndereco_eve(Endereco_Evento endereco_eve) {
+		this.endereco_eve = endereco_eve;
 	}
 	
 }

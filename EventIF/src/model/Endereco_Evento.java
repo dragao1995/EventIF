@@ -2,17 +2,18 @@ package model;
 
 public class Endereco_Evento {
 	
-	private long id;
-	private String logradouro;//
+	private long idEndereco_Eve;
+	private String logradouro;
 	private String bairro;
-	private String numero;
+	private int numero;
 	private String complemento;
+	private Cidade cidade;
 	
-	public long getId() {
-		return id;
+	public long getIdEndereco_Eve() {
+		return idEndereco_Eve;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setIdEndereco_Eve(long idEndereco_Eve) {
+		this.idEndereco_Eve = idEndereco_Eve;
 	}
 	public String getLogradouro() {
 		return logradouro;
@@ -26,10 +27,10 @@ public class Endereco_Evento {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
-	public void setNumero(String numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 	public String getComplemento() {
@@ -38,5 +39,10 @@ public class Endereco_Evento {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
 }

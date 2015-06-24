@@ -2,18 +2,26 @@ package model;
 
 public class Cidade {
 	 
-	private long id;//
+	private long idCidade;
 	private String nome;
-	public long getId() {
-		return id;
+	private Estado estado;
+	
+	public long getIdCidade() {
+		return idCidade;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setIdCidade(long idCidade) {
+		this.idCidade = idCidade;
 	}
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public Estado getEstado() {
+		return estado;
+	}
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 }

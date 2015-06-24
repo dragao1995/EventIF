@@ -2,18 +2,20 @@ package model;
 
 public class Atividade {
 	
-	private long id;
+	private long idAtividade;
 	private String descricao;
 	private String data_Inicio;
-	private String data_Fim;// todos vão ficar com String ???
-	private String carga_Horaria;// colocar horario de inicio e fim ?
-	private String numero_Vagas;
+	private String data_Fim;//Calendar ver como funciona com hora 
+	private String carga_Horaria;
+	private int numero_Vagas;
+	private Evento evento;
+	private Tipo tipo;
 	
-	public long getId() {
-		return id;
+	public long getIdAtividade() {
+		return idAtividade;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setId(long idAtividade) {
+		this.idAtividade = idAtividade;
 	}
 	public String getDescricao() {
 		return descricao;
@@ -39,11 +41,26 @@ public class Atividade {
 	public void setCarga_Horaria(String carga_Horaria) {
 		this.carga_Horaria = carga_Horaria;
 	}
-	public String getNumero_Vagas() {
+	public int getNumero_Vagas() {
 		return numero_Vagas;
 	}
-	public void setNumero_Vagas(String numero_Vagas) {
+	public void setNumero_Vagas(int numero_Vagas) {
 		this.numero_Vagas = numero_Vagas;
+	}
+	public Evento getEvento() {
+		return evento;
+	}
+	public void setEvento(Evento evento) {
+		this.evento = evento;
+	}
+	public Tipo getTipo() {
+		return tipo;
+	}
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	public void setIdAtividade(long idAtividade) {
+		this.idAtividade = idAtividade;
 	}
 	
 }

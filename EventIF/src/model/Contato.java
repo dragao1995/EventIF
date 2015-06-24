@@ -2,15 +2,15 @@ package model;
 
 public class Contato {
 	 
-	private long id;
-	private String telefone;//
+	private long idContato;
+	private String telefone;
 	private String email;
 	
-	public long getId() {
-		return id;
+	public long getIdContato() {
+		return idContato;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setIdContato(long idContato) {
+		this.idContato = idContato;
 	}
 	public String getTelefone() {
 		return telefone;

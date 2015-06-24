@@ -2,13 +2,13 @@ package model;
 
 public class Tipo {
 	
-	private long id;
-	private String tipo_Atividade;//
-	public long getId() {
-		return id;
+	private long idTipo;
+	private String tipo_Atividade;
+	public long getidTipo() {
+		return idTipo;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setIdTipo(long idTipo) {
+		this.idTipo = idTipo;
 	}
 	public String getTipo_Atividade() {
 		return tipo_Atividade;

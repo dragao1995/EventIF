@@ -2,14 +2,14 @@ package model;
 
 public class Estado {
 	 
-	private long id;
-	private String nome;//
+	private long idEstado;
+	private String nome;
 	private String uf;
-	public long getId() {
-		return id;
+	public long getIdEstado() {
+		return idEstado;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setIdEstado(long idEstado) {
+		this.idEstado = idEstado;
 	}
 	public String getNome() {
 		return nome;
