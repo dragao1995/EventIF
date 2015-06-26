@@ -21,7 +21,7 @@ import javax.swing.UIManager;
 public class TelaAtividades {
 
 	private JFrame frmEventos;
-	private JTable table;
+	private JTable tableAtividades;
 
 	/**
 	 * Launch the application.
@@ -62,48 +62,25 @@ public class TelaAtividades {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(37, 103, 610, 424);
+		
 		frmEventos.getContentPane().add(scrollPane);
 		  
-		table = new JTable();
-		table.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(255, 0, 0)));
-		table.setForeground(new Color(0, 0, 0));
-		table.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		table.setBackground(new Color(102, 204, 102));
-		table.setModel(new DefaultTableModel(
+		tableAtividades = new JTable();
+		tableAtividades.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(255, 0, 0)));
+		tableAtividades.setForeground(new Color(0, 0, 0));
+		tableAtividades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		tableAtividades.setBackground(new Color(102, 204, 102));
+		tableAtividades.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
-				{null, null, null, null, null, null},
 				{null, null, null, null, null, null},
 			},
 			new String[] {
 				"Atividade", "Tema", "Horario", "Data", "Local", "Ministrante"
 			}
 		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(137);
-		table.getColumnModel().getColumn(5).setPreferredWidth(97);
-		scrollPane.setViewportView(table);
+		tableAtividades.getColumnModel().getColumn(0).setPreferredWidth(137);
+		tableAtividades.getColumnModel().getColumn(5).setPreferredWidth(97);
+		scrollPane.setViewportView(tableAtividades);
 		
 		JButton btnAdicionar = new JButton("ADD");
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
@@ -141,4 +118,21 @@ public class TelaAtividades {
 		label.setBounds(657, -23, 125, 186);
 		frmEventos.getContentPane().add(label);
 	}
+
+	public JFrame getFrmEventos() {
+		return frmEventos;
+	}
+
+	public void setFrmEventos(JFrame frmEventos) {
+		this.frmEventos = frmEventos;
+	}
+
+	public JTable getTable() {
+		return tableAtividades;
+	}
+
+	public void setTable(JTable table) {
+		this.tableAtividades = table;
+	}
+	
 }

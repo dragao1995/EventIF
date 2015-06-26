@@ -142,4 +142,61 @@ public class ADDAtividades {
 		frmEventif.setBounds(100, 100, 800, 483);
 		frmEventif.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	public JFrame getFrmEventif() {
+		return frmEventif;
+	}
+
+	public void setFrmEventif(JFrame frmEventif) {
+		this.frmEventif = frmEventif;
+	}
+
+	public JTextField getTxtNomeativ() {
+		return txtNomeativ;
+	}
+
+	public void setTxtNomeativ(JTextField txtNomeativ) {
+		this.txtNomeativ = txtNomeativ;
+	}
+
+	public JTextField getTxtHorainicial() {
+		return txtHorainicial;
+	}
+
+	public void setTxtHorainicial(JTextField txtHorainicial) {
+		this.txtHorainicial = txtHorainicial;
+	}
+
+	public JTextField getTxtHorafinal() {
+		return txtHorafinal;
+	}
+
+	public void setTxtHorafinal(JTextField txtHorafinal) {
+		this.txtHorafinal = txtHorafinal;
+	}
+
+	public JTextField getTxtCargahor() {
+		return txtCargahor;
+	}
+
+	public void setTxtCargahor(JTextField txtCargahor) {
+		this.txtCargahor = txtCargahor;
+	}
+
+	public JTextField getTxtNvagas() {
+		return txtNvagas;
+	}
+
+	public void setTxtNvagas(JTextField txtNvagas) {
+		this.txtNvagas = txtNvagas;
+	}
+
+	public JTextField getTxtDescrativ() {
+		return txtDescrativ;
+	}
+
+	public void setTxtDescrativ(JTextField txtDescrativ) {
+		this.txtDescrativ = txtDescrativ;
+	}
+	
 }

@@ -4,7 +4,7 @@ public class Cidade {
 	 
 	private long idCidade;
 	private String nome;
-	private Estado estado;
+	private Estado estado= new Estado();
 	
 	public long getIdCidade() {
 		return idCidade;

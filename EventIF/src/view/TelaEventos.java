@@ -139,4 +139,29 @@ public class TelaEventos {
 		btnAtividades.setBounds(656, 492, 107, 35);
 		frmEventos.getContentPane().add(btnAtividades);
 	}
+
+	public JFrame getFrmEventos() {
+		return frmEventos;
+	}
+
+	public void setFrmEventos(JFrame frmEventos) {
+		this.frmEventos = frmEventos;
+	}
+
+	public JTextField getTxtPesquisa() {
+		return txtPesquisa;
+	}
+
+	public void setTxtPesquisa(JTextField txtPesquisa) {
+		this.txtPesquisa = txtPesquisa;
+	}
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+	
 }

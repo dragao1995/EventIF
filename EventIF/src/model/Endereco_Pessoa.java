@@ -7,7 +7,7 @@ public class Endereco_Pessoa {
 	private String bairro;
 	private int numero;
 	private String complemento;
-	private Cidade cidade;
+	private Cidade cidade= new Cidade();
 	public long getIdEndereco_Pes() {
 		return idEndereco_Pes;
 	}

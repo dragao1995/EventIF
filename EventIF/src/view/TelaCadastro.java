@@ -11,7 +11,7 @@ import javax.swing.JButton;
 
 public class TelaCadastro {
  
-	private JFrame frmEventif;
+	private JFrame frmCadastroEventif;
 	private JTextField txtNome;
 	private JTextField txtRg;
 	private JTextField txtCpf;
@@ -43,138 +43,138 @@ public class TelaCadastro {
 		
 		JLabel lblCadastroEventif = new JLabel("Cadastro EventIF");
 		lblCadastroEventif.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 37));
-		lblCadastroEventif.setBounds(206, 54, 410, 63);
+		lblCadastroEventif.setBounds(207, 84, 410, 63);
 		getFrame().getContentPane().add(lblCadastroEventif);
 		
 		JLabel lblNome = new JLabel("Nome: ");
 		lblNome.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblNome.setBackground(new Color(0, 128, 0));
 		lblNome.setBounds(94, 220, 68, 23);
-		frmEventif.getContentPane().add(lblNome);
+		frmCadastroEventif.getContentPane().add(lblNome);
 		
 		txtNome = new JTextField();
 		txtNome.setBackground(new Color(255, 255, 255));
 		txtNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNome.setBounds(160, 224, 485, 23);
-		frmEventif.getContentPane().add(txtNome);
+		frmCadastroEventif.getContentPane().add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblRg = new JLabel("RG: ");
 		lblRg.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblRg.setBounds(94, 257, 53, 23);
-		frmEventif.getContentPane().add(lblRg);
+		frmCadastroEventif.getContentPane().add(lblRg);
 		
 		txtRg = new JTextField();
 		txtRg.setBackground(new Color(255, 255, 255));
 		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtRg.setBounds(160, 254, 169, 26);
-		frmEventif.getContentPane().add(txtRg);
+		frmCadastroEventif.getContentPane().add(txtRg);
 		txtRg.setColumns(10);
 		
 		JLabel lblCpf = new JLabel("CPF: ");
 		lblCpf.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblCpf.setBounds(339, 258, 53, 21);
-		frmEventif.getContentPane().add(lblCpf);
+		frmCadastroEventif.getContentPane().add(lblCpf);
 		
 		txtCpf = new JTextField();
 		txtCpf.setBackground(new Color(255, 255, 255));
 		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCpf.setBounds(390, 254, 255, 25);
-		frmEventif.getContentPane().add(txtCpf);
+		frmCadastroEventif.getContentPane().add(txtCpf);
 		txtCpf.setColumns(10);
 		
 		JLabel lblEmail = new JLabel("Email: ");
 		lblEmail.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblEmail.setBounds(339, 288, 68, 21);
-		frmEventif.getContentPane().add(lblEmail);
+		frmCadastroEventif.getContentPane().add(lblEmail);
 		
 		txtEmail = new JTextField();
 		txtEmail.setBackground(new Color(255, 255, 255));
 		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEmail.setBounds(400, 285, 245, 24);
-		frmEventif.getContentPane().add(txtEmail);
+		frmCadastroEventif.getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
 		
 		JLabel lblTelefone = new JLabel("Tel:");
 		lblTelefone.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblTelefone.setBounds(94, 287, 46, 23);
-		frmEventif.getContentPane().add(lblTelefone);
+		frmCadastroEventif.getContentPane().add(lblTelefone);
 		
 		txtTelefone = new JTextField();
 		txtTelefone.setBackground(new Color(255, 255, 255));
 		txtTelefone.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtTelefone.setBounds(160, 288, 169, 26);
-		frmEventif.getContentPane().add(txtTelefone);
+		frmCadastroEventif.getContentPane().add(txtTelefone);
 		txtTelefone.setColumns(10);
 		
 		JLabel lblCep = new JLabel("Cep:");
 		lblCep.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblCep.setBounds(94, 321, 53, 23);
-		frmEventif.getContentPane().add(lblCep);
+		frmCadastroEventif.getContentPane().add(lblCep);
 		
 		txtCep = new JTextField();
 		txtCep.setBackground(new Color(255, 255, 255));
 		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtCep.setBounds(160, 321, 169, 26);
-		frmEventif.getContentPane().add(txtCep);
+		frmCadastroEventif.getContentPane().add(txtCep);
 		txtCep.setColumns(10);
 		
 		JLabel lblEndereco = new JLabel("Endere\u00E7o:");
 		lblEndereco.setFont(new Font("Tahoma", Font.ITALIC, 18));
 		lblEndereco.setBounds(76, 355, 86, 23);
-		frmEventif.getContentPane().add(lblEndereco);
+		frmCadastroEventif.getContentPane().add(lblEndereco);
 		
 		txtEndereco = new JTextField();
 		txtEndereco.setBackground(new Color(255, 255, 255));
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtEndereco.setBounds(160, 355, 347, 26);
-		frmEventif.getContentPane().add(txtEndereco);
+		frmCadastroEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		 
 		JLabel lblNumero = new JLabel("N\u00B0: ");
 		lblNumero.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblNumero.setBounds(517, 355, 35, 30);
-		frmEventif.getContentPane().add(lblNumero);
+		frmCadastroEventif.getContentPane().add(lblNumero);
 		
 		txtNumero = new JTextField();
 		txtNumero.setBackground(new Color(255, 255, 255));
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		txtNumero.setBounds(550, 355, 95, 29);
-		frmEventif.getContentPane().add(txtNumero);
+		frmCadastroEventif.getContentPane().add(txtNumero);
 		txtNumero.setColumns(10);
 		
 		JLabel lblBairro = new JLabel("Bairro:");
 		lblBairro.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblBairro.setBounds(76, 394, 71, 23);
-		frmEventif.getContentPane().add(lblBairro);
+		frmCadastroEventif.getContentPane().add(lblBairro);
 		
 		txtBairro = new JTextField();
 		txtBairro.setBackground(new Color(255, 255, 255));
 		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtBairro.setBounds(160, 389, 133, 28);
-		frmEventif.getContentPane().add(txtBairro);
+		frmCadastroEventif.getContentPane().add(txtBairro);
 		txtBairro.setColumns(10);
 		
 		JLabel lblCidade = new JLabel("Cidade:");
 		lblCidade.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblCidade.setBounds(306, 392, 71, 24);
-		frmEventif.getContentPane().add(lblCidade);
+		frmCadastroEventif.getContentPane().add(lblCidade);
 		
 		txtCidade = new JTextField();
 		txtCidade.setBackground(new Color(255, 255, 255));
 		txtCidade.setBounds(375, 392, 132, 27);
-		frmEventif.getContentPane().add(txtCidade);
+		frmCadastroEventif.getContentPane().add(txtCidade);
 		txtCidade.setColumns(10);
 		
 		JLabel lblUf = new JLabel("UF:");
 		lblUf.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblUf.setBounds(517, 395, 46, 24);
-		frmEventif.getContentPane().add(lblUf);
+		frmCadastroEventif.getContentPane().add(lblUf);
 		
 		txtUf = new JTextField();
 		txtUf.setBackground(new Color(255, 255, 255));
 		txtUf.setBounds(560, 395, 85, 24);
-		frmEventif.getContentPane().add(txtUf);
+		frmCadastroEventif.getContentPane().add(txtUf);
 		txtUf.setColumns(10);
 		
 		JButton btnConfirmar = new JButton("");
@@ -183,24 +183,24 @@ public class TelaCadastro {
 		btnConfirmar.setBackground(Color.WHITE);
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
-		frmEventif.getContentPane().add(btnConfirmar);
+		frmCadastroEventif.getContentPane().add(btnConfirmar);
 		    
 		JButton btnCancelar = new JButton("");
 		btnCancelar.setIcon(new ImageIcon(TelaCadastro.class.getResource("/view/X.png")));
 		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCancelar.setBounds(410, 488, 122, 48);
-		frmEventif.getContentPane().add(btnCancelar);
+		frmCadastroEventif.getContentPane().add(btnCancelar);
 	}
 
 	public JFrame getFrame() {
-		return frmEventif;
+		return frmCadastroEventif;
 	} 
 
 	public void setFrame(JFrame frame) {
-		this.frmEventif = frame;
-		frmEventif.setResizable(false);
-		frmEventif.setTitle("EventIF");
+		this.frmCadastroEventif = frame;
+		frmCadastroEventif.setResizable(false);
+		frmCadastroEventif.setTitle("EventIF");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/view/if.png")));
 		frame.getContentPane().setFont(new Font("Tahoma", Font.ITALIC, 19));
 	}

@@ -7,8 +7,8 @@ public class Pessoa {
 	private String cpf;
 	private String rg;
 	private String senha;
-	private Endereco_Pessoa endereco_pes;
-	private Contato contato;
+	private Endereco_Pessoa endereco_pes= new Endereco_Pessoa();
+	private Contato contato= new Contato();
 	
 	public long getIdPessoa() {
 		return idPessoa;

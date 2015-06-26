@@ -21,7 +21,7 @@ import javax.swing.JButton;
 
 public class TelaLogin {
   
-	private JFrame frame;
+	private JFrame frameLogin;
 	private JTextField txtUsuario;
 	private JTextField txtSenha;
 
@@ -38,7 +38,7 @@ public class TelaLogin {
 			public void run() {
 				try {
 					TelaLogin window = new TelaLogin();
-					window.frame.setVisible(true);
+					window.frameLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -57,52 +57,52 @@ public class TelaLogin {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setResizable(false);
-		frame.getContentPane().setBackground(new Color(102, 204, 102));
-		frame.getContentPane().setForeground(Color.WHITE);
-		frame.setBounds(100, 100, 691, 417);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/view/if.png")));
+		frameLogin = new JFrame();
+		frameLogin.setResizable(false);
+		frameLogin.getContentPane().setBackground(new Color(102, 204, 102));
+		frameLogin.getContentPane().setForeground(Color.WHITE);
+		frameLogin.setBounds(100, 100, 691, 417);
+		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameLogin.getContentPane().setLayout(null);
+		frameLogin.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/view/if.png")));
 		
 
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblUsuario.setBounds(242, 143, 88, 35);
-		frame.getContentPane().add(lblUsuario);
+		frameLogin.getContentPane().add(lblUsuario);
 
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblSenha.setBounds(242, 189, 66, 35);
-		frame.getContentPane().add(lblSenha);
+		frameLogin.getContentPane().add(lblSenha);
 
 		txtUsuario = new JTextField();
 		txtUsuario.setBackground(new Color(255, 255, 255));
 		txtUsuario.setBounds(324, 149, 260, 31);
-		frame.getContentPane().add(txtUsuario);
+		frameLogin.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 
 		txtSenha = new JTextField();
 		txtSenha.setBackground(new Color(255, 255, 255));
 		txtSenha.setBounds(324, 189, 260, 31);
-		frame.getContentPane().add(txtSenha);
+		frameLogin.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);
 
 		JRadioButton rdbtnGerente = new JRadioButton("Gerente");
 		rdbtnGerente.setBackground(new Color(102, 204, 102));
 		rdbtnGerente.setBounds(324, 227, 76, 23);
-		frame.getContentPane().add(rdbtnGerente);
+		frameLogin.getContentPane().add(rdbtnGerente);
 
 		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
 		rdbtnMonitor.setBackground(new Color(102, 204, 102));
 		rdbtnMonitor.setBounds(406, 227, 76, 23);
-		frame.getContentPane().add(rdbtnMonitor);
+		frameLogin.getContentPane().add(rdbtnMonitor);
 
 		JRadioButton rdbtnParticipante = new JRadioButton("Participante");
 		rdbtnParticipante.setBackground(new Color(102, 204, 102));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
-		frame.getContentPane().add(rdbtnParticipante);
+		frameLogin.getContentPane().add(rdbtnParticipante);
   
 		ButtonGroup radioGroup = new ButtonGroup();
 		radioGroup.add(rdbtnGerente);
@@ -113,18 +113,18 @@ public class TelaLogin {
 		lblIcon.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/if.png")));
 		lblIcon.setBounds(63, 97, 168, 169);
-		frame.getContentPane().add(lblIcon);
+		frameLogin.getContentPane().add(lblIcon);
 
 		JButton btnLogin = new JButton("");
 		btnLogin.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/Symbol_-_Check.png")));
 		btnLogin.setBounds(337, 282, 88, 67);
-		frame.getContentPane().add(btnLogin);
+		frameLogin.getContentPane().add(btnLogin);
 
 		JButton btnCadastro = new JButton("Cadastro");
 		btnCadastro.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCadastro.setBounds(472, 282, 108, 67);
-		frame.getContentPane().add(btnCadastro);
+		frameLogin.getContentPane().add(btnCadastro);
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
@@ -132,7 +132,7 @@ public class TelaLogin {
 						try {
 							TelaCadastro window = new TelaCadastro();
 							window.getFrame().setVisible(true);
-							frame.setVisible(false);
+							frameLogin.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -141,4 +141,29 @@ public class TelaLogin {
 			}
 		});
 	}
+
+	public JFrame getFrameLogin() {
+		return frameLogin;
+	}
+
+	public void setFrameLogin(JFrame frameLogin) {
+		this.frameLogin = frameLogin;
+	}
+
+	public JTextField getTxtUsuario() {
+		return txtUsuario;
+	}
+
+	public void setTxtUsuario(JTextField txtUsuario) {
+		this.txtUsuario = txtUsuario;
+	}
+
+	public JTextField getTxtSenha() {
+		return txtSenha;
+	}
+
+	public void setTxtSenha(JTextField txtSenha) {
+		this.txtSenha = txtSenha;
+	}
+	
 }
