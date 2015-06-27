@@ -1,12 +1,8 @@
 package view;
 
-import java.awt.EventQueue;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
 import java.awt.Color;
-import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -14,48 +10,31 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class TelaLogin {
   
 	private JFrame frameLogin;
 	private JTextField txtUsuario;
 	private JTextField txtSenha;
-
+	private JButton btnCadastro = new JButton("Cadastro");
+	private JLabel lblIcon = new JLabel(" ");
+	private JButton btnLogin = new JButton("");
+	private JRadioButton rdbtnParticipante = new JRadioButton("Participante");
+	private JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
+	private JRadioButton rdbtnGerente = new JRadioButton("Gerente");
 	
-	public static void main(String[] args) throws SQLException  {
-		Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto","postgres","123");
 		
-		System.out.println(conexao);
-		conexao.close();
-		
-		
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaLogin window = new TelaLogin();
-					window.frameLogin.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public TelaLogin() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	private void initialize() {
 		frameLogin = new JFrame();
 		frameLogin.setResizable(false);
@@ -89,17 +68,17 @@ public class TelaLogin {
 		frameLogin.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);
 
-		JRadioButton rdbtnGerente = new JRadioButton("Gerente");
+		
 		rdbtnGerente.setBackground(new Color(102, 204, 102));
 		rdbtnGerente.setBounds(324, 227, 76, 23);
 		frameLogin.getContentPane().add(rdbtnGerente);
 
-		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
+		
 		rdbtnMonitor.setBackground(new Color(102, 204, 102));
 		rdbtnMonitor.setBounds(406, 227, 76, 23);
 		frameLogin.getContentPane().add(rdbtnMonitor);
 
-		JRadioButton rdbtnParticipante = new JRadioButton("Participante");
+		
 		rdbtnParticipante.setBackground(new Color(102, 204, 102));
 		rdbtnParticipante.setBounds(490, 227, 94, 23);
 		frameLogin.getContentPane().add(rdbtnParticipante);
@@ -109,37 +88,74 @@ public class TelaLogin {
 		radioGroup.add(rdbtnMonitor);
 		radioGroup.add(rdbtnParticipante);
         
-		JLabel lblIcon = new JLabel(" ");
+		
+		
 		lblIcon.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/if.png")));
 		lblIcon.setBounds(63, 97, 168, 169);
 		frameLogin.getContentPane().add(lblIcon);
 
-		JButton btnLogin = new JButton("");
+		
 		btnLogin.setIcon(new ImageIcon(TelaLogin.class
 				.getResource("/view/Symbol_-_Check.png")));
 		btnLogin.setBounds(337, 282, 88, 67);
 		frameLogin.getContentPane().add(btnLogin);
 
-		JButton btnCadastro = new JButton("Cadastro");
+		
 		btnCadastro.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCadastro.setBounds(472, 282, 108, 67);
 		frameLogin.getContentPane().add(btnCadastro);
-		btnCadastro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							TelaCadastro window = new TelaCadastro();
-							window.getFrame().setVisible(true);
-							frameLogin.setVisible(false);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		});
+		
+		
+	}
+
+	
+	public JButton getBtnCadastro() {
+		return btnCadastro;
+	}
+
+	public void setBtnCadastro(JButton btnCadastro) {
+		this.btnCadastro = btnCadastro;
+	}
+
+	public JLabel getLblIcon() {
+		return lblIcon;
+	}
+
+	public void setLblIcon(JLabel lblIcon) {
+		this.lblIcon = lblIcon;
+	}
+
+	public JButton getBtnLogin() {
+		return btnLogin;
+	}
+
+	public void setBtnLogin(JButton btnLogin) {
+		this.btnLogin = btnLogin;
+	}
+
+	public JRadioButton getRdbtnParticipante() {
+		return rdbtnParticipante;
+	}
+
+	public void setRdbtnParticipante(JRadioButton rdbtnParticipante) {
+		this.rdbtnParticipante = rdbtnParticipante;
+	}
+
+	public JRadioButton getRdbtnMonitor() {
+		return rdbtnMonitor;
+	}
+
+	public void setRdbtnMonitor(JRadioButton rdbtnMonitor) {
+		this.rdbtnMonitor = rdbtnMonitor;
+	}
+
+	public JRadioButton getRdbtnGerente() {
+		return rdbtnGerente;
+	}
+
+	public void setRdbtnGerente(JRadioButton rdbtnGerente) {
+		this.rdbtnGerente = rdbtnGerente;
 	}
 
 	public JFrame getFrameLogin() {
