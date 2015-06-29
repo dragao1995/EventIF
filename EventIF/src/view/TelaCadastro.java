@@ -23,11 +23,16 @@ public class TelaCadastro {
 	private JTextField txtBairro;
 	private JTextField txtCidade;
 	private JTextField txtUf;
+	private JButton btnConfirmar = new JButton("");    
+	private JButton btnCancelar = new JButton("");
 
 	public TelaCadastro() {
 		initialize();
 	}
 
+	/**
+	 * 
+	 */
 	private void initialize() {
 		setFrame(new JFrame());
 		getFrame().getContentPane().setBackground(new Color(102, 204, 102));
@@ -177,15 +182,14 @@ public class TelaCadastro {
 		frmCadastroEventif.getContentPane().add(txtUf);
 		txtUf.setColumns(10);
 		
-		JButton btnConfirmar = new JButton("");
+		
 		btnConfirmar.setIcon(new ImageIcon(TelaCadastro.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setForeground(Color.BLACK);
 		btnConfirmar.setBackground(Color.WHITE);
 		btnConfirmar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnConfirmar.setBounds(207, 488, 122, 48);
 		frmCadastroEventif.getContentPane().add(btnConfirmar);
-		    
-		JButton btnCancelar = new JButton("");
+		
 		btnCancelar.setIcon(new ImageIcon(TelaCadastro.class.getResource("/view/X.png")));
 		btnCancelar.setBackground(Color.WHITE);
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
@@ -204,4 +208,117 @@ public class TelaCadastro {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/view/if.png")));
 		frame.getContentPane().setFont(new Font("Tahoma", Font.ITALIC, 19));
 	}
+
+	public JFrame getFrmCadastroEventif() {
+		return frmCadastroEventif;
+	}
+
+	public void setFrmCadastroEventif(JFrame frmCadastroEventif) {
+		this.frmCadastroEventif = frmCadastroEventif;
+	}
+
+	public JTextField getTxtNome() {
+		return txtNome;
+	}
+
+	public void setTxtNome(JTextField txtNome) {
+		this.txtNome = txtNome;
+	}
+
+	public JTextField getTxtRg() {
+		return txtRg;
+	}
+
+	public void setTxtRg(JTextField txtRg) {
+		this.txtRg = txtRg;
+	}
+
+	public JTextField getTxtCpf() {
+		return txtCpf;
+	}
+
+	public void setTxtCpf(JTextField txtCpf) {
+		this.txtCpf = txtCpf;
+	}
+
+	public JTextField getTxtEmail() {
+		return txtEmail;
+	}
+
+	public void setTxtEmail(JTextField txtEmail) {
+		this.txtEmail = txtEmail;
+	}
+
+	public JTextField getTxtTelefone() {
+		return txtTelefone;
+	}
+
+	public void setTxtTelefone(JTextField txtTelefone) {
+		this.txtTelefone = txtTelefone;
+	}
+
+	public JTextField getTxtCep() {
+		return txtCep;
+	}
+
+	public void setTxtCep(JTextField txtCep) {
+		this.txtCep = txtCep;
+	}
+
+	public JTextField getTxtEndereco() {
+		return txtEndereco;
+	}
+
+	public void setTxtEndereco(JTextField txtEndereco) {
+		this.txtEndereco = txtEndereco;
+	}
+
+	public JTextField getTxtNumero() {
+		return txtNumero;
+	}
+
+	public void setTxtNumero(JTextField txtNumero) {
+		this.txtNumero = txtNumero;
+	}
+
+	public JTextField getTxtBairro() {
+		return txtBairro;
+	}
+
+	public void setTxtBairro(JTextField txtBairro) {
+		this.txtBairro = txtBairro;
+	}
+
+	public JTextField getTxtCidade() {
+		return txtCidade;
+	}
+
+	public void setTxtCidade(JTextField txtCidade) {
+		this.txtCidade = txtCidade;
+	}
+
+	public JTextField getTxtUf() {
+		return txtUf;
+	}
+
+	public void setTxtUf(JTextField txtUf) {
+		this.txtUf = txtUf;
+	}
+
+	public JButton getBtnConfirmar() {
+		return btnConfirmar;
+	}
+
+	public void setBtnConfirmar(JButton btnConfirmar) {
+		this.btnConfirmar = btnConfirmar;
+	}
+
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
+
+	public void setBtnCancelar(JButton btnCancelar) {
+		this.btnCancelar = btnCancelar;
+	}
+	
 }

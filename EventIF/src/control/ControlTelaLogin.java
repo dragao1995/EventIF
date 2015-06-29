@@ -6,26 +6,20 @@ import java.awt.event.ActionListener;
 import view.TelaCadastro;
 import view.TelaLogin;
 
-public class telaLogin {
-	TelaLogin tl = new TelaLogin();
+public class ControlTelaLogin {
+	static TelaLogin tl = new TelaLogin();
+	static ControlTelaCadastro windowTC = new ControlTelaCadastro();
+	
+	
 
-	public TelaLogin getTl() {
-		return tl;
-	}
-
-	public void setTl(TelaLogin tl) {
-		this.tl = tl;
-	}
-
-	public void EventosTelaLogin() {
+	public static void EventosTelaLogin() {
+		windowTC.EventosTelaCadastro();
 		tl.getFrameLogin().setVisible(true);
 		tl.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				TelaCadastro windowTC = new TelaCadastro();
-				windowTC.getFrame().setVisible(true);
+				ControlTelaCadastro.windowTC.getFrame().setVisible(true);
 				tl.getFrameLogin().setVisible(false);
-
+				
 			}
 		});
 

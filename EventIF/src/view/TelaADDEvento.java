@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ADDEvento {
+public class TelaADDEvento {
 
 	private JFrame frmCadastrarEvento;
 	private JTextField txtNomeev;
@@ -30,7 +30,7 @@ public class ADDEvento {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ADDEvento window = new ADDEvento();
+					TelaADDEvento window = new TelaADDEvento();
 					window.frmCadastrarEvento.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class ADDEvento {
 	/**
 	 * Create the application.
 	 */
-	public ADDEvento() {
+	public TelaADDEvento() {
 		initialize();
 	}
 
@@ -51,7 +51,7 @@ public class ADDEvento {
 	 */
 	private void initialize() {
 		frmCadastrarEvento = new JFrame();
-		frmCadastrarEvento.setIconImage(Toolkit.getDefaultToolkit().getImage(ADDEvento.class.getResource("/view/if.png")));
+		frmCadastrarEvento.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDEvento.class.getResource("/view/if.png")));
 		frmCadastrarEvento.setTitle("EventIF");
 		frmCadastrarEvento.getContentPane().setBackground(new Color(102, 204, 102));
 		frmCadastrarEvento.getContentPane().setLayout(null);
@@ -128,7 +128,7 @@ public class ADDEvento {
 		txtDescricao.setColumns(10);
 		
 		JButton btnConfirmar = new JButton("");
-		btnConfirmar.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/Symbol_-_Check.png")));
+		btnConfirmar.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setBounds(218, 388, 89, 59);
 		frmCadastrarEvento.getContentPane().add(btnConfirmar);
 		
@@ -137,12 +137,12 @@ public class ADDEvento {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnCancelar.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/X.png")));
+		btnCancelar.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/view/X.png")));
 		btnCancelar.setBounds(515, 388, 89, 59);
 		frmCadastrarEvento.getContentPane().add(btnCancelar);
 		
 		JLabel lblIcon = new JLabel("");
-		lblIcon.setIcon(new ImageIcon(ADDEvento.class.getResource("/view/if.png")));
+		lblIcon.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/view/if.png")));
 		lblIcon.setBounds(0, 309, 154, 138);
 		frmCadastrarEvento.getContentPane().add(lblIcon);
 		frmCadastrarEvento.setBounds(100, 100, 800, 509);

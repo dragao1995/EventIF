@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
-public class ADDAtividades {
+public class TelaADDAtividades {
 
 	private JFrame frmEventif;
 	private JTextField txtNomeativ;
@@ -28,7 +28,7 @@ public class ADDAtividades {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ADDAtividades window = new ADDAtividades();
+					TelaADDAtividades window = new TelaADDAtividades();
 					window.frmEventif.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class ADDAtividades {
 	/**
 	 * Create the application.
 	 */
-	public ADDAtividades() {
+	public TelaADDAtividades() {
 		initialize();
 	}
 
@@ -49,7 +49,7 @@ public class ADDAtividades {
 	 */
 	private void initialize() {
 		frmEventif = new JFrame();
-		frmEventif.setIconImage(Toolkit.getDefaultToolkit().getImage(ADDAtividades.class.getResource("/view/if.png")));
+		frmEventif.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDAtividades.class.getResource("/view/if.png")));
 		frmEventif.setTitle("EventIF");
 		frmEventif.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventif.getContentPane().setLayout(null);
@@ -126,17 +126,17 @@ public class ADDAtividades {
 		txtDescrativ.setColumns(10);
 		
 		JButton btnConfirmar = new JButton("");
-		btnConfirmar.setIcon(new ImageIcon(ADDAtividades.class.getResource("/view/Symbol_-_Check.png")));
+		btnConfirmar.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setBounds(272, 365, 89, 59);
 		frmEventif.getContentPane().add(btnConfirmar);
 		
 		JButton btnCancelar = new JButton("");
-		btnCancelar.setIcon(new ImageIcon(ADDAtividades.class.getResource("/view/X.png")));
+		btnCancelar.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/view/X.png")));
 		btnCancelar.setBounds(569, 365, 89, 59);
 		frmEventif.getContentPane().add(btnCancelar);
 		
 		JLabel lblicon = new JLabel("");
-		lblicon.setIcon(new ImageIcon(ADDAtividades.class.getResource("/view/if.png")));
+		lblicon.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/view/if.png")));
 		lblicon.setBounds(29, 245, 125, 186);
 		frmEventif.getContentPane().add(lblicon);
 		frmEventif.setBounds(100, 100, 800, 483);

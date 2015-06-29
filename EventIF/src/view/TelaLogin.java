@@ -28,12 +28,10 @@ public class TelaLogin {
 	private JRadioButton rdbtnParticipante = new JRadioButton("Participante");
 	private JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
 	private JRadioButton rdbtnGerente = new JRadioButton("Gerente");
-	
 		
 	public TelaLogin() {
 		initialize();
 	}
-
 	
 	private void initialize() {
 		frameLogin = new JFrame();
