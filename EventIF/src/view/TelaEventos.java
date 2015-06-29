@@ -42,25 +42,25 @@ public class TelaEventos {
 		frmEventos.getContentPane().setLayout(null);
 		
 		txtPesquisa = new JTextField();
-		txtPesquisa.setBounds(153, 36, 493, 34);
+		txtPesquisa.setBounds(153, 67, 493, 34);
 		txtPesquisa.setBackground(new Color(255, 255, 255));
 		frmEventos.getContentPane().add(txtPesquisa);
 		txtPesquisa.setColumns(10);
 		
 		JLabel lblPesquisa = new JLabel("Pesquisa :");
-		lblPesquisa.setBounds(36, 36, 107, 34);
+		lblPesquisa.setBounds(36, 67, 107, 34);
 		lblPesquisa.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 19));
 		frmEventos.getContentPane().add(lblPesquisa);
 		
 		
-		btnPesquisarok.setBounds(656, 36, 83, 34);
+		btnPesquisarok.setBounds(656, 67, 83, 34);
 		btnPesquisarok.setBackground(Color.WHITE);
 		btnPesquisarok.setForeground(Color.WHITE);
 		btnPesquisarok.setIcon(new ImageIcon(TelaEventos.class.getResource("/view/Symbol_-_Check.png")));
 		frmEventos.getContentPane().add(btnPesquisarok);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(36, 103, 610, 424);
+		scrollPane.setBounds(36, 129, 610, 424);
 		frmEventos.getContentPane().add(scrollPane);
 		  
 		table = new JTable();
@@ -126,6 +126,11 @@ public class TelaEventos {
 		btnLogout.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnLogout.setBounds(695, 0, 89, 23);
 		frmEventos.getContentPane().add(btnLogout);
+		
+		JLabel lblIcon = new JLabel("");
+		lblIcon.setIcon(new ImageIcon(TelaEventos.class.getResource("/view/if.png")));
+		lblIcon.setBounds(0, -13, 127, 146);
+		frmEventos.getContentPane().add(lblIcon);
 	}
 
 	public JFrame getFrmEventos() {
@@ -199,5 +204,4 @@ public class TelaEventos {
 	public void setBtnPesquisarok(JButton btnPesquisarok) {
 		this.btnPesquisarok = btnPesquisarok;
 	}
-	
 }
