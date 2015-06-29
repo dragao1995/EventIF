@@ -36,7 +36,7 @@ public class TelaAtividades {
 	private void initialize() {
 		frmEventos = new JFrame();
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaAtividades.class.getResource("/view/if.png")));
-		frmEventos.setTitle("EventIF");
+		frmEventos.setTitle("Atividades");
 		frmEventos.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventos.getContentPane().setForeground(new Color(0, 0, 0));
 		frmEventos.setBackground(new Color(0, 128, 0));

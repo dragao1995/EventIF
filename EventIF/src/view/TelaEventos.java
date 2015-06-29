@@ -26,20 +26,14 @@ public class TelaEventos {
 	private JButton btnLogout = new JButton("logout");
 	private JButton btnPesquisarok = new JButton("");
 
-	/**
-	 * Create the application.
-	 */
 	public TelaEventos() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmEventos = new JFrame();
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaEventos.class.getResource("/view/if.png")));
-		frmEventos.setTitle("EventIF");
+		frmEventos.setTitle("Eventos");
 		frmEventos.getContentPane().setBackground(new Color(102, 204, 102));
 		frmEventos.getContentPane().setForeground(new Color(0, 0, 0));
 		frmEventos.setBackground(new Color(0, 128, 0));

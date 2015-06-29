@@ -30,9 +30,6 @@ public class TelaCadastro {
 		initialize();
 	}
 
-	/**
-	 * 
-	 */
 	private void initialize() {
 		setFrame(new JFrame());
 		getFrame().getContentPane().setBackground(new Color(102, 204, 102));

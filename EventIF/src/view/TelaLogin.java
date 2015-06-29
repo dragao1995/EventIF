@@ -29,6 +29,7 @@ public class TelaLogin {
 	
 	private void initialize() {
 		frameLogin = new JFrame();
+		frameLogin.setTitle("Login");
 		frameLogin.setResizable(false);
 		frameLogin.getContentPane().setBackground(new Color(102, 204, 102));
 		frameLogin.getContentPane().setForeground(Color.WHITE);
