@@ -14,6 +14,12 @@ public class ControlTelaLogin {
 
 	public static void EventosTelaLogin() {
 		windowTC.EventosTelaCadastro();
+		ControlTelaEventos.EventosTelaEventos();
+		ControlTelaAtividades.EventosTelaAtividades();
+		ControlTelaEventos.EventosTelaEventos();
+		ControlTelaADDEvento.EventosTelaADDEvento();
+		ControlTelaADDAtividades.EventosTelaADDAtividades();
+		
 		tl.getFrameLogin().setVisible(true);
 		tl.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -25,7 +31,8 @@ public class ControlTelaLogin {
 
 		tl.getBtnLogin().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
+				tl.getFrameLogin().setVisible(false);
 			}
 		});
 

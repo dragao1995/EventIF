@@ -22,33 +22,13 @@ public class TelaADDEvento {
 	private JTextField txtDataf;
 	private JTextField textOrganizador;
 	private JTextField txtDescricao;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaADDEvento window = new TelaADDEvento();
-					window.frmCadastrarEvento.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	private JButton btnCancelar = new JButton("");
+	private JButton btnConfirmar = new JButton("");
+	
 	public TelaADDEvento() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmCadastrarEvento = new JFrame();
 		frmCadastrarEvento.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDEvento.class.getResource("/view/if.png")));
@@ -127,12 +107,11 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(txtDescricao);
 		txtDescricao.setColumns(10);
 		
-		JButton btnConfirmar = new JButton("");
 		btnConfirmar.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setBounds(218, 388, 89, 59);
 		frmCadastrarEvento.getContentPane().add(btnConfirmar);
 		
-		JButton btnCancelar = new JButton("");
+		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -203,6 +182,22 @@ public class TelaADDEvento {
 
 	public void setTxtDescricao(JTextField txtDescricao) {
 		this.txtDescricao = txtDescricao;
+	}
+
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
+
+	public void setBtnCancelar(JButton btnCancelar) {
+		this.btnCancelar = btnCancelar;
+	}
+
+	public JButton getBtnConfirmar() {
+		return btnConfirmar;
+	}
+
+	public void setBtnConfirmar(JButton btnConfirmar) {
+		this.btnConfirmar = btnConfirmar;
 	}
 	
 	

@@ -11,10 +11,7 @@ public class main {
 		
 		Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Projeto","postgres","123");
 		conexao.close();
-		
 					main.chamarlogin();
-					
-					
 	}
 	
 	public static void chamarlogin(){

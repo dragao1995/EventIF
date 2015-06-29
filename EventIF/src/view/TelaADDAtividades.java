@@ -20,26 +20,10 @@ public class TelaADDAtividades {
 	private JTextField txtCargahor;
 	private JTextField txtNvagas;
 	private JTextField txtDescrativ;
+	private JButton btnCancelar = new JButton("");
+	private JButton btnConfirmar = new JButton("");
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaADDAtividades window = new TelaADDAtividades();
-					window.frmEventif.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public TelaADDAtividades() {
 		initialize();
 	}
@@ -125,12 +109,10 @@ public class TelaADDAtividades {
 		frmEventif.getContentPane().add(txtDescrativ);
 		txtDescrativ.setColumns(10);
 		
-		JButton btnConfirmar = new JButton("");
 		btnConfirmar.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/view/Symbol_-_Check.png")));
 		btnConfirmar.setBounds(272, 365, 89, 59);
 		frmEventif.getContentPane().add(btnConfirmar);
 		
-		JButton btnCancelar = new JButton("");
 		btnCancelar.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/view/X.png")));
 		btnCancelar.setBounds(569, 365, 89, 59);
 		frmEventif.getContentPane().add(btnCancelar);
@@ -197,6 +179,22 @@ public class TelaADDAtividades {
 
 	public void setTxtDescrativ(JTextField txtDescrativ) {
 		this.txtDescrativ = txtDescrativ;
+	}
+
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
+
+	public void setBtnCancelar(JButton btnCancelar) {
+		this.btnCancelar = btnCancelar;
+	}
+
+	public JButton getBtnConfirmar() {
+		return btnConfirmar;
+	}
+
+	public void setBtnConfirmar(JButton btnConfirmar) {
+		this.btnConfirmar = btnConfirmar;
 	}
 	
 }

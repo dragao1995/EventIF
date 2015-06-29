@@ -21,34 +21,18 @@ import javax.swing.UIManager;
 public class TelaAtividades {
 
 	private JFrame frmEventos;
-	private JTable tableAtividades;
+	private JTable tableAtividades;	
+	private JButton btnEditar = new JButton("Editar");
+	private JButton btnExcluir = new JButton("Excluir");
+	private JButton btnVoltar = new JButton("Voltar");
+	private JButton btnAdicionar = new JButton("ADD");
+	private JButton btnInscrever = new JButton("Inscrever");
+	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaAtividades window = new TelaAtividades();
-					window.frmEventos.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public TelaAtividades() {
 		initialize();
 	}
   
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmEventos = new JFrame();
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaAtividades.class.getResource("/view/if.png")));
@@ -82,22 +66,19 @@ public class TelaAtividades {
 		tableAtividades.getColumnModel().getColumn(5).setPreferredWidth(97);
 		scrollPane.setViewportView(tableAtividades);
 		
-		JButton btnAdicionar = new JButton("ADD");
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAdicionar.setBounds(656, 186, 89, 34);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
-		JButton btnEditar = new JButton("Editar");
+		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnEditar.setBounds(656, 254, 89, 34);
 		frmEventos.getContentPane().add(btnEditar);
 		
-		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnExcluir.setBounds(656, 322, 89, 34);
 		frmEventos.getContentPane().add(btnExcluir);
 		
-		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnVoltar.setBounds(656, 492, 107, 35);
 		frmEventos.getContentPane().add(btnVoltar);
@@ -108,7 +89,6 @@ public class TelaAtividades {
 		lblAtividades.setBounds(261, 27, 168, 49);
 		frmEventos.getContentPane().add(lblAtividades);
 		
-		JButton btnInscrever = new JButton("Inscrever");
 		btnInscrever.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnInscrever.setBounds(656, 120, 89, 34);
 		frmEventos.getContentPane().add(btnInscrever);
@@ -133,6 +113,54 @@ public class TelaAtividades {
 
 	public void setTable(JTable table) {
 		this.tableAtividades = table;
+	}
+
+	public JTable getTableAtividades() {
+		return tableAtividades;
+	}
+
+	public void setTableAtividades(JTable tableAtividades) {
+		this.tableAtividades = tableAtividades;
+	}
+
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+
+	public JButton getBtnExcluir() {
+		return btnExcluir;
+	}
+
+	public void setBtnExcluir(JButton btnExcluir) {
+		this.btnExcluir = btnExcluir;
+	}
+
+	public JButton getBtnVoltar() {
+		return btnVoltar;
+	}
+
+	public void setBtnVoltar(JButton btnVoltar) {
+		this.btnVoltar = btnVoltar;
+	}
+
+	public JButton getBtnAdicionar() {
+		return btnAdicionar;
+	}
+
+	public void setBtnAdicionar(JButton btnAdicionar) {
+		this.btnAdicionar = btnAdicionar;
+	}
+
+	public JButton getBtnInscrever() {
+		return btnInscrever;
+	}
+
+	public void setBtnInscrever(JButton btnInscrever) {
+		this.btnInscrever = btnInscrever;
 	}
 	
 }

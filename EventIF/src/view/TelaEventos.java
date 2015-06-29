@@ -1,7 +1,6 @@
 package view; 
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -20,19 +19,12 @@ public class TelaEventos {
 	private JFrame frmEventos;
 	private JTextField txtPesquisa;
 	private JTable table;
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaEventos window = new TelaEventos();
-					window.frmEventos.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JButton btnEditar = new JButton("Editar");
+	private JButton btnAdicionar = new JButton("ADD");
+	private JButton btnExcluir = new JButton("Excluir");
+	private JButton btnAtividades = new JButton("Atividades");
+	private JButton btnLogout = new JButton("logout");
+	private JButton btnPesquisarok = new JButton("");
 
 	/**
 	 * Create the application.
@@ -66,7 +58,7 @@ public class TelaEventos {
 		lblPesquisa.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 19));
 		frmEventos.getContentPane().add(lblPesquisa);
 		
-		JButton btnPesquisarok = new JButton("");
+		
 		btnPesquisarok.setBounds(656, 36, 83, 34);
 		btnPesquisarok.setBackground(Color.WHITE);
 		btnPesquisarok.setForeground(Color.WHITE);
@@ -119,25 +111,27 @@ public class TelaEventos {
 		table.getColumnModel().getColumn(4).setPreferredWidth(97);
 		scrollPane.setViewportView(table);
 		
-		JButton btnAdicionar = new JButton("ADD");
+		
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAdicionar.setBounds(656, 129, 83, 34);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
-		JButton btnEditar = new JButton("Editar");
+		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnEditar.setBounds(656, 184, 83, 34);
 		frmEventos.getContentPane().add(btnEditar);
 		
-		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnExcluir.setBounds(656, 233, 83, 34);
 		frmEventos.getContentPane().add(btnExcluir);
 		
-		JButton btnAtividades = new JButton("Atividades");
 		btnAtividades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAtividades.setBounds(656, 492, 107, 35);
 		frmEventos.getContentPane().add(btnAtividades);
+		
+		btnLogout.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnLogout.setBounds(695, 0, 89, 23);
+		frmEventos.getContentPane().add(btnLogout);
 	}
 
 	public JFrame getFrmEventos() {
@@ -162,6 +156,54 @@ public class TelaEventos {
 
 	public void setTable(JTable table) {
 		this.table = table;
+	}
+
+	public JButton getBtnEditar() {
+		return btnEditar;
+	}
+
+	public void setBtnEditar(JButton btnEditar) {
+		this.btnEditar = btnEditar;
+	}
+
+	public JButton getBtnAdicionar() {
+		return btnAdicionar;
+	}
+
+	public void setBtnAdicionar(JButton btnAdicionar) {
+		this.btnAdicionar = btnAdicionar;
+	}
+
+	public JButton getBtnExcluir() {
+		return btnExcluir;
+	}
+
+	public void setBtnExcluir(JButton btnExcluir) {
+		this.btnExcluir = btnExcluir;
+	}
+
+	public JButton getBtnAtividades() {
+		return btnAtividades;
+	}
+
+	public void setBtnAtividades(JButton btnAtividades) {
+		this.btnAtividades = btnAtividades;
+	}
+
+	public JButton getBtnLogout() {
+		return btnLogout;
+	}
+
+	public void setBtnLogout(JButton btnLogout) {
+		this.btnLogout = btnLogout;
+	}
+
+	public JButton getBtnPesquisarok() {
+		return btnPesquisarok;
+	}
+
+	public void setBtnPesquisarok(JButton btnPesquisarok) {
+		this.btnPesquisarok = btnPesquisarok;
 	}
 	
 }
