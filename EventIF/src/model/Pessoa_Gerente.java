@@ -3,7 +3,7 @@ package model;
 public class Pessoa_Gerente {
 	
 	private long idPessoa_Ger;
-	private Pessoa pessoa;
+	private Pessoa pessoa = new Pessoa();
 	public long getIdPessoa_Ger() {
 		return idPessoa_Ger;
 	}

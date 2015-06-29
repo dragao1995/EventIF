@@ -6,8 +6,8 @@ public class Evento {
 	private String nome;
 	private String data_Inicio;
 	private String data_Fim;
-	private String organizador;
-	private Endereco_Evento endereco_eve;
+	private String organizador;//quem é esse loco ?
+	private Endereco_Evento endereco_eve = new Endereco_Evento();
 	
 	public long getIdEvento() {
 		return idEvento;

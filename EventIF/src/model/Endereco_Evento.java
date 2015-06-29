@@ -7,7 +7,7 @@ public class Endereco_Evento {
 	private String bairro;
 	private int numero;
 	private String complemento;
-	private Cidade cidade;
+	private Cidade cidade = new Cidade();
 	
 	public long getIdEndereco_Eve() {
 		return idEndereco_Eve;

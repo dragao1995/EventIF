@@ -5,11 +5,11 @@ public class Atividade {
 	private long idAtividade;
 	private String descricao;
 	private String data_Inicio;
-	private String data_Fim;//Calendar ver como funciona com hora 
+	private String data_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
 	private int numero_Vagas;
 	private Evento evento;
-	private Tipo tipo;
+	private Tipo tipo = new Tipo();
 	
 	public long getIdAtividade() {
 		return idAtividade;

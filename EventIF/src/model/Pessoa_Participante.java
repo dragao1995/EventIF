@@ -3,7 +3,8 @@ package model;
 public class Pessoa_Participante {
 	
 	private long idPessoa_Part;
-	private Pessoa pessoa;
+	private Pessoa pessoa = new Pessoa();
+	
 	public long getIdPessoa_Part() {
 		return idPessoa_Part;
 	}
@@ -16,5 +17,6 @@ public class Pessoa_Participante {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
+	
 
 }

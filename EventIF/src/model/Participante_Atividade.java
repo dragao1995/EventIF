@@ -2,7 +2,7 @@ package model;
 
 public class Participante_Atividade {
 	
-	private Pessoa_Participante pessoa_part;
+	private Pessoa_Participante pessoa_part = new Pessoa_Participante();
 	private Atividade atividade;
 	private String checkin;
 	private String checkout;

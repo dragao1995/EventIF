@@ -3,7 +3,7 @@ package model;
 public class Pessoa_Monitor {
 	
 	private long idPessoa_Mon;//composição
-	private Pessoa pessoa;
+	private Pessoa pessoa = new Pessoa();
 	public long getIdPessoa_Mon() {
 		return idPessoa_Mon;
 	}
