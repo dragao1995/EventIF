@@ -7,11 +7,15 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JLabel;
 import java.awt.Font;
+
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TelaADDEvento {
 
@@ -21,7 +25,7 @@ public class TelaADDEvento {
 	private JTextField txtDatainicial;
 	private JTextField txtDataf;
 	private JTextField textOrganizador;
-	private JTextField txtDescricao;
+	private JTextArea txtDescricao;
 	private JButton btnCancelar = new JButton("");
 	private JButton btnConfirmar = new JButton("");
 	
@@ -72,36 +76,41 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(lblDescrio);
 		
 		txtNomeev = new JTextField();
+		txtNomeev.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNomeev.setBackground(Color.WHITE);
 		txtNomeev.setBounds(139, 50, 539, 31);
 		frmCadastrarEvento.getContentPane().add(txtNomeev);
 		txtNomeev.setColumns(10);
 		
 		txtEndereco = new JTextField();
+		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEndereco.setBackground(Color.WHITE);
 		txtEndereco.setBounds(139, 97, 539, 31);
 		frmCadastrarEvento.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
 		txtDatainicial = new JTextField();
+		txtDatainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDatainicial.setBackground(Color.WHITE);
 		txtDatainicial.setBounds(139, 145, 200, 33);
 		frmCadastrarEvento.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
-		
 		txtDataf = new JTextField();
+		txtDataf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDataf.setBackground(Color.WHITE);
 		txtDataf.setBounds(429, 150, 249, 29);
 		frmCadastrarEvento.getContentPane().add(txtDataf);
 		txtDataf.setColumns(10);
 		
 		textOrganizador = new JTextField();
+		textOrganizador.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		textOrganizador.setBackground(Color.WHITE);
 		textOrganizador.setBounds(139, 199, 539, 35);
 		frmCadastrarEvento.getContentPane().add(textOrganizador);
 		textOrganizador.setColumns(10);
 		
-		txtDescricao = new JTextField();
+		txtDescricao = new JTextArea();
+		txtDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDescricao.setBackground(Color.WHITE);
 		txtDescricao.setBounds(139, 252, 539, 119);
 		frmCadastrarEvento.getContentPane().add(txtDescricao);
@@ -176,11 +185,11 @@ public class TelaADDEvento {
 		this.textOrganizador = textOrganizador;
 	}
 
-	public JTextField getTxtDescricao() {
+	public JTextArea getTxtDescricao() {
 		return txtDescricao;
 	}
 
-	public void setTxtDescricao(JTextField txtDescricao) {
+	public void setTxtDescricao(JTextArea txtDescricao) {
 		this.txtDescricao = txtDescricao;
 	}
 

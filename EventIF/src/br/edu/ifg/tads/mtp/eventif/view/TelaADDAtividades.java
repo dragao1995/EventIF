@@ -7,6 +7,8 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
+
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -19,7 +21,7 @@ public class TelaADDAtividades {
 	private JTextField txtHorafinal;
 	private JTextField txtCargahor;
 	private JTextField txtNvagas;
-	private JTextField txtDescrativ;
+	private JTextArea txtDescrativ;
 	private JButton btnCancelar = new JButton("");
 	private JButton btnConfirmar = new JButton("");
 
@@ -103,7 +105,7 @@ public class TelaADDAtividades {
 		txtNvagas.setBounds(470, 167, 234, 29);
 		frmEventif.getContentPane().add(txtNvagas);
 		
-		txtDescrativ = new JTextField();
+		txtDescrativ = new JTextArea();
 		txtDescrativ.setBackground(Color.WHITE);
 		txtDescrativ.setBounds(182, 213, 522, 124);
 		frmEventif.getContentPane().add(txtDescrativ);
@@ -173,11 +175,11 @@ public class TelaADDAtividades {
 		this.txtNvagas = txtNvagas;
 	}
 
-	public JTextField getTxtDescrativ() {
+	public JTextArea getTxtDescrativ() {
 		return txtDescrativ;
 	}
 
-	public void setTxtDescrativ(JTextField txtDescrativ) {
+	public void setTxtDescrativ(JTextArea txtDescrativ) {
 		this.txtDescrativ = txtDescrativ;
 	}
 

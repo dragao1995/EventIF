@@ -102,6 +102,7 @@ public class TelaCadastro {
 		frmCadastroEventif.getContentPane().add(lblTelefone);
 		
 		txtTelefone = new JTextField();
+		
 		txtTelefone.setBackground(new Color(255, 255, 255));
 		txtTelefone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtTelefone.setBounds(160, 288, 169, 26);
