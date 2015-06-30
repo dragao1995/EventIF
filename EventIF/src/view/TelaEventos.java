@@ -42,6 +42,7 @@ public class TelaEventos {
 		frmEventos.getContentPane().setLayout(null);
 		
 		txtPesquisa = new JTextField();
+		txtPesquisa.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtPesquisa.setBounds(153, 67, 493, 34);
 		txtPesquisa.setBackground(new Color(255, 255, 255));
 		frmEventos.getContentPane().add(txtPesquisa);

@@ -23,6 +23,7 @@ public class ControlTelaLogin {
 		tl.getFrameLogin().setVisible(true);
 		tl.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				ControlTelaCadastro.windowTC.getFrame().setVisible(true);
 				tl.getFrameLogin().setVisible(false);
 				

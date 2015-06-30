@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -50,12 +51,14 @@ public class TelaLogin {
 		frameLogin.getContentPane().add(lblSenha);
 
 		txtUsuario = new JTextField();
+		txtUsuario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtUsuario.setBackground(new Color(255, 255, 255));
 		txtUsuario.setBounds(324, 149, 260, 31);
 		frameLogin.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 
-		txtSenha = new JTextField();
+		txtSenha = new JPasswordField (); 
+		txtSenha.setFont(new Font("Tunga", Font.BOLD | Font.ITALIC, 17));
 		txtSenha.setBackground(new Color(255, 255, 255));
 		txtSenha.setBounds(324, 189, 260, 31);
 		frameLogin.getContentPane().add(txtSenha);

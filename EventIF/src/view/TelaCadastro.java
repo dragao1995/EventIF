@@ -68,7 +68,7 @@ public class TelaCadastro {
 		
 		txtRg = new JTextField();
 		txtRg.setBackground(new Color(255, 255, 255));
-		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtRg.setBounds(160, 254, 169, 26);
 		frmCadastroEventif.getContentPane().add(txtRg);
 		txtRg.setColumns(10);
@@ -80,7 +80,7 @@ public class TelaCadastro {
 		
 		txtCpf = new JTextField();
 		txtCpf.setBackground(new Color(255, 255, 255));
-		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCpf.setBounds(390, 254, 255, 25);
 		frmCadastroEventif.getContentPane().add(txtCpf);
 		txtCpf.setColumns(10);
@@ -92,7 +92,7 @@ public class TelaCadastro {
 		
 		txtEmail = new JTextField();
 		txtEmail.setBackground(new Color(255, 255, 255));
-		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEmail.setBounds(400, 285, 245, 24);
 		frmCadastroEventif.getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
@@ -104,7 +104,7 @@ public class TelaCadastro {
 		
 		txtTelefone = new JTextField();
 		txtTelefone.setBackground(new Color(255, 255, 255));
-		txtTelefone.setFont(new Font("Tahoma", Font.BOLD, 13));
+		txtTelefone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtTelefone.setBounds(160, 288, 169, 26);
 		frmCadastroEventif.getContentPane().add(txtTelefone);
 		txtTelefone.setColumns(10);
@@ -116,7 +116,7 @@ public class TelaCadastro {
 		
 		txtCep = new JTextField();
 		txtCep.setBackground(new Color(255, 255, 255));
-		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCep.setBounds(160, 321, 169, 26);
 		frmCadastroEventif.getContentPane().add(txtCep);
 		txtCep.setColumns(10);
@@ -128,7 +128,7 @@ public class TelaCadastro {
 		
 		txtEndereco = new JTextField();
 		txtEndereco.setBackground(new Color(255, 255, 255));
-		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEndereco.setBounds(160, 355, 347, 26);
 		frmCadastroEventif.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
@@ -140,7 +140,7 @@ public class TelaCadastro {
 		
 		txtNumero = new JTextField();
 		txtNumero.setBackground(new Color(255, 255, 255));
-		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNumero.setBounds(550, 355, 95, 29);
 		frmCadastroEventif.getContentPane().add(txtNumero);
 		txtNumero.setColumns(10);
@@ -152,7 +152,7 @@ public class TelaCadastro {
 		
 		txtBairro = new JTextField();
 		txtBairro.setBackground(new Color(255, 255, 255));
-		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtBairro.setBounds(160, 389, 133, 28);
 		frmCadastroEventif.getContentPane().add(txtBairro);
 		txtBairro.setColumns(10);
@@ -163,6 +163,7 @@ public class TelaCadastro {
 		frmCadastroEventif.getContentPane().add(lblCidade);
 		
 		txtCidade = new JTextField();
+		txtCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCidade.setBackground(new Color(255, 255, 255));
 		txtCidade.setBounds(375, 392, 132, 27);
 		frmCadastroEventif.getContentPane().add(txtCidade);
@@ -174,6 +175,7 @@ public class TelaCadastro {
 		frmCadastroEventif.getContentPane().add(lblUf);
 		
 		txtUf = new JTextField();
+		txtUf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtUf.setBackground(new Color(255, 255, 255));
 		txtUf.setBounds(560, 395, 85, 24);
 		frmCadastroEventif.getContentPane().add(txtUf);
