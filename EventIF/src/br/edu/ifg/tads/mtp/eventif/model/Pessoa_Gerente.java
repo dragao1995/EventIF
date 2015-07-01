@@ -1,5 +1,7 @@
 package br.edu.ifg.tads.mtp.eventif.model;
 
+import java.sql.PreparedStatement;
+
 public class Pessoa_Gerente {
 	
 	private long idPessoa_Ger;
@@ -15,6 +17,10 @@ public class Pessoa_Gerente {
 	}
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
+	}
+	public PreparedStatement prepareStatement(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
