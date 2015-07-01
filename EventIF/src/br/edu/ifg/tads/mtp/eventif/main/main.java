@@ -1,7 +1,7 @@
 package br.edu.ifg.tads.mtp.eventif.main;
 
 import br.edu.ifg.tads.mtp.eventif.control.ControlTelaLogin;
-
+import br.edu.ifg.tads.mtp.eventif.model.Pessoa;;
 
 public class main {
 	public static void main(String[] args) {
@@ -10,8 +10,10 @@ public class main {
 		//conexao.close();
 		// tem que ver onde ficar esse conexão.close não fica no pacote bd
 		// verificar se aquele PreparedStatement estar certo na pessoa gerente
-		
+		Pessoa pessoa = new Pessoa();
 					main.chamarlogin();
+					System.out.println(pessoa.getCpf());
+					System.out.println(pessoa.getSenha());
 	}
 	
 	public static void chamarlogin(){

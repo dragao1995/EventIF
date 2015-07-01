@@ -21,21 +21,19 @@ import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
 
 public class PessoaDAO {
 	
-	public Pessoa_Gerente verificacao(Pessoa_Gerente pg){
+	public Pessoa verificacao(Pessoa p){
 		
-		System.out.println(pg.getIdPessoa_Ger());
+		System.out.println(p.getIdPessoa());
 		PreparedStatement stmt;
 		Pessoa pessoa = new Pessoa();
-		Pessoa_Gerente pessoa_ger = new Pessoa_Gerente();
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement("select * from pessoa_gerente where idPessoa_ger = (select idPessoa from Pessoa) "
-					+ pg.getIdPessoa_Ger());
+			stmt = con.prepareStatement("SELECT * FROM pessoa");
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()){
-				pessoa.setCpf("cpf");
-				pessoa.setSenha("senha");	
+				pessoa.setCpf(rs.getString("cpf"));
+				pessoa.setSenha(rs.getString("senha"));	
 			}
 			rs.close();
 			stmt.close();
@@ -43,7 +41,7 @@ public class PessoaDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return pessoa_ger;
+		return pessoa;
 
 	}
 
