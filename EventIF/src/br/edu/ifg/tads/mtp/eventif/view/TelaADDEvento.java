@@ -8,10 +8,13 @@ import java.awt.Toolkit;
 import javax.swing.JLabel;
 import java.awt.Font;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.text.MaskFormatter;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
@@ -89,13 +92,13 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
-		txtDatainicial = new JTextField();
+		txtDatainicial = new JFormattedTextField(Mascara("##/##/####")); 
 		txtDatainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDatainicial.setBackground(Color.WHITE);
 		txtDatainicial.setBounds(139, 145, 200, 33);
 		frmCadastrarEvento.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
-		txtDataf = new JTextField();
+		txtDataf = new JFormattedTextField(Mascara("##/##/####")); 
 		txtDataf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDataf.setBackground(Color.WHITE);
 		txtDataf.setBounds(429, 150, 249, 29);
@@ -208,6 +211,17 @@ public class TelaADDEvento {
 	public void setBtnConfirmar(JButton btnConfirmar) {
 		this.btnConfirmar = btnConfirmar;
 	}
-	
+	public MaskFormatter Mascara(String Mascara){  
+         
+       MaskFormatter F_Mascara = new MaskFormatter();  
+       try{  
+           F_Mascara.setMask(Mascara); //Atribui a mascara  
+           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
+       }  
+       catch (Exception excecao) {  
+       excecao.printStackTrace();  
+       }   
+       return F_Mascara;  
+} 
 	
 }

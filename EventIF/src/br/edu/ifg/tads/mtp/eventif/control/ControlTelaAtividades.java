@@ -3,6 +3,7 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaAtividades;
 
 
@@ -43,6 +44,12 @@ public class ControlTelaAtividades {
 				controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().dispose();
 			}
 		});
+	 
+	 TelaAtividades.getBtnLerQrcode().addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+				LerQrcode.TelaWebcam();
+			}
+	});
 	 
  }
 }

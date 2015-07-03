@@ -3,13 +3,12 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 public class ControlTelaLogin {
 	TelaLogin TelaLogin = new TelaLogin();
-	//LerQrcode lerQrcode = new LerQrcode();
 	ControlTelaEventos ControlTelaEventos = new ControlTelaEventos(this);
 	ControlTelaCadastro ControlTelaCadastro = new ControlTelaCadastro(this);
 	ControlTelaAtividades ControlTelaAtividades = new ControlTelaAtividades(this);
@@ -37,7 +36,13 @@ public void EventosTelaLogin() {
 		TelaLogin.getBtnLogin().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TelaLogin.getRdbtnGerente().isSelected() || TelaLogin.getRdbtnMonitor().isSelected() ||TelaLogin.getRdbtnParticipante().isSelected()) {			
-				if (TelaLogin.getRdbtnGerente().isSelected()) {
+					ControlTelaEventos.TelaEventos.getBtnAdicionar().setVisible(false);
+					ControlTelaEventos.TelaEventos.getBtnExcluir().setVisible(false);
+					ControlTelaEventos.TelaEventos.getBtnEditar().setVisible(false);
+					ControlTelaAtividades.TelaAtividades.getBtnAdicionar().setVisible(false);
+					ControlTelaAtividades.TelaAtividades.getBtnEditar().setVisible(false);
+					ControlTelaAtividades.TelaAtividades.getBtnExcluir().setVisible(false);
+					if (TelaLogin.getRdbtnGerente().isSelected()) {
 					ControlTelaEventos.TelaEventos.getBtnAdicionar().setVisible(true);
 					ControlTelaEventos.TelaEventos.getBtnExcluir().setVisible(true);
 					ControlTelaEventos.TelaEventos.getBtnEditar().setVisible(true);
@@ -51,11 +56,12 @@ public void EventosTelaLogin() {
 				}
 				
 				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
-				TelaLogin.getFrameLogin().dispose();  }else {
+				TelaLogin.getFrameLogin().dispose();  
+				}else {
+					
 					JOptionPane.showMessageDialog(null, "Selecione o modulo");
 				}
 			}
 		});
-
 	}
 }

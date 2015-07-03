@@ -5,11 +5,13 @@ import java.awt.Toolkit;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 public class TelaLogin {
   
@@ -49,7 +51,7 @@ public class TelaLogin {
 		lblSenha.setBounds(242, 189, 66, 35);
 		frameLogin.getContentPane().add(lblSenha);
 
-		txtUsuario = new JTextField();
+		txtUsuario =new JFormattedTextField(Mascara("###.###.###-##"));  
 		txtUsuario.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtUsuario.setBackground(new Color(255, 255, 255));
 		txtUsuario.setBounds(324, 149, 260, 31);
@@ -174,5 +176,18 @@ public class TelaLogin {
 	public void setTxtSenha(JTextField txtSenha) {
 		this.txtSenha = txtSenha;
 	}
+	public MaskFormatter Mascara(String Mascara){  
+        
+	       MaskFormatter F_Mascara = new MaskFormatter();  
+	       try{  
+	           F_Mascara.setMask(Mascara); //Atribui a mascara  
+	           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
+	       }  
+	       catch (Exception excecao) {  
+	       excecao.printStackTrace();  
+	       }   
+	       return F_Mascara;  
+	} 
 	
+
 }

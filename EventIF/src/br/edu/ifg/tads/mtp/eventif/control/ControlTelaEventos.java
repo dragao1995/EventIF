@@ -3,17 +3,18 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.edu.ifg.tads.mtp.eventif.main.main;
+import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
-import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 
 
 public class ControlTelaEventos {
+	int cont=1;
 TelaEventos TelaEventos = new TelaEventos();
 
 ControlTelaLogin controlTelaLogin;
 public ControlTelaEventos(ControlTelaLogin controlTelaLogin){
+	
 	this.controlTelaLogin = controlTelaLogin;
 }
 
@@ -43,14 +44,13 @@ public  void EventosTelaEventos(){
 	});
 	TelaEventos.getBtnLogout().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			
-			
 			controlTelaLogin.EventosTelaLogin();
 			TelaEventos.getFrmEventos().dispose();
 		}
 	});
 	TelaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
+			System.out.println("sdfsdfsd");
 			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(true);
 			TelaEventos.getFrmEventos().dispose();
 			
@@ -58,15 +58,12 @@ public  void EventosTelaEventos(){
 	});
 	TelaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-		try {
-			//controlTelaLogin.lerQrcode.TelaWebcam();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			if (cont%2==1) {
+				LerQrcode.TelaWebcam();
+			}
+			cont++;
 		}
 	});
-	
 }
 
 }

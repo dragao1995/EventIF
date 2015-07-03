@@ -1,12 +1,15 @@
 package br.edu.ifg.tads.mtp.eventif.view;
 import javax.swing.JFrame;
 import java.awt.Color;
+
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import javax.swing.text.MaskFormatter;
 
 public class TelaCadastro {
  
@@ -77,7 +80,7 @@ public class TelaCadastro {
 		lblCpf.setBounds(339, 258, 53, 21);
 		frmCadastroEventif.getContentPane().add(lblCpf);
 		
-		txtCpf = new JTextField();
+		txtCpf = new JFormattedTextField(Mascara("###.###.###-##")); 
 		txtCpf.setBackground(new Color(255, 255, 255));
 		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCpf.setBounds(390, 254, 255, 25);
@@ -319,5 +322,16 @@ public class TelaCadastro {
 	public void setBtnCancelar(JButton btnCancelar) {
 		this.btnCancelar = btnCancelar;
 	}
-	
+	public MaskFormatter Mascara(String Mascara){  
+        
+	       MaskFormatter F_Mascara = new MaskFormatter();  
+	       try{  
+	           F_Mascara.setMask(Mascara); //Atribui a mascara  
+	           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
+	       }  
+	       catch (Exception excecao) {  
+	       excecao.printStackTrace();  
+	       }   
+	       return F_Mascara;  
+	} 
 }

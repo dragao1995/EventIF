@@ -8,10 +8,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.text.MaskFormatter;
 
 public class TelaADDAtividades {
 
@@ -81,13 +83,13 @@ public class TelaADDAtividades {
 		frmEventif.getContentPane().add(txtNomeativ);
 		txtNomeativ.setColumns(10);
 		
-		txtHorainicial = new JTextField();
+		txtHorainicial = new JFormattedTextField(Mascara("##/##/####")); 
 		txtHorainicial.setBackground(Color.WHITE);
 		txtHorainicial.setBounds(182, 118, 188, 31);
 		frmEventif.getContentPane().add(txtHorainicial);
 		txtHorainicial.setColumns(10);
 		
-		txtHorafinal = new JTextField();
+		txtHorafinal = new JFormattedTextField(Mascara("##/##/####")); 
 		txtHorafinal.setBackground(Color.WHITE);
 		txtHorafinal.setBounds(470, 120, 234, 29);
 		frmEventif.getContentPane().add(txtHorafinal);
@@ -198,5 +200,17 @@ public class TelaADDAtividades {
 	public void setBtnConfirmar(JButton btnConfirmar) {
 		this.btnConfirmar = btnConfirmar;
 	}
+	public MaskFormatter Mascara(String Mascara){  
+        
+	       MaskFormatter F_Mascara = new MaskFormatter();  
+	       try{  
+	           F_Mascara.setMask(Mascara); //Atribui a mascara  
+	           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
+	       }  
+	       catch (Exception excecao) {  
+	       excecao.printStackTrace();  
+	       }   
+	       return F_Mascara;  
+	} 
 	
 }

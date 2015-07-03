@@ -1,19 +1,19 @@
 package br.edu.ifg.tads.mtp.eventif.view;
 
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
 import java.awt.Color;
-import java.awt.Toolkit;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JButton;
+import java.awt.Toolkit;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
  
 public class TelaEventos {
 
@@ -111,9 +111,8 @@ public class TelaEventos {
 		
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAdicionar.setBounds(656, 129, 83, 34);
-		btnAdicionar.setVisible(false);
 		frmEventos.getContentPane().add(btnAdicionar);
-		
+		btnAdicionar.setVisible(false);
 		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnEditar.setBounds(656, 184, 83, 34);
