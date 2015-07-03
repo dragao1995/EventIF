@@ -21,7 +21,7 @@ public class ControlTelaADDEvento {
 		});
 		TelaADDEvento.getBtnCancelar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(false);
+				controlTelaLogin.ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().dispose();
 				controlTelaLogin.ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
 			}
 		});

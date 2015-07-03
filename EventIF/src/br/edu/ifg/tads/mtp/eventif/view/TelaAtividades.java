@@ -26,7 +26,7 @@ public class TelaAtividades {
 	private JButton btnVoltar = new JButton("Voltar");
 	private JButton btnAdicionar = new JButton("ADD");
 	private JButton btnInscrever = new JButton("Inscrever");
-	
+	private JButton btnLerQrcode = new JButton("Ler QRcode");
 
 	public TelaAtividades() {
 		initialize();
@@ -67,16 +67,24 @@ public class TelaAtividades {
 		
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAdicionar.setBounds(656, 186, 89, 34);
+		btnAdicionar.setVisible(false);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
 		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnEditar.setBounds(656, 254, 89, 34);
+		btnEditar.setVisible(false);
 		frmEventos.getContentPane().add(btnEditar);
 		
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnExcluir.setBounds(656, 322, 89, 34);
+		btnExcluir.setVisible(false);
 		frmEventos.getContentPane().add(btnExcluir);
+		
+		btnLerQrcode.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnLerQrcode.setBounds(657, 386, 106, 35);
+		btnLerQrcode.setVisible(false);
+		frmEventos.getContentPane().add(btnLerQrcode);
 		
 		btnVoltar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnVoltar.setBounds(656, 492, 107, 35);
@@ -96,6 +104,8 @@ public class TelaAtividades {
 		label.setIcon(new ImageIcon(TelaAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		label.setBounds(657, -23, 125, 186);
 		frmEventos.getContentPane().add(label);
+		
+		
 	}
 
 	public JFrame getFrmEventos() {
@@ -160,6 +170,14 @@ public class TelaAtividades {
 
 	public void setBtnInscrever(JButton btnInscrever) {
 		this.btnInscrever = btnInscrever;
+	}
+
+	public JButton getBtnLerQrcode() {
+		return btnLerQrcode;
+	}
+
+	public void setBtnLerQrcode(JButton btnLerQrcode) {
+		this.btnLerQrcode = btnLerQrcode;
 	}
 	
 }

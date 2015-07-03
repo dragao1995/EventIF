@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import br.edu.ifg.tads.mtp.eventif.main.main;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
+import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 
 
@@ -25,7 +26,7 @@ public  void EventosTelaEventos(){
 	TelaEventos.getBtnAdicionar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			controlTelaLogin.ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(true);
-			TelaEventos.getFrmEventos().setVisible(false);
+			TelaEventos.getFrmEventos().dispose();
 			
 			
 		}
@@ -42,15 +43,27 @@ public  void EventosTelaEventos(){
 	});
 	TelaEventos.getBtnLogout().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			main.chamarlogin();
-			TelaEventos.getFrmEventos().setVisible(false);
+			
+			
+			controlTelaLogin.EventosTelaLogin();
+			TelaEventos.getFrmEventos().dispose();
 		}
 	});
 	TelaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(true);
-			TelaEventos.getFrmEventos().setVisible(false);
+			TelaEventos.getFrmEventos().dispose();
 			
+		}
+	});
+	TelaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+		try {
+			//controlTelaLogin.lerQrcode.TelaWebcam();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		}
 	});
 	

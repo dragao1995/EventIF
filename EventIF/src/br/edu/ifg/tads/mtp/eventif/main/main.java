@@ -22,13 +22,10 @@ public class main {
 		// tem que ver onde ficar esse conexão.close não fica no pacote bd
 		// verificar se aquele PreparedStatement estar certo na pessoa gerente
 		Pessoa pessoa = new Pessoa();
-					main.chamarlogin();
+		ControlTelaLogin ControlTelaLogin=new ControlTelaLogin();
+		ControlTelaLogin.EventosTelaLogin();
 					
 	}
 	
-	public static void chamarlogin(){
-		ControlTelaLogin ControlTelaLogin=new ControlTelaLogin();
-		ControlTelaLogin.EventosTelaLogin();
-	}
-
+	
 }

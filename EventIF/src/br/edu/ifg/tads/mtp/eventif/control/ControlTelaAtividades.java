@@ -18,7 +18,7 @@ public class ControlTelaAtividades {
 	 TelaAtividades.getBtnAdicionar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			controlTelaLogin.ControlTelaADDAtividades.TelaADDAtividades.getFrmEventif().setVisible(true);
-			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
+			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().dispose();
 			
 		}
 	});
@@ -40,7 +40,7 @@ public class ControlTelaAtividades {
 	 TelaAtividades.getBtnVoltar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlTelaLogin.ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
-				controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
+				controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().dispose();
 			}
 		});
 	 

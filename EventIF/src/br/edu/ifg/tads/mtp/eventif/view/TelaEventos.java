@@ -26,6 +26,7 @@ public class TelaEventos {
 	private JButton btnAtividades = new JButton("Atividades");
 	private JButton btnLogout = new JButton("logout");
 	private JButton btnPesquisarok = new JButton("");
+	private JButton btnLerQrcode = new JButton("Ler QRcode");
 
 	public TelaEventos() {
 		initialize();
@@ -110,16 +111,24 @@ public class TelaEventos {
 		
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAdicionar.setBounds(656, 129, 83, 34);
+		btnAdicionar.setVisible(false);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
 		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnEditar.setBounds(656, 184, 83, 34);
+		btnEditar.setVisible(false);
 		frmEventos.getContentPane().add(btnEditar);
 		
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		btnExcluir.setBounds(656, 233, 83, 34);
+		btnExcluir.setVisible(false);
 		frmEventos.getContentPane().add(btnExcluir);
+		
+		btnLerQrcode.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnLerQrcode.setBounds(656, 326, 106, 35);
+		btnLerQrcode.setVisible(false);
+		frmEventos.getContentPane().add(btnLerQrcode);	
 		
 		btnAtividades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnAtividades.setBounds(656, 492, 107, 35);
@@ -206,4 +215,13 @@ public class TelaEventos {
 	public void setBtnPesquisarok(JButton btnPesquisarok) {
 		this.btnPesquisarok = btnPesquisarok;
 	}
+
+	public JButton getBtnLerQrcode() {
+		return btnLerQrcode;
+	}
+
+	public void setBtnLerQrcode(JButton btnLerQrcode) {
+		this.btnLerQrcode = btnLerQrcode;
+	}
+	
 }

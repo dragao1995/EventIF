@@ -3,18 +3,19 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 public class ControlTelaLogin {
 	TelaLogin TelaLogin = new TelaLogin();
-
+	//LerQrcode lerQrcode = new LerQrcode();
 	ControlTelaEventos ControlTelaEventos = new ControlTelaEventos(this);
 	ControlTelaCadastro ControlTelaCadastro = new ControlTelaCadastro(this);
 	ControlTelaAtividades ControlTelaAtividades = new ControlTelaAtividades(this);
 	ControlTelaADDEvento ControlTelaADDEvento = new ControlTelaADDEvento(this);
 	ControlTelaADDAtividades ControlTelaADDAtividades = new ControlTelaADDAtividades(this);
+	
 
 public void EventosTelaLogin() {
 		
@@ -43,6 +44,10 @@ public void EventosTelaLogin() {
 					ControlTelaAtividades.TelaAtividades.getBtnAdicionar().setVisible(true);
 					ControlTelaAtividades.TelaAtividades.getBtnEditar().setVisible(true);
 					ControlTelaAtividades.TelaAtividades.getBtnExcluir().setVisible(true);
+				}
+				if ( TelaLogin.getRdbtnMonitor().isSelected() ) {
+					ControlTelaEventos.TelaEventos.getBtnLerQrcode().setVisible(true);
+					ControlTelaAtividades.TelaAtividades.getBtnLerQrcode().setVisible(true);
 				}
 				
 				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);

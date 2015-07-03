@@ -17,10 +17,8 @@ public class ControlTelaADDAtividades {
 		TelaADDAtividades.getBtnCancelar().addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						controlTelaLogin.ControlTelaADDAtividades.TelaADDAtividades
-								.getFrmEventif().setVisible(false);
-						controlTelaLogin.ControlTelaAtividades.TelaAtividades
-								.getFrmEventos().setVisible(true);
+						controlTelaLogin.ControlTelaADDAtividades.TelaADDAtividades.getFrmEventif().dispose();
+						controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(true);
 					}
 				});
 		TelaADDAtividades.getBtnConfirmar().addActionListener(

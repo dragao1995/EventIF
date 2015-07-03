@@ -23,8 +23,8 @@ public void EventosTelaCadastro(){
 	});
 	TelaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			main.chamarlogin();
-			TelaCadastro.getFrame().setVisible(false);
+			controlTelaLogin.EventosTelaLogin();
+			TelaCadastro.getFrame().dispose();
 			
 		}
 	});
