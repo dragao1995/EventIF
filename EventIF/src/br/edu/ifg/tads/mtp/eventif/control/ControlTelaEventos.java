@@ -2,16 +2,21 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
+
 import br.edu.ifg.tads.mtp.eventif.main.main;
+import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
 
 
 
 public class ControlTelaEventos {
-static TelaEventos TelaEventos = new TelaEventos();
+TelaEventos TelaEventos = new TelaEventos();
 
+ControlTelaLogin controlTelaLogin;
+public ControlTelaEventos(ControlTelaLogin controlTelaLogin){
+	this.controlTelaLogin = controlTelaLogin;
+}
 
-public static void EventosTelaEventos(){
+public  void EventosTelaEventos(){
 	TelaEventos.getBtnPesquisarok().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
@@ -19,8 +24,8 @@ public static void EventosTelaEventos(){
 	});
 	TelaEventos.getBtnAdicionar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(true);
-			ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(false);
+			controlTelaLogin.ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(true);
+			TelaEventos.getFrmEventos().setVisible(false);
 			
 			
 		}
@@ -38,13 +43,13 @@ public static void EventosTelaEventos(){
 	TelaEventos.getBtnLogout().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			main.chamarlogin();
-			ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(false);
+			TelaEventos.getFrmEventos().setVisible(false);
 		}
 	});
 	TelaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(true);
-			ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(false);
+			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(true);
+			TelaEventos.getFrmEventos().setVisible(false);
 			
 		}
 	});

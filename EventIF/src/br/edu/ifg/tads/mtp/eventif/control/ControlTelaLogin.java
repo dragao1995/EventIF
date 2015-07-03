@@ -2,38 +2,53 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
-
-
 public class ControlTelaLogin {
-	static TelaLogin tl = new TelaLogin();
-	static ControlTelaCadastro windowTC = new ControlTelaCadastro();
-	
-	
+	TelaLogin TelaLogin = new TelaLogin();
 
-	public static void EventosTelaLogin() {
-		windowTC.EventosTelaCadastro();
+	ControlTelaEventos ControlTelaEventos = new ControlTelaEventos(this);
+	ControlTelaCadastro ControlTelaCadastro = new ControlTelaCadastro(this);
+	ControlTelaAtividades ControlTelaAtividades = new ControlTelaAtividades(this);
+	ControlTelaADDEvento ControlTelaADDEvento = new ControlTelaADDEvento(this);
+	ControlTelaADDAtividades ControlTelaADDAtividades = new ControlTelaADDAtividades(this);
+
+public void EventosTelaLogin() {
+		
+		ControlTelaCadastro.EventosTelaCadastro();
 		ControlTelaEventos.EventosTelaEventos();
 		ControlTelaAtividades.EventosTelaAtividades();
 		ControlTelaEventos.EventosTelaEventos();
 		ControlTelaADDEvento.EventosTelaADDEvento();
 		ControlTelaADDAtividades.EventosTelaADDAtividades();
-		
-		tl.getFrameLogin().setVisible(true);
-		tl.getBtnCadastro().addActionListener(new ActionListener() {
+		TelaLogin.getFrameLogin().setVisible(true);
+		TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				ControlTelaCadastro.windowTC.getFrame().setVisible(true);
-				tl.getFrameLogin().setVisible(false);
-				
+				ControlTelaCadastro.TelaCadastro.getFrame().setVisible(true);
+				TelaLogin.getFrameLogin().dispose();  
 			}
 		});
 
-		tl.getBtnLogin().addActionListener(new ActionListener() {
+		TelaLogin.getBtnLogin().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if (TelaLogin.getRdbtnGerente().isSelected() || TelaLogin.getRdbtnMonitor().isSelected() ||TelaLogin.getRdbtnParticipante().isSelected()) {			
+				if (TelaLogin.getRdbtnGerente().isSelected()) {
+					ControlTelaEventos.TelaEventos.getBtnAdicionar().setVisible(true);
+					ControlTelaEventos.TelaEventos.getBtnExcluir().setVisible(true);
+					ControlTelaEventos.TelaEventos.getBtnEditar().setVisible(true);
+					ControlTelaAtividades.TelaAtividades.getBtnAdicionar().setVisible(true);
+					ControlTelaAtividades.TelaAtividades.getBtnEditar().setVisible(true);
+					ControlTelaAtividades.TelaAtividades.getBtnExcluir().setVisible(true);
+				}
+				
 				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
-				tl.getFrameLogin().setVisible(false);
+				TelaLogin.getFrameLogin().dispose();  }else {
+					JOptionPane.showMessageDialog(null, "Selecione o modulo");
+				}
 			}
 		});
 

@@ -27,6 +27,7 @@ public class main {
 	}
 	
 	public static void chamarlogin(){
+		ControlTelaLogin ControlTelaLogin=new ControlTelaLogin();
 		ControlTelaLogin.EventosTelaLogin();
 	}
 

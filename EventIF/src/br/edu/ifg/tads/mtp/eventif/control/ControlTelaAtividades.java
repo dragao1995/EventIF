@@ -3,20 +3,22 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.edu.ifg.tads.mtp.eventif.view.TelaADDAtividades;
 import br.edu.ifg.tads.mtp.eventif.view.TelaAtividades;
 
 
 
 public class ControlTelaAtividades {
- static TelaAtividades TelaAtividades=new TelaAtividades();
+  TelaAtividades TelaAtividades=new TelaAtividades();
+  ControlTelaLogin controlTelaLogin;
+  public ControlTelaAtividades(ControlTelaLogin controlTelaLogin){
+  	this.controlTelaLogin = controlTelaLogin;
+  }
  
- 
- public static void EventosTelaAtividades(){
+ public void EventosTelaAtividades(){
 	 TelaAtividades.getBtnAdicionar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			ControlTelaADDAtividades.TelaADDAtividades.getFrmEventif().setVisible(true);
-			ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
+			controlTelaLogin.ControlTelaADDAtividades.TelaADDAtividades.getFrmEventif().setVisible(true);
+			controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
 			
 		}
 	});
@@ -37,8 +39,8 @@ public class ControlTelaAtividades {
 		});
 	 TelaAtividades.getBtnVoltar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
-				ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
+				controlTelaLogin.ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
+				controlTelaLogin.ControlTelaAtividades.TelaAtividades.getFrmEventos().setVisible(false);
 			}
 		});
 	 

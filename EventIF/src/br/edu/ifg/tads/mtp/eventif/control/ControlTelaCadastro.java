@@ -3,26 +3,28 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.edu.ifg.tads.mtp.eventif.view.TelaCadastro;
-
 import br.edu.ifg.tads.mtp.eventif.main.main;
+import br.edu.ifg.tads.mtp.eventif.view.TelaCadastro;
 
 public class ControlTelaCadastro {
 	
-	static TelaCadastro windowTC = new TelaCadastro();
+	 TelaCadastro TelaCadastro = new TelaCadastro();
+	 ControlTelaLogin controlTelaLogin;
+	 public ControlTelaCadastro(ControlTelaLogin controlTelaLogin){
+	 	this.controlTelaLogin = controlTelaLogin;
+	 }
 
-
-public static void EventosTelaCadastro(){
+public void EventosTelaCadastro(){
 		
-	windowTC.getBtnConfirmar().addActionListener(new ActionListener() {
+	TelaCadastro.getBtnConfirmar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
 		}
 	});
-	windowTC.getBtnCancelar().addActionListener(new ActionListener() {
+	TelaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			main.chamarlogin();
-			windowTC.getFrame().setVisible(false);
+			TelaCadastro.getFrame().setVisible(false);
 			
 		}
 	});

@@ -8,9 +8,12 @@ import br.edu.ifg.tads.mtp.eventif.view.TelaADDEvento;
 
 
 public class ControlTelaADDEvento {
-static TelaADDEvento TelaADDEvento = new TelaADDEvento();
-
-	public static void EventosTelaADDEvento(){
+ TelaADDEvento TelaADDEvento = new TelaADDEvento();
+ ControlTelaLogin controlTelaLogin;
+ public ControlTelaADDEvento(ControlTelaLogin controlTelaLogin){
+ 	this.controlTelaLogin = controlTelaLogin;
+ }
+	public  void EventosTelaADDEvento(){
 		TelaADDEvento.getBtnConfirmar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -18,9 +21,16 @@ static TelaADDEvento TelaADDEvento = new TelaADDEvento();
 		});
 		TelaADDEvento.getBtnCancelar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(false);
-				ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
+				controlTelaLogin.ControlTelaADDEvento.TelaADDEvento.getFrmCadastrarEvento().setVisible(false);
+				controlTelaLogin.ControlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
 			}
 		});
 	}
+	public TelaADDEvento getTelaADDEvento() {
+		return TelaADDEvento;
+	}
+	public void setTelaADDEvento(TelaADDEvento telaADDEvento) {
+		TelaADDEvento = telaADDEvento;
+	}
+	
 }
