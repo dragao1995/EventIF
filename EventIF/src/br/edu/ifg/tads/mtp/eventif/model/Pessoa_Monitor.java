@@ -16,5 +16,5 @@ public class Pessoa_Monitor {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
+	
 }

@@ -18,9 +18,9 @@ public class Pessoa_Gerente {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-	public PreparedStatement prepareStatement(String string) {
+	//public PreparedStatement prepareStatement(String string) {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		//return null;
+	//}
 
 }

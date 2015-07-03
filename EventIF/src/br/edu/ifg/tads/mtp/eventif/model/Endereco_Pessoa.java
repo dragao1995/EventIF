@@ -7,7 +7,15 @@ public class Endereco_Pessoa {
 	private String bairro;
 	private int numero;
 	private String complemento;
+	private String cep;
 	private Cidade cidade = new Cidade();
+	
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 	public long getIdEndereco_Pes() {
 		return idEndereco_Pes;
 	}
