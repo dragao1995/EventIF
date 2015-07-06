@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.text.MaskFormatter;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class TelaADDAtividades {
 
@@ -26,6 +28,8 @@ public class TelaADDAtividades {
 	private JTextArea txtDescrativ;
 	private JButton btnCancelar = new JButton("");
 	private JButton btnConfirmar = new JButton("");
+	private JTextField txtData;
+	private JTextField txtMinistrante;
 
 	
 	public TelaADDAtividades() {
@@ -49,65 +53,71 @@ public class TelaADDAtividades {
 		
 		JLabel lblNomeAtividade = new JLabel("Nome Atividade:");
 		lblNomeAtividade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblNomeAtividade.setBounds(62, 70, 100, 22);
+		lblNomeAtividade.setBounds(72, 75, 100, 22);
 		frmEventif.getContentPane().add(lblNomeAtividade);
 		
 		JLabel lblHorarioInicial = new JLabel("Horario inicial:");
 		lblHorarioInicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblHorarioInicial.setBounds(62, 120, 92, 24);
+		lblHorarioInicial.setBounds(293, 122, 92, 24);
 		frmEventif.getContentPane().add(lblHorarioInicial);
 		
 		JLabel lblHorarioFinal = new JLabel("Horario Final:");
 		lblHorarioFinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblHorarioFinal.setBounds(380, 120, 80, 24);
+		lblHorarioFinal.setBounds(513, 122, 92, 24);
 		frmEventif.getContentPane().add(lblHorarioFinal);
 		
 		JLabel lblCargaHoraria = new JLabel("Carga Horaria:");
 		lblCargaHoraria.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblCargaHoraria.setBounds(62, 165, 100, 22);
+		lblCargaHoraria.setBounds(291, 168, 100, 22);
 		frmEventif.getContentPane().add(lblCargaHoraria);
 		
 		JLabel lblNDeVagas = new JLabel("N\u00BA de Vagas:");
 		lblNDeVagas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblNDeVagas.setBounds(380, 168, 92, 22);
+		lblNDeVagas.setBounds(513, 168, 80, 22);
 		frmEventif.getContentPane().add(lblNDeVagas);
 		
 		JLabel lblDescrio = new JLabel("Descri\u00E7\u00E3o:");
 		lblDescrio.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblDescrio.setBounds(62, 210, 80, 24);
+		lblDescrio.setBounds(77, 212, 80, 24);
 		frmEventif.getContentPane().add(lblDescrio);
 		
 		txtNomeativ = new JTextField();
+		txtNomeativ.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtNomeativ.setBackground(Color.WHITE);
-		txtNomeativ.setBounds(182, 72, 522, 31);
+		txtNomeativ.setBounds(182, 72, 273, 31);
 		frmEventif.getContentPane().add(txtNomeativ);
 		txtNomeativ.setColumns(10);
 		
 		txtHorainicial = new JFormattedTextField(Mascara("##/##/####")); 
+		txtHorainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorainicial.setBackground(Color.WHITE);
-		txtHorainicial.setBounds(182, 118, 188, 31);
+		txtHorainicial.setBounds(387, 122, 114, 31);
 		frmEventif.getContentPane().add(txtHorainicial);
 		txtHorainicial.setColumns(10);
 		
 		txtHorafinal = new JFormattedTextField(Mascara("##/##/####")); 
+		txtHorafinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorafinal.setBackground(Color.WHITE);
-		txtHorafinal.setBounds(470, 120, 234, 29);
+		txtHorafinal.setBounds(603, 120, 101, 29);
 		frmEventif.getContentPane().add(txtHorafinal);
 		txtHorafinal.setColumns(10);
 		
 		txtCargahor = new JTextField();
+		txtCargahor.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtCargahor.setBackground(Color.WHITE);
-		txtCargahor.setBounds(182, 165, 188, 31);
+		txtCargahor.setBounds(389, 167, 114, 31);
 		frmEventif.getContentPane().add(txtCargahor);
 		txtCargahor.setColumns(10);
 		
 		txtNvagas = new JTextField();
+		txtNvagas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtNvagas.setBackground(Color.WHITE);
 		txtNvagas.setColumns(10);
-		txtNvagas.setBounds(470, 167, 234, 29);
+		txtNvagas.setBounds(603, 167, 101, 29);
 		frmEventif.getContentPane().add(txtNvagas);
 		
 		txtDescrativ = new JTextArea();
+		txtDescrativ.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtDescrativ.setBackground(Color.WHITE);
 		txtDescrativ.setBounds(182, 213, 522, 124);
 		frmEventif.getContentPane().add(txtDescrativ);
@@ -125,6 +135,39 @@ public class TelaADDAtividades {
 		lblicon.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		lblicon.setBounds(29, 245, 125, 186);
 		frmEventif.getContentPane().add(lblicon);
+		
+		JLabel lblTipo = new JLabel("Tipo Atividade:");
+		lblTipo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		lblTipo.setBounds(77, 130, 100, 18);
+		frmEventif.getContentPane().add(lblTipo);
+		
+		JComboBox comboBoxTipo = new JComboBox();
+		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Palestra", "Minicurso", "Oficina"}));
+		comboBoxTipo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		comboBoxTipo.setBounds(182, 122, 101, 31);
+		frmEventif.getContentPane().add(comboBoxTipo);
+		
+		JLabel lblData = new JLabel("Data:");
+		lblData.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		lblData.setBounds(77, 173, 89, 17);
+		frmEventif.getContentPane().add(lblData);
+		
+		txtData = new JTextField();
+		txtData.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		txtData.setBounds(182, 170, 99, 28);
+		frmEventif.getContentPane().add(txtData);
+		txtData.setColumns(10);
+		
+		JLabel lblMinistrante = new JLabel("Ministrante:");
+		lblMinistrante.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		lblMinistrante.setBounds(465, 80, 80, 22);
+		frmEventif.getContentPane().add(lblMinistrante);
+		
+		txtMinistrante = new JTextField();
+		txtMinistrante.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		txtMinistrante.setBounds(542, 74, 162, 27);
+		frmEventif.getContentPane().add(txtMinistrante);
+		txtMinistrante.setColumns(10);
 		frmEventif.setBounds(100, 100, 800, 483);
 		frmEventif.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -212,5 +255,4 @@ public class TelaADDAtividades {
 	       }   
 	       return F_Mascara;  
 	} 
-	
 }

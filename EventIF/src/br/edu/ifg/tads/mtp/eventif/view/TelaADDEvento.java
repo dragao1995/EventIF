@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -26,6 +24,14 @@ public class TelaADDEvento {
 	private JTextArea txtDescricao;
 	private JButton btnCancelar = new JButton("");
 	private JButton btnConfirmar = new JButton("");
+	private JTextField txtTelefone;
+	private JTextField txtEmail;
+	private JTextField txtCep;
+	private JTextField extEndereco;
+	private JTextField txtNumero;
+	private JTextField txtBairro;
+	private JTextField txtCidade;
+	private JTextField txtUF;
 	
 	public TelaADDEvento() {
 		initialize();
@@ -33,6 +39,7 @@ public class TelaADDEvento {
 
 	private void initialize() {
 		frmCadastrarEvento = new JFrame();
+		frmCadastrarEvento.getContentPane().setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
 		frmCadastrarEvento.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDEvento.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		frmCadastrarEvento.setTitle("EventIF");
 		frmCadastrarEvento.getContentPane().setBackground(new Color(102, 204, 102));
@@ -40,98 +47,189 @@ public class TelaADDEvento {
 		
 		JLabel lblCadastrarEvento = new JLabel("Cadastrar Evento");
 		lblCadastrarEvento.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblCadastrarEvento.setBounds(276, 11, 200, 31);
+		lblCadastrarEvento.setBounds(313, 11, 200, 31);
 		frmCadastrarEvento.getContentPane().add(lblCadastrarEvento);
 		
 		JLabel lblNomeDeEvento = new JLabel("Nome Evento:");
-		lblNomeDeEvento.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblNomeDeEvento.setBounds(37, 52, 92, 24);
+		lblNomeDeEvento.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblNomeDeEvento.setBounds(67, 64, 109, 24);
 		frmCadastrarEvento.getContentPane().add(lblNomeDeEvento);
 		
 		JLabel lblEndereo = new JLabel("Endere\u00E7o: ");
-		lblEndereo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblEndereo.setBounds(37, 99, 103, 24);
+		lblEndereo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblEndereo.setBounds(67, 213, 103, 24);
 		frmCadastrarEvento.getContentPane().add(lblEndereo);
 		
 		JLabel lblDataInicial = new JLabel("Data inicial:");
-		lblDataInicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblDataInicial.setBounds(37, 150, 92, 24);
+		lblDataInicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblDataInicial.setBounds(68, 101, 92, 24);
 		frmCadastrarEvento.getContentPane().add(lblDataInicial);
 		
 		JLabel lblDataFinal = new JLabel("Data Final:");
-		lblDataFinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblDataFinal.setBounds(349, 150, 69, 24);
+		lblDataFinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblDataFinal.setBounds(387, 101, 82, 24);
 		frmCadastrarEvento.getContentPane().add(lblDataFinal);
 		
 		JLabel lblOrganizador = new JLabel("Organizador: ");
-		lblOrganizador.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblOrganizador.setBounds(37, 203, 82, 24);
+		lblOrganizador.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblOrganizador.setBounds(67, 138, 109, 24);
 		frmCadastrarEvento.getContentPane().add(lblOrganizador);
 		
-		JLabel lblDescrio = new JLabel("Descri\u00E7\u00E3o:");
-		lblDescrio.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		lblDescrio.setBounds(37, 249, 82, 24);
-		frmCadastrarEvento.getContentPane().add(lblDescrio);
+		JLabel lblDescricao = new JLabel("Descri\u00E7\u00E3o:");
+		lblDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblDescricao.setBounds(67, 335, 82, 24);
+		frmCadastrarEvento.getContentPane().add(lblDescricao);
 		
 		txtNomeev = new JTextField();
 		txtNomeev.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNomeev.setBackground(Color.WHITE);
-		txtNomeev.setBounds(139, 50, 539, 31);
+		txtNomeev.setBounds(176, 64, 539, 26);
 		frmCadastrarEvento.getContentPane().add(txtNomeev);
 		txtNomeev.setColumns(10);
 		
 		txtEndereco = new JTextField();
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEndereco.setBackground(Color.WHITE);
-		txtEndereco.setBounds(139, 97, 539, 31);
+		txtEndereco.setBounds(176, 213, 539, 26);
 		frmCadastrarEvento.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
 		txtDatainicial = new JFormattedTextField(Mascara("##/##/####")); 
 		txtDatainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDatainicial.setBackground(Color.WHITE);
-		txtDatainicial.setBounds(139, 145, 200, 33);
+		txtDatainicial.setBounds(177, 101, 200, 26);
 		frmCadastrarEvento.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
 		txtDataf = new JFormattedTextField(Mascara("##/##/####")); 
 		txtDataf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDataf.setBackground(Color.WHITE);
-		txtDataf.setBounds(429, 150, 249, 29);
+		txtDataf.setBounds(475, 101, 240, 26);
 		frmCadastrarEvento.getContentPane().add(txtDataf);
 		txtDataf.setColumns(10);
 		
 		textOrganizador = new JTextField();
 		textOrganizador.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		textOrganizador.setBackground(Color.WHITE);
-		textOrganizador.setBounds(139, 199, 539, 35);
+		textOrganizador.setBounds(176, 138, 539, 26);
 		frmCadastrarEvento.getContentPane().add(textOrganizador);
 		textOrganizador.setColumns(10);
 		
 		txtDescricao = new JTextArea();
 		txtDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDescricao.setBackground(Color.WHITE);
-		txtDescricao.setBounds(139, 252, 539, 119);
+		txtDescricao.setBounds(176, 337, 539, 99);
 		frmCadastrarEvento.getContentPane().add(txtDescricao);
 		txtDescricao.setColumns(10);
 		
 		btnConfirmar.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/Symbol_-_Check.png")));
-		btnConfirmar.setBounds(218, 388, 89, 59);
+		btnConfirmar.setBounds(246, 459, 89, 59);
 		frmCadastrarEvento.getContentPane().add(btnConfirmar);
 		
-		
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnCancelar.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/X.png")));
-		btnCancelar.setBounds(515, 388, 89, 59);
+		btnCancelar.setBounds(546, 459, 89, 59);
 		frmCadastrarEvento.getContentPane().add(btnCancelar);
 		
 		JLabel lblIcon = new JLabel("");
 		lblIcon.setIcon(new ImageIcon(TelaADDEvento.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
-		lblIcon.setBounds(0, 309, 154, 138);
+		lblIcon.setBounds(25, 380, 154, 138);
 		frmCadastrarEvento.getContentPane().add(lblIcon);
-		frmCadastrarEvento.setBounds(100, 100, 800, 509);
+		
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblTelefone.setBounds(67, 175, 92, 26);
+		frmCadastrarEvento.getContentPane().add(lblTelefone);
+		
+		txtTelefone = new JTextField();
+		txtTelefone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtTelefone.setColumns(10);
+		txtTelefone.setBackground(Color.WHITE);
+		txtTelefone.setBounds(176, 173, 169, 26);
+		frmCadastrarEvento.getContentPane().add(txtTelefone);
+		
+		JLabel lblEmail = new JLabel("Email: ");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblEmail.setBounds(355, 176, 68, 26);
+		frmCadastrarEvento.getContentPane().add(lblEmail);
+		
+		txtEmail = new JTextField();
+		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtEmail.setColumns(10);
+		txtEmail.setBackground(Color.WHITE);
+		txtEmail.setBounds(416, 173, 299, 26);
+		frmCadastrarEvento.getContentPane().add(txtEmail);
+		
+		JLabel lblCep = new JLabel("Cep:");
+		lblCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblCep.setBounds(67, 250, 53, 26);
+		frmCadastrarEvento.getContentPane().add(lblCep);
+		
+		txtCep = new JTextField();
+		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtCep.setColumns(10);
+		txtCep.setBackground(Color.WHITE);
+		txtCep.setBounds(176, 250, 169, 26);
+		frmCadastrarEvento.getContentPane().add(txtCep);
+		
+		JLabel lblEndereco = new JLabel("Endere\u00E7o:");
+		lblEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblEndereco.setBounds(67, 289, 86, 26);
+		frmCadastrarEvento.getContentPane().add(lblEndereco);
+		
+		extEndereco = new JTextField();
+		extEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		extEndereco.setColumns(10);
+		extEndereco.setBackground(Color.WHITE);
+		extEndereco.setBounds(176, 289, 169, 26);
+		frmCadastrarEvento.getContentPane().add(extEndereco);
+		
+		txtNumero = new JTextField();
+		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtNumero.setColumns(10);
+		txtNumero.setBackground(Color.WHITE);
+		txtNumero.setBounds(386, 289, 60, 26);
+		frmCadastrarEvento.getContentPane().add(txtNumero);
+		
+		JLabel lblNumero = new JLabel("N\u00B0: ");
+		lblNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblNumero.setBounds(355, 289, 35, 26);
+		frmCadastrarEvento.getContentPane().add(lblNumero);
+		
+		JLabel lblBairro = new JLabel("Bairro:");
+		lblBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblBairro.setBounds(456, 288, 60, 26);
+		frmCadastrarEvento.getContentPane().add(lblBairro);
+		
+		txtBairro = new JTextField();
+		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtBairro.setColumns(10);
+		txtBairro.setBackground(Color.WHITE);
+		txtBairro.setBounds(517, 288, 198, 27);
+		frmCadastrarEvento.getContentPane().add(txtBairro);
+		
+		JLabel lblCidade = new JLabel("Cidade:");
+		lblCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblCidade.setBounds(456, 252, 68, 24);
+		frmCadastrarEvento.getContentPane().add(lblCidade);
+		
+		txtCidade = new JTextField();
+		txtCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtCidade.setColumns(10);
+		txtCidade.setBackground(Color.WHITE);
+		txtCidade.setBounds(517, 249, 198, 25);
+		frmCadastrarEvento.getContentPane().add(txtCidade);
+		
+		JLabel lblUF = new JLabel("UF:");
+		lblUF.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblUF.setBounds(355, 254, 35, 24);
+		frmCadastrarEvento.getContentPane().add(lblUF);
+		
+		txtUF = new JTextField();
+		txtUF.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtUF.setColumns(10);
+		txtUF.setBackground(Color.WHITE);
+		txtUF.setBounds(386, 252, 60, 24);
+		frmCadastrarEvento.getContentPane().add(txtUF);
+		frmCadastrarEvento.setBounds(100, 100, 800, 570);
 		frmCadastrarEvento.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
@@ -218,5 +316,4 @@ public class TelaADDEvento {
        }   
        return F_Mascara;  
 } 
-	
 }
