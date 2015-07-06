@@ -3,7 +3,7 @@ package br.edu.ifg.tads.mtp.eventif.model;
 public class Tipo {
 	
 	private long idTipo;
-	private String tipo_Atividade;
+	private String tipo_Atividade;//Paletra,Minicurso,Oficina
 	public long getidTipo() {
 		return idTipo;
 	}

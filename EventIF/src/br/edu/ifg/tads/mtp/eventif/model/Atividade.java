@@ -4,8 +4,8 @@ public class Atividade {
 	
 	private long idAtividade;
 	private String descricao;
-	private String data_Inicio;
-	private String data_Fim;//Calendar ver como funciona com hora conversão util
+	private String hora_Inicio;
+	private String hora_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
 	private int numero_Vagas;
 	private Evento evento;
@@ -23,17 +23,18 @@ public class Atividade {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getData_Inicio() {
-		return data_Inicio;
+	
+	public String getHora_Inicio() {
+		return hora_Inicio;
 	}
-	public void setData_Inicio(String data_Inicio) {
-		this.data_Inicio = data_Inicio;
+	public void setHora_Inicio(String hora_Inicio) {
+		this.hora_Inicio = hora_Inicio;
 	}
-	public String getData_Fim() {
-		return data_Fim;
+	public String getHora_Fim() {
+		return hora_Fim;
 	}
-	public void setData_Fim(String data_Fim) {
-		this.data_Fim = data_Fim;
+	public void setHora_Fim(String hora_Fim) {
+		this.hora_Fim = hora_Fim;
 	}
 	public String getCarga_Horaria() {
 		return carga_Horaria;

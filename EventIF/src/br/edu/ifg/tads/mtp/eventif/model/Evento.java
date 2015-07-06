@@ -8,6 +8,7 @@ public class Evento {
 	private String data_Fim;
 	private String organizador;//quem é esse loco ?
 	private String descricao;
+	private Contato contato = new Contato();
 	private Endereco_Evento endereco_eve = new Endereco_Evento();
 	
 	public long getIdEvento() {
@@ -52,5 +53,12 @@ public class Evento {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public Contato getContato() {
+		return contato;
+	}
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+	
 	
 }

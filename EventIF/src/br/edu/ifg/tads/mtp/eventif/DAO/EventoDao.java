@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
+import br.edu.ifg.tads.mtp.eventif.model.Atividade;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 
 public class EventoDao {
@@ -63,12 +64,30 @@ public class EventoDao {
 			// executa
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
-			int idEndereco = 0;
+			int idEndereco_eve = 0;
 			if(rs.next()){
-				idEndereco = rs.getInt("idEndereco_eve");
+				idEndereco_eve = rs.getInt("idEndereco_eve");
 			}
+			
+			sql = "insert into Contato"
+					+"(telefone,email)"+" values (?,?)";
+			
+			con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+
+			stmt.setString(1, evento.getContato().getTelefone());
+			stmt.setString(2, evento.getContato().getEmail());
+
+			// executa
+			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
+			int idContato = 0;
+			if(rs.next()){
+				idContato = rs.getInt("idContato");
+			}
+			
 			sql = "insert into Evento "
-					+ "(nome,data_inicio,data_fim,organizador,idEndereco_eve)" + " values (?,?,?,?,?)";
+					+ "(nome,data_inicio,data_fim,organizador,idEndereco_eve,idContato)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql);
@@ -77,7 +96,8 @@ public class EventoDao {
 			stmt.setString(2, evento.getData_Inicio());
 			stmt.setString(3, evento.getData_Fim());
 			stmt.setString(4, evento.getOrganizador());
-			stmt.setInt(5, idEndereco);
+			stmt.setInt(5, idEndereco_eve);
+			stmt.setInt(6, idContato);
 
 			// executa
 			stmt.executeUpdate();
@@ -94,6 +114,12 @@ public class EventoDao {
 		
 		}
 		
+	}
+	// terminar
+	public Atividade buscar_evento(Atividade ati){
+		PreparedStatement stmt;
+		Atividade atividade;
+		return ati;
 	}
 
 }

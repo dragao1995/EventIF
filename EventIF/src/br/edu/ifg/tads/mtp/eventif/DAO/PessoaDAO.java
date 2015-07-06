@@ -22,7 +22,6 @@ public class PessoaDAO {
 	
 	public void inserir(Pessoa pessoa){
 		
-		
 		Connection con = null;
 		try {
 			
@@ -76,13 +75,29 @@ public class PessoaDAO {
 			// executa
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
-			int idEndereco = 0;
+			int idEndereco_pes = 0;
 			if(rs.next()){
-				idEndereco = rs.getInt("idEndereco_pes");
+				idEndereco_pes = rs.getInt("idEndereco_pes");
+			}
+			sql = "insert into Contato"
+					+"(telefone,email)"+" values (?,?)";
+			
+			con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+
+			stmt.setString(1, pessoa.getContato().getTelefone());
+			stmt.setString(2, pessoa.getContato().getEmail());
+
+			// executa
+			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
+			int idContato = 0;
+			if(rs.next()){
+				idContato = rs.getInt("idContato");
 			}
 			
 			sql = "insert into pessoa "
-					+ "(nome,cpf,rg,senha,idEndereco_pes)" + " values (?,?,?,?,?)";
+					+ "(nome,cpf,rg,senha,idEndereco_pes,idContato)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql);
@@ -91,7 +106,8 @@ public class PessoaDAO {
 			stmt.setString(2, pessoa.getCpf());
 			stmt.setString(3, pessoa.getRg());
 			stmt.setString(4, pessoa.getSenha());
-			stmt.setInt(5, idEndereco);
+			stmt.setInt(5, idEndereco_pes);
+			stmt.setInt(6, idContato);
 
 			// executa
 			stmt.executeUpdate();
@@ -106,6 +122,14 @@ public class PessoaDAO {
 						"não foi possível fechar a conexão com o BD");
 			}
 		}
+		
+	}
+	// terminar
+	public Pessoa buscar(Pessoa pessoa){
+		PreparedStatement stmt;
+		Pessoa p;
+		return pessoa;
+		
 		
 	}
 	
