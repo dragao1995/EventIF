@@ -1,24 +1,19 @@
 package br.edu.ifg.tads.mtp.eventif.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.Color;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
 import javax.swing.text.MaskFormatter;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class TelaADDEvento {
 

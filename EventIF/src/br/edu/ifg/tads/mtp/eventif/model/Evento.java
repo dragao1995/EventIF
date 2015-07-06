@@ -7,6 +7,7 @@ public class Evento {
 	private String data_Inicio;
 	private String data_Fim;
 	private String organizador;//quem é esse loco ?
+	private String descricao;
 	private Endereco_Evento endereco_eve = new Endereco_Evento();
 	
 	public long getIdEvento() {
@@ -44,6 +45,12 @@ public class Evento {
 	}
 	public void setEndereco_eve(Endereco_Evento endereco_eve) {
 		this.endereco_eve = endereco_eve;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }

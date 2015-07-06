@@ -5,6 +5,7 @@ public class Estado {
 	private long idEstado;
 	private String nome;
 	private String uf;
+	
 	public long getIdEstado() {
 		return idEstado;
 	}

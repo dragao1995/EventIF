@@ -58,6 +58,7 @@ public class Pessoa implements ValidarCPF {
 	}
 	
 	public boolean isCPF() {
+		
 		// considera-se erro CPF's formados por uma sequencia de numeros iguais
 				if (cpf.equals("00000000000") || cpf.equals("11111111111") ||
 					cpf.equals("22222222222") || cpf.equals("33333333333") ||
@@ -122,6 +123,10 @@ public class Pessoa implements ValidarCPF {
 				} catch (InputMismatchException erro) {
 			        return(false);
 			    }
+	}
+	public String limparCpf(String cpf){
+		cpf.replace(".", "").replace("-", ""); 
+		return(cpf) ;
 	}
 
 }
