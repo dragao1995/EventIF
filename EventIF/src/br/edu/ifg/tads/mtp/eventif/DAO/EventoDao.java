@@ -26,7 +26,7 @@ public class EventoDao {
 		Connection con = null;
 		
 		try{
-			String sql = "insert into estado "
+			String sql = "insert into ESTADO "
 					+ "(nome,uf)" + " values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -43,7 +43,7 @@ public class EventoDao {
 				idEstado = rs.getInt("idEstado");
 			}
 			
-			sql = "insert into cidade "
+			sql = "insert into CIDADE "
 					+ "(nome,idEstado)" + " values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -59,7 +59,7 @@ public class EventoDao {
 			if(rs.next()){
 				idCidade = rs.getInt("idCidade");
 			}
-			sql = "insert into Endereco_evento "
+			sql = "insert into ENDERECO_EVENTO "
 					+ "(cep,logradouro,bairro,numero,complemento,idCidade)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -80,7 +80,7 @@ public class EventoDao {
 				idEndereco_eve = rs.getInt("idEndereco_eve");
 			}
 			
-			sql = "insert into Contato"
+			sql = "insert into CONTATO"
 					+"(telefone,email)"+" values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -97,11 +97,11 @@ public class EventoDao {
 				idContato = rs.getInt("idContato");
 			}
 			
-			sql = "insert into Evento "
+			sql = "insert into EVENTO "
 					+ "(nome,data_inicio,data_fim,organizador,idEndereco_eve,idContato)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement(sql);
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, evento.getNome());
 			stmt.setString(2, evento.getData_Inicio());
@@ -109,8 +109,46 @@ public class EventoDao {
 			stmt.setString(4, evento.getOrganizador());
 			stmt.setInt(5, idEndereco_eve);
 			stmt.setInt(6, idContato);
-
-			// executa
+			
+			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
+			int idEvento = 0;
+			if(rs.next()){
+				idEvento = rs.getInt("idEvento");
+			}
+			
+			sql = "insert into TIPO"
+					+"(tipo_avividade)"+" values(?)";
+			
+			con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+			
+			stmt.setString(1, tipo.getTipo_Atividade());
+			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
+			int idTipo = 0;
+			if(rs.next()){
+				idTipo = rs.getInt("idTipo");
+			}
+			
+			sql = "insert into ATIVIDADE "
+					+ "(nome,descricao,ministrante,datas,hora_inicio,hora_fim,carga_horaria,numero_vagas,idEvento,idTpo)"
+					+"(values (?,?,?,?,?,?,?,?,?,?))";
+			
+			con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement(sql);
+			
+			stmt.setString(1, atividade.getNome());
+			stmt.setString(2, atividade.getMinistrante());
+			stmt.setString(3, atividade.getDescricao());
+			stmt.setString(4, atividade.getData());
+			stmt.setString(5, atividade.getHora_Inicio());
+			stmt.setString(6, atividade.getHora_Fim());
+			stmt.setString(7,atividade.getCarga_Horaria());
+			stmt.setInt(8,atividade.getNumero_Vagas());
+			stmt.setInt(9, idEvento);
+			stmt.setInt(10, idTipo);
+			
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw new RuntimeException(
@@ -199,14 +237,34 @@ public class EventoDao {
 			
 			while (rs.next()) {
 				
-				Contato contato = new Contato();
-				contato.setId(rs.getLong("id"));
-				contato.setNome(rs.getString("nome"));
-				contato.setEmail(rs.getString("email"));
-				contato.setEndereco(rs.getString("endereco"));
+				evento.setIdEvento(rs.getLong("idEvento"));
+				evento.setNome(rs.getString("nome"));
+				evento.setDescricao(rs.getString("email"));
+				evento.setOrganizador(rs.getString("endereco"));
+				evento.setData_Inicio(rs.getString("data_Inicio"));
+				evento.setData_Fim(rs.getString("data_Fim"));
+				ee.setIdEndereco_Eve(rs.getLong("idEvento_eve"));
+				contato.setIdContato(rs.getLong("idContato"));
+				
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + evento.getIdEvento());
+				colunas.add(evento.getNome());
+				colunas.add("" + ee.getIdEndereco_Eve());
+				colunas.add("" + contato.getIdContato());
+				colunas.add("alterar");
+				colunas.add("excluir");
+				Evento.add(colunas);
+				
+			}
+			rs.close();
+			stmt.close();
+			return Evento;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 
 	}
 	
-	
-
 }
+
+
