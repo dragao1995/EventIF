@@ -125,12 +125,34 @@ public class PessoaDAO {
 		
 	}
 	// terminar
-	public Pessoa buscar(Pessoa pessoa){
+	public Pessoa buscar(Pessoa p){
 		PreparedStatement stmt;
-		Pessoa p;
+		Pessoa pessoa;
+		
+		try {
+			Connection con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement("select * from Pessoa where idPessoa = "
+					+ p.getIdPessoa());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				
+				pessoa.setIdPessoa(rs.getLong("idPessoa"));
+				pessoa.setNome(rs.getString("nome"));
+				pessoa.setCpf(rs.getString("idCpf"));
+				pessoa.setRg(rs.getString("rg"));
+				pessoa.setSenha(rs.getString("senha"));
+				pessoa.setContato(rs.getLong("idContato"));//verificar como faz
+				pessoa.setEndereco_pes(rs.getLong("idEndereoc_pes"));
+				
+			}
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
 		return pessoa;
-		
-		
 	}
 	
 	// toda essa parte a baixo no modelo fazer alteração para verificação

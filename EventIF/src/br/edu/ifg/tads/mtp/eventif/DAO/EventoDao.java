@@ -136,7 +136,7 @@ public class EventoDao {
 				evento.setData_Fim(rs.getString("Data_Fim"));
 				evento.setOrganizador(rs.getString("Organizador"));
 				evento.setContato(rs.getLong("idContato"));//verificar como vai ser feito
-				evento.setEndereco(rs.getString("endereco"));//verificar como vai ser feito
+				evento.setEndereco(rs.getString("idEndereco_eve"));//verificar como vai ser feito
 			}
 			rs.close();
 			stmt.close();
@@ -180,5 +180,7 @@ public class EventoDao {
 
 		return atividade;	
 	}
+	
+	
 
 }
