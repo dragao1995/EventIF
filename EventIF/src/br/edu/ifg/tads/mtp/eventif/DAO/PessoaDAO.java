@@ -32,7 +32,7 @@ public class PessoaDAO {
 		Connection con = null;
 		try {
 			
-			String sql = "insert into estado "
+			String sql = "insert into ESTADO "
 					+ "(nome,uf)" + " values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -49,7 +49,7 @@ public class PessoaDAO {
 				idEstado = rs.getInt("idEstado");
 			}
 			
-			sql = "insert into cidade "
+			sql = "insert into CIDADE "
 					+ "(nome,idEstado)" + " values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -66,7 +66,7 @@ public class PessoaDAO {
 				idCidade = rs.getInt("idCidade");
 			}
 			
-			sql = "insert into Endereco_pessoa "
+			sql = "insert into ENDERECO_PESSOA "
 					+ "(cep,logradouro,bairro,numero,complemento,idCidade)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -86,7 +86,7 @@ public class PessoaDAO {
 			if(rs.next()){
 				idEndereco_pes = rs.getInt("idEndereco_pes");
 			}
-			sql = "insert into Contato"
+			sql = "insert into CONTATO"
 					+"(telefone,email)"+" values (?,?)";
 			
 			con = new ConnectionFactory().getConnection();
@@ -103,7 +103,7 @@ public class PessoaDAO {
 				idContato = rs.getInt("idContato");
 			}
 			
-			sql = "insert into pessoa "
+			sql = "insert into PESSOA "
 					+ "(nome,cpf,rg,senha,idEndereco_pes,idContato)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
