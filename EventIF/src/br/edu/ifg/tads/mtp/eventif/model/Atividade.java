@@ -6,11 +6,12 @@ public class Atividade {
 	private String nome;
 	private String ministrante;
 	private String descricao;
-	private String hora_Inicio;
+	private String data;
+	private String hora_Inicio;// olhar como ta no bd
 	private String hora_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
 	private int numero_Vagas;
-	private Evento evento;
+	private Evento evento = new Evento();
 	private Tipo tipo = new Tipo();
 	
 	public long getIdAtividade() {
@@ -76,6 +77,12 @@ public class Atividade {
 	}
 	public void setMinistrante(String ministrante) {
 		this.ministrante = ministrante;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
 	}
 	
 }

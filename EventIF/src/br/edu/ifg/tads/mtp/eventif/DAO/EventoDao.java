@@ -3,6 +3,7 @@ package br.edu.ifg.tads.mtp.eventif.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
@@ -116,10 +117,68 @@ public class EventoDao {
 		
 	}
 	// terminar
-	public Atividade buscar_evento(Atividade ati){
+	public Evento buscar_evento(Evento e){
+		PreparedStatement stmt;
+		Evento evento;
+		
+		try {
+			Connection con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement("select * from Evento where idEvento = "
+					+ e.getIdEvento());
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				
+				evento.setIdEvento(rs.getLong("idEvento"));
+				evento.setNome(rs.getString("nome"));
+				evento.setDescricao(rs.getString("Descricao"));
+				evento.setData_Inicio(rs.getString("Data_inicio"));
+				evento.setData_Fim(rs.getString("Data_Fim"));
+				evento.setOrganizador(rs.getString("Organizador"));
+				evento.setContato(rs.getLong("idContato"));//verificar como vai ser feito
+				evento.setEndereco(rs.getString("endereco"));//verificar como vai ser feito
+			}
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+		return evento;
+	}
+	public Atividade buscar_Atividade(Atividade a){
 		PreparedStatement stmt;
 		Atividade atividade;
-		return ati;
+		
+		try {
+			Connection con = new ConnectionFactory().getConnection();
+			stmt = con.prepareStatement("select * from Atividade where idAtividade = "
+					+ a.getIdAtividade());
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				
+				atividade.setIdAtividade(rs.getLong("idAtividade"));
+				atividade.setNome(rs.getString("nome"));
+				atividade.setDescricao(rs.getString("Descricao"));	
+				atividade.setMinistrante(rs.getString("Ministrante"));
+				atividade.setData(rs.getString("data"));
+				atividade.setHora_Inicio(rs.getString("hora_Inicio"));
+				atividade.setHora_Fim(rs.getString("hora_Fim"));
+				atividade.setCarga_Horaria(rs.getString("Carga_Horaria"));
+				atividade.setNumero_Vagas(rs.getInt("numero_Vagas"));
+				atividade.setEvento(rs.getLong("idEvento"));// verificar como faz
+				atividade.setTipo(rs.getLong("idTipo"));
+			}
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+		return atividade;	
 	}
 
 }
