@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
@@ -188,6 +189,23 @@ public class EventoDao {
 		return atividade;	
 	}
 	
+	public Vector<Vector<String>> buscaEvento(){
+		
+		try {
+			Vector<Vector<String>> Evento = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("select * from Evento order by id");
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+				
+				Contato contato = new Contato();
+				contato.setId(rs.getLong("id"));
+				contato.setNome(rs.getString("nome"));
+				contato.setEmail(rs.getString("email"));
+				contato.setEndereco(rs.getString("endereco"));
+
+	}
 	
 	
 
