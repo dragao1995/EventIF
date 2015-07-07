@@ -17,25 +17,19 @@ public class ControlTelaLogin {
 	Evento evento = new Evento();
 	TelaLogin TelaLogin = new TelaLogin();
 	 Pessoa pessoa = new Pessoa();
-	 Contato contato = new Contato();
+	
 	 Estado estado = new Estado();
 	 Atividade atividade= new Atividade();
-	 Endereco_Pessoa endereco_Pessoa = new Endereco_Pessoa();
 	ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
 	ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
 	ControlTelaAtividades controlTelaAtividades = new ControlTelaAtividades(this);
 	ControlTelaADDEvento controlTelaADDEvento = new ControlTelaADDEvento(this);
 	ControlTelaADDAtividades controlTelaADDAtividades = new ControlTelaADDAtividades(this);
 	
+	
 
 public void EventosTelaLogin() {
 		
-		controlTelaCadastro.EventosTelaCadastro();
-		controlTelaEventos.EventosTelaEventos();
-		controlTelaAtividades.EventosTelaAtividades();
-		controlTelaEventos.EventosTelaEventos();
-		controlTelaADDEvento.EventosTelaADDEvento();
-		controlTelaADDAtividades.EventosTelaADDAtividades();
 		TelaLogin.getFrameLogin().setVisible(true);
 		TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -77,4 +71,13 @@ public void EventosTelaLogin() {
 			}
 		});
 	}
+
+public void todosEventos(){
+	controlTelaCadastro.EventosTelaCadastro();
+	controlTelaEventos.EventosTelaEventos();
+	controlTelaAtividades.EventosTelaAtividades();
+	controlTelaEventos.EventosTelaEventos();
+	controlTelaADDEvento.EventosTelaADDEvento();
+	controlTelaADDAtividades.EventosTelaADDAtividades();
+}
 }

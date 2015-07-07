@@ -33,6 +33,7 @@ public class ControlTelaADDAtividades {
 						controlTelaLogin.atividade.getTipo().setTipo_Atividade((String) telaADDAtividades.getComboBoxTipo().getSelectedItem());
 						controlTelaLogin.atividade.setNome(telaADDAtividades.getTxtNomeativ().getText());
 						controlTelaLogin.atividade.setMinistrante(telaADDAtividades.getTxtMinistrante().getText());
+						controlTelaLogin.atividade.setData(telaADDAtividades.getTxtData().getText());
 						
 					}
 				});

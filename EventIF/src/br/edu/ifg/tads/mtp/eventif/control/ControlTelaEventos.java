@@ -48,6 +48,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("bbb");
 				controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);
 				telaEventos.getFrmEventos().dispose();
@@ -56,6 +57,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("sss");
 				if (cont % 2 == 1) {
 					LerQrcode.TelaWebcam();
 				}

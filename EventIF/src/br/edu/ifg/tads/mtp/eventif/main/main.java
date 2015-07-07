@@ -1,8 +1,5 @@
 package br.edu.ifg.tads.mtp.eventif.main;
 
-import java.sql.Connection;
-
-import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.control.ControlTelaLogin;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 
@@ -22,8 +19,9 @@ public class main {
 		// tem que ver onde ficar esse conexão.close não fica no pacote bd
 		// verificar se aquele PreparedStatement estar certo na pessoa gerente
 		Pessoa pessoa = new Pessoa();
-		ControlTelaLogin ControlTelaLogin=new ControlTelaLogin();
-		ControlTelaLogin.EventosTelaLogin();
+		ControlTelaLogin controlTelaLogin = new ControlTelaLogin();
+		controlTelaLogin.todosEventos();
+		controlTelaLogin.EventosTelaLogin();
 					
 	}
 	
