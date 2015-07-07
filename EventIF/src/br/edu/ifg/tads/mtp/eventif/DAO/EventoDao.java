@@ -7,9 +7,18 @@ import java.sql.SQLException;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
+import br.edu.ifg.tads.mtp.eventif.model.Contato;
+import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
+import br.edu.ifg.tads.mtp.eventif.model.Tipo;
 
 public class EventoDao {
+	
+	Evento evento = new Evento();
+	Atividade atividade = new Atividade();
+	Tipo tipo = new Tipo();
+	Contato contato = new Contato();
+	Endereco_Evento ee = new Endereco_Evento();
 	
 	public void inserir_evento(Evento evento){
 		
@@ -119,7 +128,6 @@ public class EventoDao {
 	// terminar
 	public Evento buscar_evento(Evento e){
 		PreparedStatement stmt;
-		Evento evento;
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
@@ -135,8 +143,8 @@ public class EventoDao {
 				evento.setData_Inicio(rs.getString("Data_inicio"));
 				evento.setData_Fim(rs.getString("Data_Fim"));
 				evento.setOrganizador(rs.getString("Organizador"));
-				evento.setContato(rs.getLong("idContato"));//verificar como vai ser feito
-				evento.setEndereco(rs.getString("idEndereco_eve"));//verificar como vai ser feito
+				contato.setIdContato(rs.getLong("idContato"));
+				ee.setIdEndereco_Eve(rs.getLong("idEndereco_eve"));
 			}
 			rs.close();
 			stmt.close();
@@ -149,7 +157,6 @@ public class EventoDao {
 	}
 	public Atividade buscar_Atividade(Atividade a){
 		PreparedStatement stmt;
-		Atividade atividade;
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
@@ -168,8 +175,8 @@ public class EventoDao {
 				atividade.setHora_Fim(rs.getString("hora_Fim"));
 				atividade.setCarga_Horaria(rs.getString("Carga_Horaria"));
 				atividade.setNumero_Vagas(rs.getInt("numero_Vagas"));
-				atividade.setEvento(rs.getLong("idEvento"));// verificar como faz
-				atividade.setTipo(rs.getLong("idTipo"));
+				evento.setIdEvento(rs.getLong("idEvento"));
+				tipo.setIdTipo(rs.getLong("idTipo"));
 			}
 			rs.close();
 			stmt.close();
@@ -180,6 +187,7 @@ public class EventoDao {
 
 		return atividade;	
 	}
+	
 	
 	
 

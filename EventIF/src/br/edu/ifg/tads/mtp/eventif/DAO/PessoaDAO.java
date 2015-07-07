@@ -15,10 +15,17 @@ import java.util.Vector;
 import javax.sql.ConnectionEvent;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
+import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
+import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
+import br.edu.ifg.tads.mtp.eventif.model.Contato;;
 
 public class PessoaDAO {
+	
+	Contato c = new Contato();
+	Endereco_Pessoa ep = new Endereco_Pessoa();
+	Pessoa pessoa = new Pessoa();
 	
 	public void inserir(Pessoa pessoa){
 		
@@ -127,7 +134,6 @@ public class PessoaDAO {
 	// terminar
 	public Pessoa buscar(Pessoa p){
 		PreparedStatement stmt;
-		Pessoa pessoa;
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
@@ -141,8 +147,8 @@ public class PessoaDAO {
 				pessoa.setCpf(rs.getString("idCpf"));
 				pessoa.setRg(rs.getString("rg"));
 				pessoa.setSenha(rs.getString("senha"));
-				pessoa.setContato(rs.getLong("idContato"));//verificar como faz
-				pessoa.setEndereco_pes(rs.getLong("idEndereoc_pes"));
+				c.setIdContato(rs.getLong("idContato"));//verificar como faz
+				ep.setIdEndereco_Pes(rs.getLong("idEndereoc_pes"));
 				
 			}
 			rs.close();
