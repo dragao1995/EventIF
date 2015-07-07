@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import br.edu.ifg.tads.mtp.eventif.model.Atividade;
 import br.edu.ifg.tads.mtp.eventif.model.Contato;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Estado;
@@ -18,6 +19,7 @@ public class ControlTelaLogin {
 	 Pessoa pessoa = new Pessoa();
 	 Contato contato = new Contato();
 	 Estado estado = new Estado();
+	 Atividade atividade= new Atividade();
 	 Endereco_Pessoa endereco_Pessoa = new Endereco_Pessoa();
 	ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
 	ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
@@ -38,7 +40,7 @@ public void EventosTelaLogin() {
 		TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				controlTelaCadastro.TelaCadastro.getFrame().setVisible(true);
+				controlTelaCadastro.telaCadastro.getFrame().setVisible(true);
 				TelaLogin.getFrameLogin().dispose();  
 			}
 		});
@@ -47,26 +49,26 @@ public void EventosTelaLogin() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				if (TelaLogin.getRdbtnGerente().isSelected() || TelaLogin.getRdbtnMonitor().isSelected() ||TelaLogin.getRdbtnParticipante().isSelected()) {			
-					controlTelaEventos.TelaEventos.getBtnAdicionar().setVisible(false);
-					controlTelaEventos.TelaEventos.getBtnExcluir().setVisible(false);
-					controlTelaEventos.TelaEventos.getBtnEditar().setVisible(false);
-					controlTelaAtividades.TelaAtividades.getBtnAdicionar().setVisible(false);
-					controlTelaAtividades.TelaAtividades.getBtnEditar().setVisible(false);
-					controlTelaAtividades.TelaAtividades.getBtnExcluir().setVisible(false);
+					controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(false);
+					controlTelaEventos.telaEventos.getBtnExcluir().setVisible(false);
+					controlTelaEventos.telaEventos.getBtnEditar().setVisible(false);
+					controlTelaAtividades.telaAtividades.getBtnAdicionar().setVisible(false);
+					controlTelaAtividades.telaAtividades.getBtnEditar().setVisible(false);
+					controlTelaAtividades.telaAtividades.getBtnExcluir().setVisible(false);
 					if (TelaLogin.getRdbtnGerente().isSelected()) {
-					controlTelaEventos.TelaEventos.getBtnAdicionar().setVisible(true);
-					controlTelaEventos.TelaEventos.getBtnExcluir().setVisible(true);
-					controlTelaEventos.TelaEventos.getBtnEditar().setVisible(true);
-					controlTelaAtividades.TelaAtividades.getBtnAdicionar().setVisible(true);
-					controlTelaAtividades.TelaAtividades.getBtnEditar().setVisible(true);
-					controlTelaAtividades.TelaAtividades.getBtnExcluir().setVisible(true);
+					controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
+					controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
+					controlTelaEventos.telaEventos.getBtnEditar().setVisible(true);
+					controlTelaAtividades.telaAtividades.getBtnAdicionar().setVisible(true);
+					controlTelaAtividades.telaAtividades.getBtnEditar().setVisible(true);
+					controlTelaAtividades.telaAtividades.getBtnExcluir().setVisible(true);
 				}
 				if ( TelaLogin.getRdbtnMonitor().isSelected() ) {
-					controlTelaEventos.TelaEventos.getBtnLerQrcode().setVisible(true);
-					controlTelaAtividades.TelaAtividades.getBtnLerQrcode().setVisible(true);
+					controlTelaEventos.telaEventos.getBtnLerQrcode().setVisible(true);
+					controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(true);
 				}
 				
-				controlTelaEventos.TelaEventos.getFrmEventos().setVisible(true);
+				controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 				TelaLogin.getFrameLogin().dispose();  
 				}else {
 					

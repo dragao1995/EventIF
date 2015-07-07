@@ -25,11 +25,12 @@ public class TelaADDAtividades {
 	private JTextField txtHorafinal;
 	private JTextField txtCargahor;
 	private JTextField txtNvagas;
-	private JTextArea txtDescrativ;
+	private JTextArea txtDescricao;
 	private JButton btnCancelar = new JButton("");
 	private JButton btnConfirmar = new JButton("");
 	private JTextField txtData;
 	private JTextField txtMinistrante;
+	private JComboBox comboBoxTipo = new JComboBox();
 
 	
 	public TelaADDAtividades() {
@@ -88,14 +89,14 @@ public class TelaADDAtividades {
 		frmEventif.getContentPane().add(txtNomeativ);
 		txtNomeativ.setColumns(10);
 		
-		txtHorainicial = new JFormattedTextField(Mascara("##/##/####")); 
+		txtHorainicial = new JFormattedTextField(Mascara("##:##:##")); 
 		txtHorainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorainicial.setBackground(Color.WHITE);
 		txtHorainicial.setBounds(387, 122, 114, 31);
 		frmEventif.getContentPane().add(txtHorainicial);
 		txtHorainicial.setColumns(10);
 		
-		txtHorafinal = new JFormattedTextField(Mascara("##/##/####")); 
+		txtHorafinal = new JFormattedTextField(Mascara("##:##:##")); 
 		txtHorafinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorafinal.setBackground(Color.WHITE);
 		txtHorafinal.setBounds(603, 120, 101, 29);
@@ -116,12 +117,12 @@ public class TelaADDAtividades {
 		txtNvagas.setBounds(603, 167, 101, 29);
 		frmEventif.getContentPane().add(txtNvagas);
 		
-		txtDescrativ = new JTextArea();
-		txtDescrativ.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		txtDescrativ.setBackground(Color.WHITE);
-		txtDescrativ.setBounds(182, 213, 522, 124);
-		frmEventif.getContentPane().add(txtDescrativ);
-		txtDescrativ.setColumns(10);
+		txtDescricao = new JTextArea();
+		txtDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		txtDescricao.setBackground(Color.WHITE);
+		txtDescricao.setBounds(182, 213, 522, 124);
+		frmEventif.getContentPane().add(txtDescricao);
+		txtDescricao.setColumns(10);
 		
 		btnConfirmar.setIcon(new ImageIcon(TelaADDAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/Symbol_-_Check.png")));
 		btnConfirmar.setBounds(272, 365, 89, 59);
@@ -141,7 +142,7 @@ public class TelaADDAtividades {
 		lblTipo.setBounds(77, 130, 100, 18);
 		frmEventif.getContentPane().add(lblTipo);
 		
-		JComboBox comboBoxTipo = new JComboBox();
+		
 		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Palestra", "Minicurso", "Oficina"}));
 		comboBoxTipo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		comboBoxTipo.setBounds(182, 122, 101, 31);
@@ -152,7 +153,7 @@ public class TelaADDAtividades {
 		lblData.setBounds(77, 173, 89, 17);
 		frmEventif.getContentPane().add(lblData);
 		
-		txtData = new JTextField();
+		txtData = new JFormattedTextField(Mascara("##/##/####")); 
 		txtData.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtData.setBounds(182, 170, 99, 28);
 		frmEventif.getContentPane().add(txtData);
@@ -220,12 +221,12 @@ public class TelaADDAtividades {
 		this.txtNvagas = txtNvagas;
 	}
 
-	public JTextArea getTxtDescrativ() {
-		return txtDescrativ;
+	public JTextArea getTxtDescricao() {
+		return txtDescricao;
 	}
 
-	public void setTxtDescrativ(JTextArea txtDescrativ) {
-		this.txtDescrativ = txtDescrativ;
+	public void setTxtDescricao(JTextArea txtDescrativ) {
+		this.txtDescricao = txtDescrativ;
 	}
 
 	public JButton getBtnCancelar() {
@@ -243,6 +244,31 @@ public class TelaADDAtividades {
 	public void setBtnConfirmar(JButton btnConfirmar) {
 		this.btnConfirmar = btnConfirmar;
 	}
+	
+	public JTextField getTxtData() {
+		return txtData;
+	}
+
+	public void setTxtData(JTextField txtData) {
+		this.txtData = txtData;
+	}
+
+	public JTextField getTxtMinistrante() {
+		return txtMinistrante;
+	}
+
+	public void setTxtMinistrante(JTextField txtMinistrante) {
+		this.txtMinistrante = txtMinistrante;
+	}
+
+	public JComboBox getComboBoxTipo() {
+		return comboBoxTipo;
+	}
+
+	public void setComboBoxTipo(JComboBox comboBoxTipo) {
+		this.comboBoxTipo = comboBoxTipo;
+	}
+
 	public MaskFormatter Mascara(String Mascara){  
         
 	       MaskFormatter F_Mascara = new MaskFormatter();  

@@ -7,7 +7,7 @@ import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
 
 public class ControlTelaEventos {
 	int cont = 1;
-	TelaEventos TelaEventos = new TelaEventos();
+	TelaEventos telaEventos = new TelaEventos();
 
 	ControlTelaLogin controlTelaLogin;
 
@@ -17,44 +17,44 @@ public class ControlTelaEventos {
 	}
 
 	public void EventosTelaEventos() {
-		TelaEventos.getBtnPesquisarok().addActionListener(new ActionListener() {
+		telaEventos.getBtnPesquisarok().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 			}
 		});
-		TelaEventos.getBtnAdicionar().addActionListener(new ActionListener() {
+		telaEventos.getBtnAdicionar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.controlTelaADDEvento.TelaADDEvento
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento
 						.getFrmCadastrarEvento().setVisible(true);
-				TelaEventos.getFrmEventos().dispose();
+				telaEventos.getFrmEventos().dispose();
 
 			}
 		});
-		TelaEventos.getBtnEditar().addActionListener(new ActionListener() {
+		telaEventos.getBtnEditar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 			}
 		});
-		TelaEventos.getBtnExcluir().addActionListener(new ActionListener() {
+		telaEventos.getBtnExcluir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 			}
 		});
-		TelaEventos.getBtnLogout().addActionListener(new ActionListener() {
+		telaEventos.getBtnLogout().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlTelaLogin.EventosTelaLogin();
-				TelaEventos.getFrmEventos().dispose();
+				telaEventos.getFrmEventos().dispose();
 			}
 		});
-		TelaEventos.getBtnAtividades().addActionListener(new ActionListener() {
+		telaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.controlTelaAtividades.TelaAtividades
+				controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);
-				TelaEventos.getFrmEventos().dispose();
+				telaEventos.getFrmEventos().dispose();
 
 			}
 		});
-		TelaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
+		telaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (cont % 2 == 1) {
 					LerQrcode.TelaWebcam();
