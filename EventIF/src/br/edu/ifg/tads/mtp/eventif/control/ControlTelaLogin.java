@@ -17,9 +17,8 @@ public class ControlTelaLogin {
 	Evento evento = new Evento();
 	TelaLogin TelaLogin = new TelaLogin();
 	 Pessoa pessoa = new Pessoa();
-	
-	 Estado estado = new Estado();
 	 Atividade atividade= new Atividade();
+	 
 	ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
 	ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
 	ControlTelaAtividades controlTelaAtividades = new ControlTelaAtividades(this);

@@ -3,10 +3,11 @@ package br.edu.ifg.tads.mtp.eventif.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 import br.edu.ifg.tads.mtp.eventif.view.TelaADDEvento;
 
 public class ControlTelaADDEvento {
-
+	EventoDao eventoDao= new EventoDao();
  TelaADDEvento telaADDEvento = new TelaADDEvento();
  ControlTelaLogin controlTelaLogin;
  public ControlTelaADDEvento(ControlTelaLogin controlTelaLogin){
@@ -29,6 +30,7 @@ public class ControlTelaADDEvento {
 				controlTelaLogin.evento.getEndereco_eve().getCidade().setNome(telaADDEvento.getTxtCidade().getText());
 				controlTelaLogin.evento.getEndereco_eve().getCidade().getEstado().setUf(telaADDEvento.getTxtUF().getText());
 				controlTelaLogin.evento.getEndereco_eve().setBairro(telaADDEvento.getTxtBairro().getText());
+				eventoDao.inserir_evento(controlTelaLogin.evento);
 			}
 		});
 		telaADDEvento.getBtnCancelar().addActionListener(new ActionListener() {

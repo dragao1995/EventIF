@@ -24,7 +24,7 @@ public class ControlTelaADDAtividades {
 		telaADDAtividades.getBtnConfirmar().addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						controlTelaLogin.atividade.setDescricao(telaADDAtividades.getTxtDescricao().getText());
+						controlTelaLogin.evento.atividade.setDescricao(telaADDAtividades.getTxtDescricao().getText());
 						controlTelaLogin.atividade.setCarga_Horaria(telaADDAtividades.getTxtCargahor().getText());
 						controlTelaLogin.atividade.setHora_Inicio(telaADDAtividades.getTxtHorainicial().getText());
 						controlTelaLogin.atividade.setHora_Fim(telaADDAtividades.getTxtHorafinal().getText());
