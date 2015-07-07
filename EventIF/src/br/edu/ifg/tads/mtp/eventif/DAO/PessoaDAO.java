@@ -17,6 +17,7 @@ import javax.sql.ConnectionEvent;
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
+import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
 import br.edu.ifg.tads.mtp.eventif.model.Contato;;
@@ -56,7 +57,7 @@ public class PessoaDAO {
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, pessoa.getEndereco_pes().getCidade().getNome());
-			stmt.setInt(2,  idEstado);
+			stmt.setInt(2,idEstado);
 
 			// executa
 			stmt.executeUpdate();
@@ -137,17 +138,17 @@ public class PessoaDAO {
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement("select * from Pessoa where idPessoa = "
+			stmt = con.prepareStatement("select * from PESSOA where idPessoa = "
 					+ p.getIdPessoa());
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				
 				pessoa.setIdPessoa(rs.getLong("idPessoa"));
 				pessoa.setNome(rs.getString("nome"));
-				pessoa.setCpf(rs.getString("idCpf"));
+				pessoa.setCpf(rs.getString("cpf"));
 				pessoa.setRg(rs.getString("rg"));
 				pessoa.setSenha(rs.getString("senha"));
-				c.setIdContato(rs.getLong("idContato"));//verificar como faz
+				c.setIdContato(rs.getLong("idContato"));
 				ep.setIdEndereco_Pes(rs.getLong("idEndereoc_pes"));
 				
 			}
@@ -159,6 +160,64 @@ public class PessoaDAO {
 		}
 
 		return pessoa;
+	}
+	
+	public Vector<Vector<String>> buscar(){
+		
+		try {
+			Vector<Vector<String>> Pessoa = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("select * from PESSOA order by idPessoa");
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+				
+				pessoa.setIdPessoa(rs.getLong("idPessoa"));
+				pessoa.setNome(rs.getString("nome"));
+				pessoa.setCpf(rs.getString("cpf"));
+				pessoa.setRg(rs.getString("rg"));
+				pessoa.setSenha(rs.getString("senha"));
+				c.setIdContato(rs.getLong("idContato"));
+				ep.setIdEndereco_Pes(rs.getLong("idEndereoc_pes"));
+				
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + pessoa.getIdPessoa());
+				colunas.add(pessoa.getNome());
+				colunas.add(pessoa.getCpf());
+				colunas.add(pessoa.getRg());
+				colunas.add(pessoa.getSenha());
+				colunas.add(""+c.getIdContato());
+				colunas.add(""+ep.getIdEndereco_Pes());
+				colunas.add("alterar");
+				colunas.add("excluir");
+				Pessoa.add(colunas);
+				
+			}
+			rs.close();
+			stmt.close();
+			return Pessoa;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+	
+	public void altera(Pessoa pessoa) {
+		String sql = "update PESSOA set nome=?,cpf=?, rg=?, senha=?"
+				+ "where id=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, pessoa.getNome());
+			stmt.setString(2,pessoa.getCpf());
+			stmt.setString(3,pessoa.getCpf());
+			stmt.setString(4,pessoa.getRg());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
 	}
 	
 	// toda essa parte a baixo no modelo fazer alteração para verificação

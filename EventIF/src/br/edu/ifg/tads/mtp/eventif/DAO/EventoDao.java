@@ -232,23 +232,27 @@ public class EventoDao {
 		try {
 			Vector<Vector<String>> Evento = new Vector<Vector<String>>();
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
-					.prepareStatement("select * from Evento order by id");
+					.prepareStatement("select * from EVENTO order by idEvento");
 			ResultSet rs = stmt.executeQuery();
 			
 			while (rs.next()) {
 				
 				evento.setIdEvento(rs.getLong("idEvento"));
 				evento.setNome(rs.getString("nome"));
-				evento.setDescricao(rs.getString("email"));
-				evento.setOrganizador(rs.getString("endereco"));
-				evento.setData_Inicio(rs.getString("data_Inicio"));
-				evento.setData_Fim(rs.getString("data_Fim"));
-				ee.setIdEndereco_Eve(rs.getLong("idEvento_eve"));
+				evento.setDescricao(rs.getString("descricao"));
+				evento.setOrganizador(rs.getString("organizador"));
+				evento.setData_Inicio(rs.getString("data_inicio"));
+				evento.setData_Fim(rs.getString("data_fim"));
+				ee.setIdEndereco_Eve(rs.getLong("idEndereco_eve"));
 				contato.setIdContato(rs.getLong("idContato"));
 				
 				Vector<String> colunas = new Vector<String>();
 				colunas.add("" + evento.getIdEvento());
 				colunas.add(evento.getNome());
+				colunas.add(evento.getDescricao());
+				colunas.add(evento.getOrganizador());
+				colunas.add(evento.getData_Inicio());
+				colunas.add(evento.getData_Fim());
 				colunas.add("" + ee.getIdEndereco_Eve());
 				colunas.add("" + contato.getIdContato());
 				colunas.add("alterar");
@@ -264,7 +268,144 @@ public class EventoDao {
 		}
 
 	}
+	public Vector<Vector<String>> buscaAtividade(){
+		try {
+			Vector<Vector<String>> Atividade = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("select * from ATIVIDADE order by idAtividade");
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+				atividade.setIdAtividade(rs.getLong("idAtividade"));
+				atividade.setNome(rs.getString("nome"));
+				atividade.setDescricao(rs.getString("descricao"));
+				atividade.setMinistrante(rs.getString("ministrante"));
+				atividade.setData(rs.getString("datas"));
+				atividade.setHora_Inicio(rs.getString("hora_inicio"));
+				atividade.setHora_Fim(rs.getString("hora_fim"));
+				atividade.setCarga_Horaria(rs.getString("carga_horaria"));
+				atividade.setNumero_Vagas(rs.getInt("numero_vagas"));
+				evento.setIdEvento(rs.getLong("idEvento"));
+				tipo.setIdTipo(rs.getLong("idTipo"));
+				
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + atividade.getIdAtividade());
+				colunas.add(atividade.getNome());
+				colunas.add(atividade.getDescricao());
+				colunas.add(atividade.getMinistrante());
+				colunas.add(atividade.getData());
+				colunas.add(atividade.getHora_Inicio());
+				colunas.add(atividade.getHora_Fim());
+				colunas.add(atividade.getCarga_Horaria());
+				colunas.add(""+atividade.getNumero_Vagas());
+				colunas.add(""+evento.getIdEvento());
+				colunas.add(""+tipo.getidTipo());
+				colunas.add("alterar");
+				colunas.add("excluir");
+				
+				Atividade.add(colunas);
+			}
+			rs.close();
+			stmt.close();
+			return Atividade;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+				
+	}	
 	
-}
-
+	public void altera_Evento(Evento evento) {
+		String sql = "update EVENTO set nome=?,organizador=?, descricao=?, data_inicio=?, data_fim=?"
+				+ "where id=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, evento.getNome());
+			stmt.setString(2, evento.getOrganizador());
+			stmt.setString(3, evento.getDescricao());
+			stmt.setString(4, evento.getData_Inicio());
+			stmt.setString(5, evento.getData_Fim());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
+	public void altera_Tipo(Tipo tipo) {
+		String sql = "update TIPO set tipo_atividade=?"
+				+ "where id=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, tipo.getTipo_Atividade());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+		
+	}
+	public void altera_Atividade(Atividade atividade) {
+		String sql = "update ATIVIDADE set nome=?,descricao=?, ministrante=?,data=? , hora_inicio=?, hora_fim=?,"
+				+ "carga_horaria=? numero_vagas=? where id=?";
+		
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, atividade.getNome());
+			stmt.setString(2, atividade.getDescricao());
+			stmt.setString(3, atividade.getMinistrante());
+			stmt.setString(4, atividade.getData());
+			stmt.setString(5, atividade.getHora_Inicio());
+			stmt.setString(6, atividade.getHora_Fim());
+			stmt.setString(7, atividade.getCarga_Horaria());
+			stmt.setInt(8, atividade.getNumero_Vagas());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void remove_evento(Evento evento) {
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("delete from EVENTO where idEvento=?");
+			stmt.setLong(1, evento.getIdEvento());
+			stmt.execute();
+			stmt.close();
+		}catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	public void remove_atividade(Atividade atividade) {
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("delete from ATIVIDADE where idAtividade=?");
+			stmt.setLong(1, atividade.getIdAtividade());
+			stmt.execute();
+			stmt.close();
+		}catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	public void remove_tipo(Tipo tipo) {
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement("delete from TIPO where idTipo=?");
+			stmt.setLong(1, tipo.getidTipo());
+			stmt.execute();
+			stmt.close();
+		}catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+}	
+	
 
