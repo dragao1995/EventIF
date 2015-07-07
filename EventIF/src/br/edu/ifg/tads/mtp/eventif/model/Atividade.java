@@ -3,6 +3,8 @@ package br.edu.ifg.tads.mtp.eventif.model;
 public class Atividade {
 	
 	private long idAtividade;
+	private String nome;
+	private String ministrante;
 	private String descricao;
 	private String hora_Inicio;
 	private String hora_Fim;//Calendar ver como funciona com hora conversão util
@@ -62,6 +64,18 @@ public class Atividade {
 	}
 	public void setIdAtividade(long idAtividade) {
 		this.idAtividade = idAtividade;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getMinistrante() {
+		return ministrante;
+	}
+	public void setMinistrante(String ministrante) {
+		this.ministrante = ministrante;
 	}
 	
 }
