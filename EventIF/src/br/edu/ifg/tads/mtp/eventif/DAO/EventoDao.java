@@ -8,8 +8,10 @@ import java.util.Vector;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
+import br.edu.ifg.tads.mtp.eventif.model.Cidade;
 import br.edu.ifg.tads.mtp.eventif.model.Contato;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
+import br.edu.ifg.tads.mtp.eventif.model.Estado;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Tipo;
 
@@ -312,11 +314,80 @@ public class EventoDao {
 			throw new RuntimeException(e);
 		}
 				
-	}	
+	}
+	
+	public void altera_contado(Contato cont){
+		String sql = "update CONTATO set telefone=?,email=?"
+				+ "where idContato=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, cont.getTelefone());
+			stmt.setString(2, cont.getEmail());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	public void altera_estado(Estado est){
+		String sql = "update ESTADO set nome=?,uf=?"
+				+ "where idEstado=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, est.getNome());
+			stmt.setString(2, est.getUf());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
+	public void altera_cidade(Cidade cid){
+		String sql = "update CIDADE set nome=?"
+				+ "where idCidade=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, cid.getNome());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+			
+	}
+	
+	public void altera_endereco(Endereco_Evento ev){
+		String sql = "update ENDERECO_PESSOA set logradouro=?,cep=?, bairro=?, numero=?,complemento=?"
+				+ "where idEndereco_pes=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, ev.getLogradouro());
+			stmt.setString(2,ev.getCep());
+			stmt.setString(3, ev.getBairro());
+			stmt.setInt(4, ev.getNumero());
+			stmt.setString(5, ev.getComplemento());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
 	
 	public void altera_Evento(Evento evento) {
 		String sql = "update EVENTO set nome=?,organizador=?, descricao=?, data_inicio=?, data_fim=?"
-				+ "where id=?";
+				+ "where idEvento=?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
@@ -335,7 +406,7 @@ public class EventoDao {
 	}
 	public void altera_Tipo(Tipo tipo) {
 		String sql = "update TIPO set tipo_atividade=?"
-				+ "where id=?";
+				+ "where idTipo=?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
@@ -350,7 +421,7 @@ public class EventoDao {
 	}
 	public void altera_Atividade(Atividade atividade) {
 		String sql = "update ATIVIDADE set nome=?,descricao=?, ministrante=?,data=? , hora_inicio=?, hora_fim=?,"
-				+ "carga_horaria=? numero_vagas=? where id=?";
+				+ "carga_horaria=? numero_vagas=? where idAtividade=?";
 		
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
@@ -407,5 +478,3 @@ public class EventoDao {
 	}
 	
 }	
-	
-

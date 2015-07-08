@@ -15,8 +15,10 @@ import java.util.Vector;
 import javax.sql.ConnectionEvent;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
+import br.edu.ifg.tads.mtp.eventif.model.Cidade;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
+import br.edu.ifg.tads.mtp.eventif.model.Estado;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
@@ -201,17 +203,85 @@ public class PessoaDAO {
 		}
 
 	}
+	public void altera_contado(Contato cont){
+		String sql = "update CONTATO set telefone=?,email=?"
+				+ "where idContato=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, cont.getTelefone());
+			stmt.setString(2, cont.getEmail());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+		
+	}
 	
+	public void altera_estado(Estado est){
+		String sql = "update ESTADO set nome=?,uf=?"
+				+ "where idEstado=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, est.getNome());
+			stmt.setString(2, est.getUf());
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
+	public void altera_cidade(Cidade cid){
+		String sql = "update CIDADE set nome=?"
+				+ "where idCidade=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, cid.getNome());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+			
+	}
+	
+	public void altera_endereco(Endereco_Pessoa ep){
+		String sql = "update ENDERECO_PESSOA set logradouro=?,cep=?, bairro=?, numero=?,complemento=?"
+				+ "where idEndereco_pes=?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, ep.getLogradouro());
+			stmt.setString(2,ep.getCep());
+			stmt.setString(3, ep.getBairro());
+			stmt.setInt(4, ep.getNumero());
+			stmt.setString(5, ep.getComplemento());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println(e);
+			throw new RuntimeException(e);
+		}
+	}
+		
 	public void altera(Pessoa pessoa) {
 		String sql = "update PESSOA set nome=?,cpf=?, rg=?, senha=?"
-				+ "where id=?";
+				+ "where idPessoa=?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
 			stmt.setString(1, pessoa.getNome());
 			stmt.setString(2,pessoa.getCpf());
-			stmt.setString(3,pessoa.getCpf());
-			stmt.setString(4,pessoa.getRg());
+			stmt.setString(3,pessoa.getRg());
+			stmt.setString(4,pessoa.getSenha());
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (SQLException e) {
