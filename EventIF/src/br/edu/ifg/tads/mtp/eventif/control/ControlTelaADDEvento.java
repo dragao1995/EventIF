@@ -40,11 +40,6 @@ public class ControlTelaADDEvento {
 			}
 		});
 	}
-	public TelaADDEvento getTelaADDEvento() {
-		return telaADDEvento;
-	}
-	public void setTelaADDEvento(TelaADDEvento telaADDEvento) {
-		telaADDEvento = telaADDEvento;
-	}
+	
 	
 }

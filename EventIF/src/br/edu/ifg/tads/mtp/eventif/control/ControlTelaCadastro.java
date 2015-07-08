@@ -1,19 +1,29 @@
 package br.edu.ifg.tads.mtp.eventif.control;
 
 
+import java.awt.Font;
+import javax.swing.SwingConstants;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
+import br.edu.ifg.tads.mtp.eventif.util.Cracha;
+import br.edu.ifg.tads.mtp.eventif.util.CriarQRCode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaCadastro;
 
 public class ControlTelaCadastro {
-	 TelaCadastro telaCadastro = new TelaCadastro();
-	 ControlTelaLogin controlTelaLogin;
-	 PessoaDAO pessoaDAO = new PessoaDAO();
-	 public ControlTelaCadastro(ControlTelaLogin controlTelaLogin){
+	Cracha cracha = new Cracha();
+		public TelaCadastro telaCadastro = new TelaCadastro();
+		ControlTelaLogin controlTelaLogin;
+		public PessoaDAO pessoaDAO = new PessoaDAO();
+		public JLabel llblNome;
+		public CriarQRCode ccriarQRCode = new CriarQRCode();
+		
+	public ControlTelaCadastro(ControlTelaLogin controlTelaLogin){
 	 	this.controlTelaLogin = controlTelaLogin;
 	 }
 
@@ -24,6 +34,18 @@ public void EventosTelaCadastro(){
 			
 			controlTelaLogin.pessoa.setCpf(telaCadastro.getTxtCpf().getText().replace(".", "").replace("-", ""));
 			if (controlTelaLogin.pessoa.isCPF()){
+				try {cracha.SalvarNomeaq(telaCadastro.getTxtNome().getText());} catch (IOException e1) {e1.printStackTrace();}
+				//cracha
+				llblNome= new JLabel(telaCadastro.getTxtNome().getText());
+				controlTelaLogin.telaGerarCracha.setLlblNome(llblNome);
+				llblNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 19));
+				llblNome.setBounds(32, 180, 383, 52);
+				llblNome.setHorizontalAlignment(SwingConstants.CENTER);  
+				ccriarQRCode.setCpfQR(telaCadastro.getTxtCpf().getText().replace(".", "").replace("-", ""));
+				ccriarQRCode.criarQRcode();
+				try {
+					controlTelaLogin.telaGerarCracha.cracha();} catch (IOException e) {}
+				//fim cracha
 				controlTelaLogin.pessoa.setNome(telaCadastro.getTxtNome().getText());
 				controlTelaLogin.pessoa.setRg(telaCadastro.getTxtRg().getText());
 				controlTelaLogin.pessoa.getContato().setTelefone(telaCadastro.getTxtTelefone().getText());
@@ -35,8 +57,12 @@ public void EventosTelaCadastro(){
 				controlTelaLogin.pessoa.getEndereco_pes().setBairro(telaCadastro.getTxtBairro().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().setNome(telaCadastro.getTxtCidade().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().getEstado().setUf(telaCadastro.getTxtUf().getText());
-				pessoaDAO.inserir(controlTelaLogin.pessoa);
+				//pessoaDAO.inserir(controlTelaLogin.pessoa);
 				System.out.println("cpf ok fio");
+				
+				
+				
+				
 			}else {
 				JOptionPane.showMessageDialog(null, "CPF Invalido!!");
 			}
@@ -51,4 +77,6 @@ public void EventosTelaCadastro(){
 		}
 	});
 	
-}}
+}
+
+}

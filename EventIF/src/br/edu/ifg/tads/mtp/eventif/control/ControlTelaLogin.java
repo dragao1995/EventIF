@@ -11,6 +11,7 @@ import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Estado;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
+import br.edu.ifg.tads.mtp.eventif.view.TelaGerarCracha;
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 public class ControlTelaLogin {
@@ -18,12 +19,12 @@ public class ControlTelaLogin {
 	TelaLogin TelaLogin = new TelaLogin();
 	 Pessoa pessoa = new Pessoa();
 	 Atividade atividade= new Atividade();
-	 
-	ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
-	ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
-	ControlTelaAtividades controlTelaAtividades = new ControlTelaAtividades(this);
-	ControlTelaADDEvento controlTelaADDEvento = new ControlTelaADDEvento(this);
-	ControlTelaADDAtividades controlTelaADDAtividades = new ControlTelaADDAtividades(this);
+	public TelaGerarCracha telaGerarCracha= new TelaGerarCracha();
+	public ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
+	public ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
+	public ControlTelaAtividades controlTelaAtividades = new ControlTelaAtividades(this);
+	public ControlTelaADDEvento controlTelaADDEvento = new ControlTelaADDEvento(this);
+	public ControlTelaADDAtividades controlTelaADDAtividades = new ControlTelaADDAtividades(this);
 	
 	
 

@@ -14,7 +14,7 @@ import javax.swing.text.MaskFormatter;
 public class TelaCadastro {
  
 	private JFrame frmCadastroEventif;
-	private JTextField txtNome;
+	private JTextField txtNome = new JTextField("");
 	private JTextField txtRg;
 	private JTextField txtCpf;
 	private JTextField txtEmail;
@@ -56,7 +56,7 @@ public class TelaCadastro {
 		lblNome.setBounds(94, 220, 68, 23);
 		frmCadastroEventif.getContentPane().add(lblNome);
 		
-		txtNome = new JTextField();
+		
 		txtNome.setBackground(new Color(255, 255, 255));
 		txtNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNome.setBounds(160, 224, 485, 23);

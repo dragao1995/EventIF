@@ -22,6 +22,7 @@ public class main {
 		ControlTelaLogin controlTelaLogin = new ControlTelaLogin();
 		controlTelaLogin.todosEventos();
 		controlTelaLogin.EventosTelaLogin();
+		
 					
 	}
 	
