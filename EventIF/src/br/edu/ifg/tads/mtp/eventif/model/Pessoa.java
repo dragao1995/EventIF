@@ -57,6 +57,12 @@ public class Pessoa implements ValidarCPF {
 		this.contato = contato;
 	}
 	
+	
+	public String validar(String cpf, String senha) {
+		
+		return null;
+	}
+	
 	public boolean isCPF() {
 		
 		// considera-se erro CPF's formados por uma sequencia de numeros iguais
