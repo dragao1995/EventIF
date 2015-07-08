@@ -290,30 +290,35 @@ public class PessoaDAO {
 		}
 	}
 	
-	// toda essa parte a baixo no modelo fazer alteração para verificação
-	public Pessoa verificacao(Pessoa p){
-		
-		System.out.println(p.getIdPessoa());
+	public Pessoa validar(Pessoa p){
 		PreparedStatement stmt;
-		Pessoa pessoa = new Pessoa();
 		
 		try {
 			Connection con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement("SELECT * FROM pessoa");
+			stmt = con.prepareStatement("select * from PESSOA where idPessoa = "
+					+ p.getIdPessoa());
 			ResultSet rs = stmt.executeQuery();
-			if(rs.next()){
+			if (rs.next()) {
+				
 				pessoa.setCpf(rs.getString("cpf"));
 				pessoa.setSenha(rs.getString("senha"));
-				System.out.println("Inserido");
 			}
 			rs.close();
 			stmt.close();
 			con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
 		}
-		return pessoa;
 
+		return pessoa;
+	}
+	public String validar_cpf(String cpf) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String validar_senha(String senha) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
