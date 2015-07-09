@@ -48,7 +48,7 @@ public void EventosTelaCadastro(){
 				//fim cracha
 				controlTelaLogin.pessoa.setNome(telaCadastro.getTxtNome().getText());
 				controlTelaLogin.pessoa.setRg(telaCadastro.getTxtRg().getText());
-				controlTelaLogin.pessoa.getContato().setTelefone(telaCadastro.getTxtTelefone().getText());
+				controlTelaLogin.pessoa.getContato().setTelefone(Integer.parseInt(telaCadastro.getTxtTelefone().getText()));
 				controlTelaLogin.pessoa.getContato().setEmail(telaCadastro.getTxtEmail().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().setCep(telaCadastro.getTxtCep().getText());
 				int numeroo =Integer.parseInt(telaCadastro.getTxtNumero().getText());
@@ -57,7 +57,7 @@ public void EventosTelaCadastro(){
 				controlTelaLogin.pessoa.getEndereco_pes().setBairro(telaCadastro.getTxtBairro().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().setNome(telaCadastro.getTxtCidade().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().getEstado().setUf(telaCadastro.getTxtUf().getText());
-				//pessoaDAO.inserir(controlTelaLogin.pessoa);
+				pessoaDAO.inserir(controlTelaLogin.pessoa);
 				System.out.println("cpf ok fio");
 				
 				

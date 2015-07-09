@@ -95,7 +95,7 @@ public class PessoaDAO {
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
-			stmt.setString(1, pessoa.getContato().getTelefone());
+			stmt.setInt(1, pessoa.getContato().getTelefone());
 			stmt.setString(2, pessoa.getContato().getEmail());
 
 			// executa
@@ -123,7 +123,7 @@ public class PessoaDAO {
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw new RuntimeException(
-					"falha ao tentar executar um comando no BD. Verifique sua conexão");
+					"falha ao tentar executar um comando no BD. Verifique sua conexão " + e.getMessage());
 		} finally {
 			try {
 				con.close();
@@ -209,7 +209,7 @@ public class PessoaDAO {
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
-			stmt.setString(1, cont.getTelefone());
+			stmt.setInt(1, cont.getTelefone());
 			stmt.setString(2, cont.getEmail());
 			stmt.executeUpdate();
 			stmt.close();
@@ -290,7 +290,8 @@ public class PessoaDAO {
 		}
 	}
 	
-	public Pessoa validar(Pessoa p){
+	public Pessoa validar(Pessoa p,String nome, String senha){
+	
 		PreparedStatement stmt;
 		
 		try {

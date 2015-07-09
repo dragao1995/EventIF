@@ -88,7 +88,7 @@ public class EventoDao {
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
-			stmt.setString(1, evento.getContato().getTelefone());
+			stmt.setInt(1, evento.getContato().getTelefone());
 			stmt.setString(2, evento.getContato().getEmail());
 
 			// executa
@@ -322,7 +322,7 @@ public class EventoDao {
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
-			stmt.setString(1, cont.getTelefone());
+			stmt.setInt(1, cont.getTelefone());
 			stmt.setString(2, cont.getEmail());
 			stmt.executeUpdate();
 			stmt.close();

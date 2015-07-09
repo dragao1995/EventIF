@@ -3,7 +3,7 @@ package br.edu.ifg.tads.mtp.eventif.model;
 public class Contato {
 	 
 	private long idContato;
-	private String telefone;
+	private int telefone;
 	private String email;
 	
 	public long getIdContato() {
@@ -12,10 +12,11 @@ public class Contato {
 	public void setIdContato(long idContato) {
 		this.idContato = idContato;
 	}
-	public String getTelefone() {
+
+	public int getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
 	public String getEmail() {

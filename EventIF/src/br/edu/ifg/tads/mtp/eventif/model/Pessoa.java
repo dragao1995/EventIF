@@ -6,7 +6,7 @@ import br.edu.ifg.tads.mtp.eventif.util.ValidarCPF;
 
 public class Pessoa implements ValidarCPF {
 	
-	private long idPessoa;
+	private long idPessoa;//criar um tipo pessoa igual tipo atividade e gerar 3 resultados so mas facil ou não ?
 	private String nome;
 	private String cpf;
 	private String rg;
@@ -57,11 +57,6 @@ public class Pessoa implements ValidarCPF {
 		this.contato = contato;
 	}
 	
-	
-	public String validar(String cpf, String senha) {
-		
-		return null;
-	}
 	
 	public boolean isCPF() {
 		

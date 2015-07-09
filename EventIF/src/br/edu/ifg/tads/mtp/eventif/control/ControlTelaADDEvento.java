@@ -21,7 +21,7 @@ public class ControlTelaADDEvento {
 				controlTelaLogin.evento.setData_Fim(telaADDEvento.getTxtDataf().getText());
 				controlTelaLogin.evento.setOrganizador(telaADDEvento.getTextOrganizador().getText());
 				controlTelaLogin.evento.setDescricao(telaADDEvento.getTxtDescricao().getText());
-				controlTelaLogin.evento.getContato().setTelefone(telaADDEvento.getTxtTelefone().getText());
+				controlTelaLogin.evento.getContato().setTelefone(Integer.parseInt(telaADDEvento.getTxtTelefone().getText()));
 				controlTelaLogin.evento.getContato().setEmail(telaADDEvento.getTxtEmail().getText());
 				controlTelaLogin.evento.getEndereco_eve().setLogradouro(telaADDEvento.getTxtEndereco().getText());
 				controlTelaLogin.evento.getEndereco_eve().setCep(telaADDEvento.getTxtCep().getText());
