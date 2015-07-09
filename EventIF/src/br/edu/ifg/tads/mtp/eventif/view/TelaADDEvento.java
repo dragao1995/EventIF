@@ -93,13 +93,13 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
-		txtDatainicial = new JFormattedTextField(Mascara("##/##/####")); 
+		txtDatainicial = new JFormattedTextField(Mascara("####/##/##")); 
 		txtDatainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDatainicial.setBackground(Color.WHITE);
 		txtDatainicial.setBounds(177, 101, 200, 26);
 		frmCadastrarEvento.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
-		txtDataf = new JFormattedTextField(Mascara("##/##/####")); 
+		txtDataf = new JFormattedTextField(Mascara("####/##/##")); 
 		txtDataf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDataf.setBackground(Color.WHITE);
 		txtDataf.setBounds(475, 101, 240, 26);

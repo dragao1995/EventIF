@@ -2,6 +2,9 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 import br.edu.ifg.tads.mtp.eventif.view.TelaADDEvento;
@@ -17,8 +20,19 @@ public class ControlTelaADDEvento {
 		telaADDEvento.getBtnConfirmar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlTelaLogin.evento.setNome(telaADDEvento.getTxtNomeev().getText());
-				controlTelaLogin.evento.setData_Inicio(telaADDEvento.getTxtDatainicial().getText());
-				controlTelaLogin.evento.setData_Fim(telaADDEvento.getTxtDataf().getText());
+				SimpleDateFormat formater = new SimpleDateFormat("yyyy/mm/dd");
+				Date di = null, df = null;
+				try {
+					di = formater.parse(telaADDEvento.getTxtDatainicial().getText());
+					df = formater.parse(telaADDEvento.getTxtDataf().getText());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				controlTelaLogin.evento.setData_Inicio(di);
+				controlTelaLogin.evento.setData_Fim(df);
+				
 				controlTelaLogin.evento.setOrganizador(telaADDEvento.getTextOrganizador().getText());
 				controlTelaLogin.evento.setDescricao(telaADDEvento.getTxtDescricao().getText());
 				controlTelaLogin.evento.getContato().setTelefone(Integer.parseInt(telaADDEvento.getTxtTelefone().getText()));

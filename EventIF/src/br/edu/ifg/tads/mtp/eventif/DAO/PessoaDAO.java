@@ -290,19 +290,21 @@ public class PessoaDAO {
 		}
 	}
 	
-	public Pessoa validar(Pessoa p,String nome, String senha){
-	
-		PreparedStatement stmt;
-		
+	public String validar(String cpf,String senha) {
+		Connection con = new ConnectionFactory().getConnection();
+		String sql = "SELECT*FROM PESSOA WHERE cpf = " + cpf;
 		try {
-			Connection con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement("select * from PESSOA where idPessoa = "
-					+ p.getIdPessoa());
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
-				
-				pessoa.setCpf(rs.getString("cpf"));
-				pessoa.setSenha(rs.getString("senha"));
+			if(rs.next()){
+				String lc = rs.getString("cpf");
+				String ls = rs.getString("senha");
+				if(senha.equals(ls)){
+					System.out.println("Senha correta");
+				}else{
+					System.out.println("Senha incorreta ou cpf");
+				}
 			}
 			rs.close();
 			stmt.close();
@@ -310,16 +312,7 @@ public class PessoaDAO {
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
-
-		return pessoa;
-	}
-	public String validar_cpf(String cpf) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public String validar_senha(String senha) {
-		// TODO Auto-generated method stub
-		return null;
+		return senha;
 	}
 
 }

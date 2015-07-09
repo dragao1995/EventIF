@@ -1,6 +1,7 @@
 package br.edu.ifg.tads.mtp.eventif.DAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -106,8 +107,8 @@ public class EventoDao {
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, evento.getNome());
-			stmt.setString(2, evento.getData_Inicio());
-			stmt.setString(3, evento.getData_Fim());
+			stmt.setDate(2, (Date) evento.getData_Inicio());
+			stmt.setDate(3, (Date) evento.getData_Fim());
 			stmt.setString(4, evento.getOrganizador());
 			stmt.setInt(5, idEndereco_eve);
 			stmt.setInt(6, idContato);
@@ -154,7 +155,7 @@ public class EventoDao {
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw new RuntimeException(
-					"falha ao tentar executar um comando no BD. Verifique sua conexão");
+					"falha ao tentar executar um comando no BD. Verifique sua conexão"+e.getMessage());
 		} finally {
 			try {
 				con.close();
@@ -181,8 +182,8 @@ public class EventoDao {
 				evento.setIdEvento(rs.getLong("idEvento"));
 				evento.setNome(rs.getString("nome"));
 				evento.setDescricao(rs.getString("Descricao"));
-				evento.setData_Inicio(rs.getString("Data_inicio"));
-				evento.setData_Fim(rs.getString("Data_Fim"));
+				evento.setData_Inicio(rs.getDate("Data_inicio"));
+				evento.setData_Fim(rs.getDate("Data_Fim"));
 				evento.setOrganizador(rs.getString("Organizador"));
 				contato.setIdContato(rs.getLong("idContato"));
 				ee.setIdEndereco_Eve(rs.getLong("idEndereco_eve"));
@@ -243,8 +244,8 @@ public class EventoDao {
 				evento.setNome(rs.getString("nome"));
 				evento.setDescricao(rs.getString("descricao"));
 				evento.setOrganizador(rs.getString("organizador"));
-				evento.setData_Inicio(rs.getString("data_inicio"));
-				evento.setData_Fim(rs.getString("data_fim"));
+				evento.setData_Inicio(rs.getDate("data_inicio"));
+				evento.setData_Fim(rs.getDate("data_fim"));
 				ee.setIdEndereco_Eve(rs.getLong("idEndereco_eve"));
 				contato.setIdContato(rs.getLong("idContato"));
 				
@@ -253,8 +254,8 @@ public class EventoDao {
 				colunas.add(evento.getNome());
 				colunas.add(evento.getDescricao());
 				colunas.add(evento.getOrganizador());
-				colunas.add(evento.getData_Inicio());
-				colunas.add(evento.getData_Fim());
+				colunas.add(""+evento.getData_Inicio());
+				colunas.add(""+evento.getData_Fim());
 				colunas.add("" + ee.getIdEndereco_Eve());
 				colunas.add("" + contato.getIdContato());
 				colunas.add("alterar");
@@ -394,8 +395,8 @@ public class EventoDao {
 			stmt.setString(1, evento.getNome());
 			stmt.setString(2, evento.getOrganizador());
 			stmt.setString(3, evento.getDescricao());
-			stmt.setString(4, evento.getData_Inicio());
-			stmt.setString(5, evento.getData_Fim());
+			stmt.setDate(4, (Date) evento.getData_Inicio());
+			stmt.setDate(5, (Date) evento.getData_Fim());
 			
 			stmt.executeUpdate();
 			stmt.close();

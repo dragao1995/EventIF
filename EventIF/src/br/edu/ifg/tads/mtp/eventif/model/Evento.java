@@ -1,11 +1,13 @@
 package br.edu.ifg.tads.mtp.eventif.model;
 
+import java.util.Date;
+
 public class Evento {
 	
 	private long idEvento;
 	private String nome;
-	private String data_Inicio;
-	private String data_Fim;
+	private Date data_Inicio;
+	private Date data_Fim;
 	private String organizador;//quem é esse loco ?
 	private String descricao;
 	private Contato contato = new Contato();
@@ -23,16 +25,17 @@ public class Evento {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getData_Inicio() {
+	
+	public Date getData_Inicio() {
 		return data_Inicio;
 	}
-	public void setData_Inicio(String data_Inicio) {
+	public void setData_Inicio(Date data_Inicio) {
 		this.data_Inicio = data_Inicio;
 	}
-	public String getData_Fim() {
+	public Date getData_Fim() {
 		return data_Fim;
 	}
-	public void setData_Fim(String data_Fim) {
+	public void setData_Fim(Date data_Fim) {
 		this.data_Fim = data_Fim;
 	}
 	public String getOrganizador() {
