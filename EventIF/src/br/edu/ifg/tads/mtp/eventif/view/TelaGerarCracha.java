@@ -3,6 +3,8 @@ package br.edu.ifg.tads.mtp.eventif.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -60,7 +62,18 @@ public class TelaGerarCracha {
 		lblQr.setBounds(115, 243, 194, 160);
 		frame.getContentPane().add(lblQr);
 		frame.getContentPane().add(llblNome);
+		frame.setDefaultCloseOperation(0);
+        frame.setResizable(false);
+        frame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {	getFrame().dispose();
+            	ControlTelaLogin ccontrolTelaLogin = new ControlTelaLogin();
+            	ccontrolTelaLogin.EventosTelaLogin();
+            }
+        });
 		frame.setVisible(true);
+		
 		Print();
 	
 	}
