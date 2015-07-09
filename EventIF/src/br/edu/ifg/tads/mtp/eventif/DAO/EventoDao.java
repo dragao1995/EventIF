@@ -107,8 +107,8 @@ public class EventoDao {
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, evento.getNome());
-			stmt.setDate(2, (Date) evento.getData_Inicio());
-			stmt.setDate(3, (Date) evento.getData_Fim());
+			stmt.setDate(2, new Date (evento.getData_Inicio().getTime()));
+			stmt.setDate(3, new Date (evento.getData_Fim().getTime()));
 			stmt.setString(4, evento.getOrganizador());
 			stmt.setInt(5, idEndereco_eve);
 			stmt.setInt(6, idContato);
@@ -121,7 +121,7 @@ public class EventoDao {
 			}
 			
 			sql = "insert into TIPO"
-					+"(tipo_avividade)"+" values(?)";
+					+"(tipo_atividade)"+" values(?)";
 			
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
@@ -135,7 +135,7 @@ public class EventoDao {
 			}
 			
 			sql = "insert into ATIVIDADE "
-					+ "(nome,descricao,ministrante,datas,hora_inicio,hora_fim,carga_horaria,numero_vagas,idEvento,idTpo)"
+					+ "(nome,descricao,ministrante,datas,hora_inicio,hora_fim,carga_horaria,numero_vagas,idEvento,idTipo)"
 					+"(values (?,?,?,?,?,?,?,?,?,?))";
 			
 			con = new ConnectionFactory().getConnection();
@@ -144,7 +144,7 @@ public class EventoDao {
 			stmt.setString(1, atividade.getNome());
 			stmt.setString(2, atividade.getMinistrante());
 			stmt.setString(3, atividade.getDescricao());
-			stmt.setString(4, atividade.getData());
+			stmt.setDate(4, new Date(atividade.getData().getTime()));
 			stmt.setString(5, atividade.getHora_Inicio());
 			stmt.setString(6, atividade.getHora_Fim());
 			stmt.setString(7,atividade.getCarga_Horaria());
@@ -155,7 +155,7 @@ public class EventoDao {
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw new RuntimeException(
-					"falha ao tentar executar um comando no BD. Verifique sua conexão"+e.getMessage());
+					"falha ao tentar executar um comando no BD. Verifique sua conexão "+e.getMessage());
 		} finally {
 			try {
 				con.close();
@@ -212,7 +212,7 @@ public class EventoDao {
 				atividade.setNome(rs.getString("nome"));
 				atividade.setDescricao(rs.getString("Descricao"));	
 				atividade.setMinistrante(rs.getString("Ministrante"));
-				atividade.setData(rs.getString("data"));
+				atividade.setData(rs.getDate("data"));
 				atividade.setHora_Inicio(rs.getString("hora_Inicio"));
 				atividade.setHora_Fim(rs.getString("hora_Fim"));
 				atividade.setCarga_Horaria(rs.getString("Carga_Horaria"));
@@ -283,7 +283,7 @@ public class EventoDao {
 				atividade.setNome(rs.getString("nome"));
 				atividade.setDescricao(rs.getString("descricao"));
 				atividade.setMinistrante(rs.getString("ministrante"));
-				atividade.setData(rs.getString("datas"));
+				atividade.setData(rs.getDate(("datas")));
 				atividade.setHora_Inicio(rs.getString("hora_inicio"));
 				atividade.setHora_Fim(rs.getString("hora_fim"));
 				atividade.setCarga_Horaria(rs.getString("carga_horaria"));
@@ -296,7 +296,7 @@ public class EventoDao {
 				colunas.add(atividade.getNome());
 				colunas.add(atividade.getDescricao());
 				colunas.add(atividade.getMinistrante());
-				colunas.add(atividade.getData());
+				colunas.add(""+atividade.getData());
 				colunas.add(atividade.getHora_Inicio());
 				colunas.add(atividade.getHora_Fim());
 				colunas.add(atividade.getCarga_Horaria());
@@ -395,8 +395,8 @@ public class EventoDao {
 			stmt.setString(1, evento.getNome());
 			stmt.setString(2, evento.getOrganizador());
 			stmt.setString(3, evento.getDescricao());
-			stmt.setDate(4, (Date) evento.getData_Inicio());
-			stmt.setDate(5, (Date) evento.getData_Fim());
+			stmt.setDate(4, new Date(evento.getData_Inicio().getTime()));
+			stmt.setDate(5, new Date (evento.getData_Fim().getTime()));
 			
 			stmt.executeUpdate();
 			stmt.close();
@@ -430,7 +430,7 @@ public class EventoDao {
 			stmt.setString(1, atividade.getNome());
 			stmt.setString(2, atividade.getDescricao());
 			stmt.setString(3, atividade.getMinistrante());
-			stmt.setString(4, atividade.getData());
+			stmt.setDate(4,new Date(atividade.getData().getTime()));
 			stmt.setString(5, atividade.getHora_Inicio());
 			stmt.setString(6, atividade.getHora_Fim());
 			stmt.setString(7, atividade.getCarga_Horaria());

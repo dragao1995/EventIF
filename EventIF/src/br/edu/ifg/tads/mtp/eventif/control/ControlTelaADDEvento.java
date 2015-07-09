@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 import br.edu.ifg.tads.mtp.eventif.view.TelaADDEvento;
@@ -23,8 +23,8 @@ public class ControlTelaADDEvento {
 				SimpleDateFormat formater = new SimpleDateFormat("yyyy/mm/dd");
 				Date di = null, df = null;
 				try {
-					di = formater.parse(telaADDEvento.getTxtDatainicial().getText());
-					df = formater.parse(telaADDEvento.getTxtDataf().getText());
+					di = new Date ((formater.parse(telaADDEvento.getTxtDatainicial().getText())).getTime());
+					df = new Date ((formater.parse(telaADDEvento.getTxtDataf().getText())).getTime());
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

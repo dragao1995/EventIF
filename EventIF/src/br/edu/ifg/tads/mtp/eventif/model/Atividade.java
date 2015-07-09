@@ -1,12 +1,14 @@
 package br.edu.ifg.tads.mtp.eventif.model;
 
+import java.util.Date;
+
 public class Atividade {
 	
 	private long idAtividade;
 	private String nome;
 	private String ministrante;
 	private String descricao;
-	private String data;
+	private Date data;
 	private String hora_Inicio;// olhar como ta no bd
 	private String hora_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
@@ -78,10 +80,10 @@ public class Atividade {
 	public void setMinistrante(String ministrante) {
 		this.ministrante = ministrante;
 	}
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	
