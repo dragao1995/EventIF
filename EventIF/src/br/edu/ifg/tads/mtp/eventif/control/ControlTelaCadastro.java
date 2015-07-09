@@ -32,6 +32,10 @@ public void EventosTelaCadastro(){
 	telaCadastro.getBtnConfirmar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
+			System.out.println("ssss"+telaCadastro.getTxtSenha().getText()+" == "+telaCadastro.getTxtCsenha().getText());
+			
+			if (telaCadastro.getTxtSenha().getText().equals(telaCadastro.getTxtCsenha().getText())) {
+				System.out.println(telaCadastro.getTxtSenha().getText()+" babacao "+telaCadastro.getTxtCsenha().getText());
 			controlTelaLogin.pessoa.setCpf(telaCadastro.getTxtCpf().getText().replace(".", "").replace("-", ""));
 			if (controlTelaLogin.pessoa.isCPF()){
 				try {cracha.SalvarNomeaq(telaCadastro.getTxtNome().getText());} catch (IOException e1) {e1.printStackTrace();}
@@ -57,16 +61,15 @@ public void EventosTelaCadastro(){
 				controlTelaLogin.pessoa.getEndereco_pes().setBairro(telaCadastro.getTxtBairro().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().setNome(telaCadastro.getTxtCidade().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().getEstado().setUf(telaCadastro.getTxtUf().getText());
+				controlTelaLogin.pessoa.setSenha(telaCadastro.getTxtSenha().getText());
 				pessoaDAO.inserir(controlTelaLogin.pessoa);
 				System.out.println("cpf ok fio");
-				
-				
 				
 				
 			}else {
 				JOptionPane.showMessageDialog(null, "CPF Invalido!!");
 			}
-		}
+		}}
 	});
 	telaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {

@@ -5,6 +5,8 @@ import java.awt.Color;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JPasswordField;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Toolkit;
@@ -27,6 +29,8 @@ public class TelaCadastro {
 	private JTextField txtUf;
 	private JButton btnConfirmar = new JButton("");    
 	private JButton btnCancelar = new JButton("");
+	private JTextField txtSenha;
+	private JTextField txtCsenha;
 
 	public TelaCadastro() {
 		initialize();
@@ -144,7 +148,7 @@ public class TelaCadastro {
 		txtNumero = new JTextField();
 		txtNumero.setBackground(new Color(255, 255, 255));
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		txtNumero.setBounds(550, 355, 95, 29);
+		txtNumero.setBounds(550, 356, 95, 29);
 		frmCadastroEventif.getContentPane().add(txtNumero);
 		txtNumero.setColumns(10);
 		
@@ -197,6 +201,27 @@ public class TelaCadastro {
 		btnCancelar.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		btnCancelar.setBounds(410, 488, 122, 48);
 		frmCadastroEventif.getContentPane().add(btnCancelar);
+		
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setFont(new Font("Tahoma", Font.ITALIC, 19));
+		lblSenha.setBounds(76, 428, 71, 23);
+		frmCadastroEventif.getContentPane().add(lblSenha);
+		
+		txtSenha = new JPasswordField();
+		txtSenha.setBounds(160, 425, 133, 26);
+		frmCadastroEventif.getContentPane().add(txtSenha);
+		txtSenha.setColumns(10);
+		
+		JLabel lblConfirmarSenha = new JLabel("Confirmar Senha:");
+		lblConfirmarSenha.setFont(new Font("Tahoma", Font.ITALIC, 19));
+		lblConfirmarSenha.setBounds(306, 427, 160, 24);
+		frmCadastroEventif.getContentPane().add(lblConfirmarSenha);
+		
+		txtCsenha = new JPasswordField();
+		txtCsenha.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		txtCsenha.setBounds(461, 425, 184, 26);
+		frmCadastroEventif.getContentPane().add(txtCsenha);
+		txtCsenha.setColumns(10);
 	}
 
 	public JFrame getFrame() {
@@ -209,6 +234,22 @@ public class TelaCadastro {
 		frmCadastroEventif.setTitle("EventIF");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaCadastro.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		frame.getContentPane().setFont(new Font("Tahoma", Font.ITALIC, 19));
+	}
+
+	public JTextField getTxtSenha() {
+		return txtSenha;
+	}
+
+	public void setTxtSenha(JTextField txtSenha) {
+		this.txtSenha = txtSenha;
+	}
+
+	public JTextField getTxtCsenha() {
+		return txtCsenha;
+	}
+
+	public void setTxtCsenha(JTextField txtCsenha) {
+		this.txtCsenha = txtCsenha;
 	}
 
 	public JFrame getFrmCadastroEventif() {
