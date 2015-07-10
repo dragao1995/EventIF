@@ -74,7 +74,7 @@ public void EventosTelaCadastro(){
 	telaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
-			controlTelaLogin.EventosTelaLogin();
+			controlTelaLogin.Login();
 			telaCadastro.getFrame().dispose();
 			
 		}

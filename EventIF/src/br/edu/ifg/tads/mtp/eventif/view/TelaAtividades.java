@@ -20,8 +20,9 @@ public class TelaAtividades {
 	private JButton btnExcluir = new JButton("Excluir");
 	private JButton btnVoltar = new JButton("Voltar");
 	private JButton btnAdicionar = new JButton("ADD");
-	private JButton btnInscrever = new JButton("Inscrever");
+	private JButton btnInscrever = new JButton("Se Inscrever");
 	private JButton btnLerQrcode = new JButton("Ler QRcode");
+	private final JButton btnAddMonitor = new JButton("ADD Monitor");
 
 	public TelaAtividades() {
 		initialize();
@@ -29,6 +30,7 @@ public class TelaAtividades {
   
 	private void initialize() {
 		frmEventos = new JFrame();
+		frmEventos.getContentPane().setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		frmEventos.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		frmEventos.setTitle("Atividades");
 		frmEventos.getContentPane().setBackground(new Color(102, 204, 102));
@@ -61,23 +63,23 @@ public class TelaAtividades {
 		scrollPane.setViewportView(tableAtividades);
 		
 		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnAdicionar.setBounds(656, 186, 89, 34);
+		btnAdicionar.setBounds(657, 173, 106, 34);
 		btnAdicionar.setVisible(false);
 		frmEventos.getContentPane().add(btnAdicionar);
 		
 		
 		btnEditar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnEditar.setBounds(656, 254, 89, 34);
+		btnEditar.setBounds(657, 218, 106, 34);
 		btnEditar.setVisible(false);
 		frmEventos.getContentPane().add(btnEditar);
 		
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		btnExcluir.setBounds(656, 322, 89, 34);
+		btnExcluir.setBounds(657, 263, 106, 34);
 		btnExcluir.setVisible(false);
 		frmEventos.getContentPane().add(btnExcluir);
 		
 		btnLerQrcode.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		btnLerQrcode.setBounds(657, 386, 106, 35);
+		btnLerQrcode.setBounds(657, 432, 106, 35);
 		btnLerQrcode.setVisible(false);
 		frmEventos.getContentPane().add(btnLerQrcode);
 		
@@ -92,13 +94,17 @@ public class TelaAtividades {
 		frmEventos.getContentPane().add(lblAtividades);
 		
 		btnInscrever.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		btnInscrever.setBounds(656, 120, 89, 34);
+		btnInscrever.setBounds(656, 120, 107, 34);
 		frmEventos.getContentPane().add(btnInscrever);
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(TelaAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		label.setBounds(657, -23, 125, 186);
 		frmEventos.getContentPane().add(label);
+		btnAddMonitor.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		btnAddMonitor.setBounds(657, 308, 106, 34);
+		
+		frmEventos.getContentPane().add(btnAddMonitor);
 		
 		
 	}
@@ -173,6 +179,10 @@ public class TelaAtividades {
 
 	public void setBtnLerQrcode(JButton btnLerQrcode) {
 		this.btnLerQrcode = btnLerQrcode;
+	}
+
+	public JButton getBtnAddMonitor() {
+		return btnAddMonitor;
 	}
 	
 }

@@ -6,7 +6,6 @@ import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
 
 public class ControlTelaEventos {
-	int cont = 1;
 	TelaEventos telaEventos = new TelaEventos();
 
 	ControlTelaLogin controlTelaLogin;
@@ -42,7 +41,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnLogout().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.EventosTelaLogin();
+				controlTelaLogin.Login();
 				telaEventos.getFrmEventos().dispose();
 			}
 		});
@@ -57,11 +56,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("sss");
-				if (cont % 2 == 1) {
 					LerQrcode.TelaWebcam();
-				}
-				cont++;
 			}
 		});
 	}

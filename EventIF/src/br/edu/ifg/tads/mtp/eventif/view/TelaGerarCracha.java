@@ -69,7 +69,7 @@ public class TelaGerarCracha {
             public void windowClosing(WindowEvent e)
             {	getFrame().dispose();
             	ControlTelaLogin ccontrolTelaLogin = new ControlTelaLogin();
-            	ccontrolTelaLogin.EventosTelaLogin();
+            	ccontrolTelaLogin.Login();
             }
         });
 		frame.setVisible(true);

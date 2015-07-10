@@ -21,7 +21,7 @@ public class main {
 		Pessoa pessoa = new Pessoa();
 		ControlTelaLogin controlTelaLogin = new ControlTelaLogin();
 		controlTelaLogin.todosEventos();
-		controlTelaLogin.EventosTelaLogin();
+		controlTelaLogin.Login();
 		
 					
 	}

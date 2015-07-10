@@ -19,13 +19,14 @@ public class TelaEventos {
 
 	private JFrame frmEventos;
 	private JTextField txtPesquisa;
+	private JButton btnPesquisarok = new JButton("");
 	private JTable table;
 	private JButton btnEditar = new JButton("Editar");
 	private JButton btnAdicionar = new JButton("ADD");
 	private JButton btnExcluir = new JButton("Excluir");
 	private JButton btnAtividades = new JButton("Atividades");
 	private JButton btnLogout = new JButton("logout");
-	private JButton btnPesquisarok = new JButton("");
+
 	private JButton btnLerQrcode = new JButton("Ler QRcode");
 
 	public TelaEventos() {
