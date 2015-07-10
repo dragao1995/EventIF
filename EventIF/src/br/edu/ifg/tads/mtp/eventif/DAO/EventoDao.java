@@ -24,6 +24,7 @@ public class EventoDao {
 	Contato contato = new Contato();
 	Endereco_Evento ee = new Endereco_Evento();
 	
+	int idEvento = 0;
 	public void inserir_evento(Evento evento){
 		
 		Connection con = null;
@@ -115,20 +116,39 @@ public class EventoDao {
 			
 			stmt.executeUpdate();
 			rs = stmt.getGeneratedKeys();
-			int idEvento = 0;
+			
 			if(rs.next()){
 				idEvento = rs.getInt("idEvento");
 			}
-			
-			sql = "insert into TIPO"
-					+"(tipo_atividade)"+" values(?)";
-			
+			stmt.executeUpdate();
+		} catch (Exception e) {
+			throw new RuntimeException(
+					"falha ao tentar executar um comando no BD. Verifique sua conexão "+e.getMessage());
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e) {
+				throw new RuntimeException(
+						"não foi possível fechar a conexão com o BD");
+			}
+		
+		}
+		
+	}
+	
+	public void inserir_Atividade(Atividade atividade){
+		
+		Connection con = null;
+		
+		try{
+			String sql = "insert into TIPO"
+						+"(tipo_atividade)"+" values(?)";
 			con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
+			PreparedStatement stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 			
 			stmt.setString(1, tipo.getTipo_Atividade());
 			stmt.executeUpdate();
-			rs = stmt.getGeneratedKeys();
+			ResultSet rs = stmt.getGeneratedKeys();
 			int idTipo = 0;
 			if(rs.next()){
 				idTipo = rs.getInt("idTipo");
@@ -153,21 +173,21 @@ public class EventoDao {
 			stmt.setInt(10, idTipo);
 			
 			stmt.executeUpdate();
+	} catch (Exception e) {
+		throw new RuntimeException(
+				"falha ao tentar executar um comando no BD. Verifique sua conexão "+e.getMessage());
+	} finally {
+		try {
+			con.close();
 		} catch (Exception e) {
 			throw new RuntimeException(
-					"falha ao tentar executar um comando no BD. Verifique sua conexão "+e.getMessage());
-		} finally {
-			try {
-				con.close();
-			} catch (Exception e) {
-				throw new RuntimeException(
-						"não foi possível fechar a conexão com o BD");
-			}
-		
+					"não foi possível fechar a conexão com o BD");
 		}
+	
+	}
 		
 	}
-	// terminar
+	
 	public Evento buscar_evento(Evento e){
 		PreparedStatement stmt;
 		

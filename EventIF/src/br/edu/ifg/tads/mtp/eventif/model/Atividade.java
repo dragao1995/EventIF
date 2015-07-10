@@ -13,6 +13,7 @@ public class Atividade {
 	private String hora_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
 	private int numero_Vagas;
+	private String tempo_total;
 	private Evento evento = new Evento();
 	private Tipo tipo = new Tipo();
 	
@@ -85,6 +86,12 @@ public class Atividade {
 	}
 	public void setData(Date data) {
 		this.data = data;
+	}
+	public String getTempo_total() {
+		return tempo_total;
+	}
+	public void setTempo_total(String tempo_total) {
+		this.tempo_total = tempo_total;
 	}
 	
 }
