@@ -13,7 +13,7 @@ public class Cracha {
 	ControlTelaLogin controlTelaLogin;
 	public String line;
 	public void SalvarNomeaq(String Nome) throws IOException {
-		FileWriter arq = new FileWriter("D:/eventIF/nome.txt");
+		FileWriter arq = new FileWriter("D:/eventIF/cracha/nome.txt");
 		PrintWriter gravarArq = new PrintWriter(arq);
 
 		gravarArq.printf(Nome);

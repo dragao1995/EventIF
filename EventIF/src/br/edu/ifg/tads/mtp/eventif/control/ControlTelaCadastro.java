@@ -6,6 +6,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -13,10 +14,12 @@ import javax.swing.JOptionPane;
 import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 import br.edu.ifg.tads.mtp.eventif.util.Cracha;
 import br.edu.ifg.tads.mtp.eventif.util.CriarQRCode;
+import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 import br.edu.ifg.tads.mtp.eventif.view.TelaCadastro;
 
 public class ControlTelaCadastro {
 	Cracha cracha = new Cracha();
+	Mascaras mascaras =new Mascaras();
 		public TelaCadastro telaCadastro = new TelaCadastro();
 		ControlTelaLogin controlTelaLogin;
 		public PessoaDAO pessoaDAO = new PessoaDAO();
@@ -32,10 +35,8 @@ public void EventosTelaCadastro(){
 	telaCadastro.getBtnConfirmar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
-			System.out.println("ssss"+telaCadastro.getTxtSenha().getText()+" == "+telaCadastro.getTxtCsenha().getText());
 			
 			if (telaCadastro.getTxtSenha().getText().equals(telaCadastro.getTxtCsenha().getText())) {
-				System.out.println(telaCadastro.getTxtSenha().getText()+" babacao "+telaCadastro.getTxtCsenha().getText());
 			controlTelaLogin.pessoa.setCpf(telaCadastro.getTxtCpf().getText().replace(".", "").replace("-", ""));
 			if (controlTelaLogin.pessoa.isCPF()){
 				try {cracha.SalvarNomeaq(telaCadastro.getTxtNome().getText());} catch (IOException e1) {e1.printStackTrace();}
@@ -61,9 +62,12 @@ public void EventosTelaCadastro(){
 				controlTelaLogin.pessoa.getEndereco_pes().setBairro(telaCadastro.getTxtBairro().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().setNome(telaCadastro.getTxtCidade().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().getCidade().getEstado().setUf(telaCadastro.getTxtUf().getText());
-				controlTelaLogin.pessoa.setSenha(telaCadastro.getTxtSenha().getText());
+				
+				try {controlTelaLogin.pessoa.setSenha(mascaras.MD5(telaCadastro.getTxtSenha().getText()));
+				} catch (NoSuchAlgorithmException e) {e.printStackTrace();}
+				
 				pessoaDAO.inserir(controlTelaLogin.pessoa);
-				System.out.println("cpf ok fio");
+				System.out.println(controlTelaLogin.pessoa.getSenha());
 				
 				
 			}else {

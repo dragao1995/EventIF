@@ -29,8 +29,18 @@ public class ControlTelaADDAtividades {
 					public void actionPerformed(ActionEvent arg0) {
 						controlTelaLogin.atividade.setDescricao(telaADDAtividades.getTxtDescricao().getText());
 						controlTelaLogin.atividade.setCarga_Horaria(telaADDAtividades.getTxtCargahor().getText());
-						controlTelaLogin.atividade.setHora_Inicio(telaADDAtividades.getTxtHorainicial().getText());
-						controlTelaLogin.atividade.setHora_Fim(telaADDAtividades.getTxtHorafinal().getText());
+						SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");  
+					   	java.util.Date date1,date2;
+					   	long tempototal;
+						try {
+							date1 = sdf.parse(telaADDAtividades.getTxtHorainicial().getText());
+							date2=sdf.parse(telaADDAtividades.getTxtHorafinal().getText());
+							tempototal = date2.getTime() - date1.getTime();
+						} catch (ParseException e1) {}
+					      
+						controlTelaLogin.atividade.setHora_Inicio(date1);
+						controlTelaLogin.atividade.setHora_Fim(date2);
+						controlTelaLogin.atividade.setTempo_total(tempototal);
 						int nuneroVagas = Integer.parseInt(telaADDAtividades.getTxtNvagas().getText());
 						controlTelaLogin.atividade.setNumero_Vagas(nuneroVagas);
 						controlTelaLogin.atividade.getTipo().setTipo_Atividade((String) telaADDAtividades.getComboBoxTipo().getSelectedItem());

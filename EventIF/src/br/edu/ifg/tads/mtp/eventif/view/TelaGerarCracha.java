@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import br.edu.ifg.tads.mtp.eventif.control.ControlTelaLogin;
 import br.edu.ifg.tads.mtp.eventif.util.Cracha;
@@ -69,6 +70,8 @@ public class TelaGerarCracha {
             public void windowClosing(WindowEvent e)
             {	getFrame().dispose();
             	ControlTelaLogin ccontrolTelaLogin = new ControlTelaLogin();
+            	JOptionPane.showMessageDialog(null, "Cadastro efetuado");
+            	ccontrolTelaLogin.controlTelaCadastro.telaCadastro.getFrame().dispose();
             	ccontrolTelaLogin.Login();
             }
         });
@@ -90,7 +93,7 @@ public class TelaGerarCracha {
 	        frame.paintAll(graphics);  
 	        graphics.dispose();  
 	        // salvar imagem  
-	        ImageIO.write(image, "png", new FileOutputStream("D:/eventIF/"+cracha.line+".png"));
+	        ImageIO.write(image, "png", new FileOutputStream("D:/eventIF/cracha/"+cracha.line+".png"));
 	}  
 
 

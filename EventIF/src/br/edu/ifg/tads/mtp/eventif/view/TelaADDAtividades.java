@@ -17,8 +17,10 @@ import javax.swing.text.MaskFormatter;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class TelaADDAtividades {
+import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 
+public class TelaADDAtividades {
+	Mascaras mascaras = new Mascaras();
 	private JFrame frmEventif;
 	private JTextField txtNomeativ;
 	private JTextField txtHorainicial;
@@ -89,14 +91,14 @@ public class TelaADDAtividades {
 		frmEventif.getContentPane().add(txtNomeativ);
 		txtNomeativ.setColumns(10);
 		
-		txtHorainicial = new JFormattedTextField(Mascara("##:##:##")); 
+		txtHorainicial = new JFormattedTextField(mascaras.Mascara("##:##:##")); 
 		txtHorainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorainicial.setBackground(Color.WHITE);
 		txtHorainicial.setBounds(387, 122, 114, 31);
 		frmEventif.getContentPane().add(txtHorainicial);
 		txtHorainicial.setColumns(10);
 		
-		txtHorafinal = new JFormattedTextField(Mascara("##:##:##")); 
+		txtHorafinal = new JFormattedTextField(mascaras.Mascara("##:##:##")); 
 		txtHorafinal.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtHorafinal.setBackground(Color.WHITE);
 		txtHorafinal.setBounds(603, 120, 101, 29);
@@ -153,7 +155,7 @@ public class TelaADDAtividades {
 		lblData.setBounds(77, 173, 89, 17);
 		frmEventif.getContentPane().add(lblData);
 		
-		txtData = new JFormattedTextField(Mascara("##/##/####")); 
+		txtData = new JFormattedTextField(mascaras.Mascara("####/##/##")); 
 		txtData.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtData.setBounds(182, 170, 99, 28);
 		frmEventif.getContentPane().add(txtData);
@@ -269,16 +271,4 @@ public class TelaADDAtividades {
 		this.comboBoxTipo = comboBoxTipo;
 	}
 
-	public MaskFormatter Mascara(String Mascara){  
-        
-	       MaskFormatter F_Mascara = new MaskFormatter();  
-	       try{  
-	           F_Mascara.setMask(Mascara); //Atribui a mascara  
-	           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
-	       }  
-	       catch (Exception excecao) {  
-	       excecao.printStackTrace();  
-	       }   
-	       return F_Mascara;  
-	} 
 }

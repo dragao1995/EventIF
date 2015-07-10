@@ -13,8 +13,10 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.text.MaskFormatter;
 
+import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
+
 public class TelaCadastro {
- 
+	Mascaras mascaras = new Mascaras();
 	private JFrame frmCadastroEventif;
 	private JTextField txtNome = new JTextField("");
 	private JTextField txtRg;
@@ -83,8 +85,8 @@ public class TelaCadastro {
 		lblCpf.setFont(new Font("Tahoma", Font.ITALIC, 19));
 		lblCpf.setBounds(339, 258, 53, 21);
 		frmCadastroEventif.getContentPane().add(lblCpf);
-		
-		txtCpf = new JFormattedTextField(Mascara("###.###.###-##")); 
+	
+		txtCpf = new JFormattedTextField(mascaras.Mascara("###.###.###-##")); 
 		txtCpf.setBackground(new Color(255, 255, 255));
 		txtCpf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCpf.setBounds(390, 254, 255, 25);
@@ -363,16 +365,4 @@ public class TelaCadastro {
 	public void setBtnCancelar(JButton btnCancelar) {
 		this.btnCancelar = btnCancelar;
 	}
-	public MaskFormatter Mascara(String Mascara){  
-        
-	       MaskFormatter F_Mascara = new MaskFormatter();  
-	       try{  
-	           F_Mascara.setMask(Mascara); //Atribui a mascara  
-	           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
-	       }  
-	       catch (Exception excecao) {  
-	       excecao.printStackTrace();  
-	       }   
-	       return F_Mascara;  
-	} 
 }

@@ -13,8 +13,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
-public class TelaADDEvento {
+import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 
+public class TelaADDEvento {
+	Mascaras mascaras = new Mascaras();
 	private JFrame frmCadastrarEvento;
 	private JTextField txtNomeev;
 	private JTextField txtEndereco;
@@ -93,13 +95,13 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(txtEndereco);
 		txtEndereco.setColumns(10);
 		
-		txtDatainicial = new JFormattedTextField(Mascara("####/##/##")); 
+		txtDatainicial = new JFormattedTextField(mascaras.Mascara("####/##/##")); 
 		txtDatainicial.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDatainicial.setBackground(Color.WHITE);
 		txtDatainicial.setBounds(177, 101, 200, 26);
 		frmCadastrarEvento.getContentPane().add(txtDatainicial);
 		txtDatainicial.setColumns(10);
-		txtDataf = new JFormattedTextField(Mascara("####/##/##")); 
+		txtDataf = new JFormattedTextField(mascaras.Mascara("####/##/##")); 
 		txtDataf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDataf.setBackground(Color.WHITE);
 		txtDataf.setBounds(475, 101, 240, 26);
@@ -349,17 +351,5 @@ public class TelaADDEvento {
 		this.txtUF = txtUF;
 	}
 
-	public MaskFormatter Mascara(String Mascara){  
-         
-       MaskFormatter F_Mascara = new MaskFormatter();  
-       try{  
-           F_Mascara.setMask(Mascara); //Atribui a mascara  
-           F_Mascara.setPlaceholderCharacter(' '); //Caracter para preencimento   
-       }  
-       catch (Exception excecao) {  
-       excecao.printStackTrace();  
-       }   
-       return F_Mascara;  
-} 
-	
+		
 }
