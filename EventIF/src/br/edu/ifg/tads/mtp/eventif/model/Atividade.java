@@ -9,11 +9,11 @@ public class Atividade {
 	private String ministrante;
 	private String descricao;
 	private Date data;
-	private String hora_Inicio;// olhar como ta no bd
-	private String hora_Fim;//Calendar ver como funciona com hora conversão util
+	private Date hora_Inicio;// olhar como ta no bd
+	private Date hora_Fim;//Calendar ver como funciona com hora conversão util
 	private String carga_Horaria;
 	private int numero_Vagas;
-	private String tempo_total;
+	private long tempo_total;
 	private Evento evento = new Evento();
 	private Tipo tipo = new Tipo();
 	
@@ -30,16 +30,16 @@ public class Atividade {
 		this.descricao = descricao;
 	}
 	
-	public String getHora_Inicio() {
+	public Date getHora_Inicio() {
 		return hora_Inicio;
 	}
-	public void setHora_Inicio(String hora_Inicio) {
+	public void setHora_Inicio(Date hora_Inicio) {
 		this.hora_Inicio = hora_Inicio;
 	}
-	public String getHora_Fim() {
+	public Date getHora_Fim() {
 		return hora_Fim;
 	}
-	public void setHora_Fim(String hora_Fim) {
+	public void setHora_Fim(Date hora_Fim) {
 		this.hora_Fim = hora_Fim;
 	}
 	public String getCarga_Horaria() {
@@ -87,10 +87,10 @@ public class Atividade {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public String getTempo_total() {
+	public long getTempo_total() {
 		return tempo_total;
 	}
-	public void setTempo_total(String tempo_total) {
+	public void setTempo_total(long tempo_total) {
 		this.tempo_total = tempo_total;
 	}
 	

@@ -165,8 +165,7 @@ public class EventoDao {
 			stmt.setString(2, atividade.getMinistrante());
 			stmt.setString(3, atividade.getDescricao());
 			stmt.setDate(4, new Date(atividade.getData().getTime()));
-			stmt.setString(5, atividade.getHora_Inicio());
-			stmt.setString(6, atividade.getHora_Fim());
+			stmt.setDate(5, new Date(atividade.getHora_Inicio().getTime()));
 			stmt.setString(7,atividade.getCarga_Horaria());
 			stmt.setInt(8,atividade.getNumero_Vagas());
 			stmt.setInt(9, idEvento);
@@ -233,8 +232,8 @@ public class EventoDao {
 				atividade.setDescricao(rs.getString("Descricao"));	
 				atividade.setMinistrante(rs.getString("Ministrante"));
 				atividade.setData(rs.getDate("data"));
-				atividade.setHora_Inicio(rs.getString("hora_Inicio"));
-				atividade.setHora_Fim(rs.getString("hora_Fim"));
+				atividade.setHora_Inicio(rs.getDate("hora_Inicio"));
+				atividade.setHora_Fim(rs.getDate("hora_Fim"));
 				atividade.setCarga_Horaria(rs.getString("Carga_Horaria"));
 				atividade.setNumero_Vagas(rs.getInt("numero_Vagas"));
 				evento.setIdEvento(rs.getLong("idEvento"));
@@ -304,8 +303,8 @@ public class EventoDao {
 				atividade.setDescricao(rs.getString("descricao"));
 				atividade.setMinistrante(rs.getString("ministrante"));
 				atividade.setData(rs.getDate(("datas")));
-				atividade.setHora_Inicio(rs.getString("hora_inicio"));
-				atividade.setHora_Fim(rs.getString("hora_fim"));
+				atividade.setHora_Inicio(rs.getDate("hora_inicio"));
+				atividade.setHora_Fim(rs.getDate("hora_fim"));
 				atividade.setCarga_Horaria(rs.getString("carga_horaria"));
 				atividade.setNumero_Vagas(rs.getInt("numero_vagas"));
 				evento.setIdEvento(rs.getLong("idEvento"));
@@ -317,8 +316,8 @@ public class EventoDao {
 				colunas.add(atividade.getDescricao());
 				colunas.add(atividade.getMinistrante());
 				colunas.add(""+atividade.getData());
-				colunas.add(atividade.getHora_Inicio());
-				colunas.add(atividade.getHora_Fim());
+				colunas.add(""+atividade.getHora_Inicio());
+				colunas.add(""+atividade.getHora_Fim());
 				colunas.add(atividade.getCarga_Horaria());
 				colunas.add(""+atividade.getNumero_Vagas());
 				colunas.add(""+evento.getIdEvento());
@@ -451,8 +450,8 @@ public class EventoDao {
 			stmt.setString(2, atividade.getDescricao());
 			stmt.setString(3, atividade.getMinistrante());
 			stmt.setDate(4,new Date(atividade.getData().getTime()));
-			stmt.setString(5, atividade.getHora_Inicio());
-			stmt.setString(6, atividade.getHora_Fim());
+			stmt.setDate(5, new Date (atividade.getHora_Inicio().getTime()));
+			stmt.setDate(6, new Date (atividade.getHora_Fim().getTime()));
 			stmt.setString(7, atividade.getCarga_Horaria());
 			stmt.setInt(8, atividade.getNumero_Vagas());
 			

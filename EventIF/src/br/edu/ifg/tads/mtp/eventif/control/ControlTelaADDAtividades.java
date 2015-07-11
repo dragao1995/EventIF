@@ -30,8 +30,8 @@ public class ControlTelaADDAtividades {
 						controlTelaLogin.atividade.setDescricao(telaADDAtividades.getTxtDescricao().getText());
 						controlTelaLogin.atividade.setCarga_Horaria(telaADDAtividades.getTxtCargahor().getText());
 						SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");  
-					   	java.util.Date date1,date2;
-					   	long tempototal;
+					   	java.util.Date date1 = null,date2 = null;
+					   	long tempototal = 0;
 						try {
 							date1 = sdf.parse(telaADDAtividades.getTxtHorainicial().getText());
 							date2=sdf.parse(telaADDAtividades.getTxtHorafinal().getText());
