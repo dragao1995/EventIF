@@ -28,7 +28,7 @@ public class ControlTelaADDAtividades {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						controlTelaLogin.atividade.setDescricao(telaADDAtividades.getTxtDescricao().getText());
-						controlTelaLogin.atividade.setCarga_Horaria(telaADDAtividades.getTxtCargahor().getText());
+						controlTelaLogin.atividade.setCarga_Horaria(Integer.parseInt(telaADDAtividades.getTxtCargahor().getText()));
 						SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");  
 					   	java.util.Date date1 = null,date2 = null;
 					   	long tempototal = 0;
@@ -55,6 +55,9 @@ public class ControlTelaADDAtividades {
 							e.printStackTrace();
 						}
 						controlTelaLogin.atividade.setData(datas);
+						controlTelaLogin.eventoDao.inserir_Atividade(controlTelaLogin.atividade);
+						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().dispose();
+						controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().setVisible(true);
 						
 					}
 				});

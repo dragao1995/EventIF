@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
 import br.edu.ifg.tads.mtp.eventif.model.Contato;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
@@ -20,6 +21,7 @@ public class ControlTelaLogin {
 	TelaLogin TelaLogin = new TelaLogin();
 	 Pessoa pessoa = new Pessoa();
 	 Atividade atividade= new Atividade();
+	 EventoDao eventoDao= new EventoDao();
 	public TelaGerarCracha telaGerarCracha= new TelaGerarCracha();
 	public ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
 	public ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
@@ -84,6 +86,7 @@ public void todosEventos(){
 				
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
 			}
+		controlTelaEventos.telaEventos.setTable(eventoDao.buscaEvento());
 		}
 	});
 

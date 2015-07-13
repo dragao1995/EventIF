@@ -11,7 +11,7 @@ public class Atividade {
 	private Date data;
 	private Date hora_Inicio;// olhar como ta no bd
 	private Date hora_Fim;//Calendar ver como funciona com hora conversão util
-	private String carga_Horaria;
+	private int carga_Horaria;
 	private int numero_Vagas;
 	private long tempo_total;
 	private Evento evento = new Evento();
@@ -42,10 +42,10 @@ public class Atividade {
 	public void setHora_Fim(Date hora_Fim) {
 		this.hora_Fim = hora_Fim;
 	}
-	public String getCarga_Horaria() {
+	public int getCarga_Horaria() {
 		return carga_Horaria;
 	}
-	public void setCarga_Horaria(String carga_Horaria) {
+	public void setCarga_Horaria(int carga_Horaria) {
 		this.carga_Horaria = carga_Horaria;
 	}
 	public int getNumero_Vagas() {

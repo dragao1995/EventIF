@@ -2,13 +2,22 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
+
+import javax.swing.Action;
+import javax.swing.table.DefaultTableModel;
+
 import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
+import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 
 public class ControlTelaEventos {
+	
 	TelaEventos telaEventos = new TelaEventos();
-
+	private EventoDao ed = new EventoDao();
 	ControlTelaLogin controlTelaLogin;
+	//private Action alterarAction;
+	//private Action excluirAction;
 
 	public ControlTelaEventos(ControlTelaLogin controlTelaLogin) {
 
@@ -59,6 +68,34 @@ public class ControlTelaEventos {
 					LerQrcode.TelaWebcam();
 			}
 		});
+	}
+	public void preencheTabela(){
+			
+			Vector<Vector<String>> listaContatos = ed.buscaEvento();
+			preencheTabela(listaContatos);
+				
+	}
+	public void preencheTabela(Vector<Vector<String>> listaContatos){
+		
+		telaEventos.getTable().clearSelection();
+		telaEventos.getTable().removeAll();
+		
+		Vector<String> colunas = new Vector<String>();
+		colunas.add("idEvento");
+		colunas.add("nome");
+		colunas.add("idContato");
+		colunas.add("idEndereco_eve");
+		colunas.add("Data");
+		colunas.add("");
+		colunas.add("");
+		
+		DefaultTableModel model = new DefaultTableModel(listaContatos, colunas);
+		telaEventos.getTable().setModel(model);
+		telaEventos.getTable().getColumn("idEvento").setMaxWidth(25);
+		//new ButtonColumn(contatoView.getTable(),alterarAction, 5); 
+		//new ButtonColumn(contatoView.getTable(),excluirAction, 6);
+		//procurar como trazer vetor em tabela
+		
 	}
 
 }
