@@ -7,16 +7,19 @@ import java.sql.SQLException;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
+import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 
 public class ValidarLogin {
 	
 	PessoaDAO pd = new PessoaDAO();
-	Pessoa pessoa = new Pessoa();
+	TelaLogin tl = new TelaLogin();
 	
-	public ValidarLogin(){
+	
+	public void Validar(){
 		
-		pd.validar(pessoa.getCpf(), pessoa.getSenha());
+		tl.getTxtUsuario().toString();
+		pd.validar(tl.getTxtUsuario().toString(), tl.getTxtSenha().toString());
 		
 	}
 

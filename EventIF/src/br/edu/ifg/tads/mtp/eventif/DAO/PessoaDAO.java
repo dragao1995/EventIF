@@ -290,7 +290,7 @@ public class PessoaDAO {
 		}
 	}
 	
-	public String validar(String cpf,String senha) {
+	public void validar(String cpf,String senha) {
 		Connection con = new ConnectionFactory().getConnection();
 		String sql = "SELECT*FROM PESSOA WHERE cpf = " + cpf;
 		try {
@@ -311,8 +311,9 @@ public class PessoaDAO {
 			con.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
+			System.out.println("erro no validar "+ex.getMessage());
 		}
-		return senha;
+		
 	}
 
 }
