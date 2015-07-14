@@ -10,6 +10,7 @@ import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
+import br.edu.ifg.tads.mtp.eventif.util.ValidarLogin;
 import br.edu.ifg.tads.mtp.eventif.view.TelaGerarCracha;
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
@@ -19,7 +20,8 @@ public class ControlTelaLogin {
 	 Pessoa pessoa = new Pessoa();
 	 Atividade atividade= new Atividade();
 	 EventoDao eventoDao= new EventoDao();
-	 public PessoaDAO pessoaDAO = new PessoaDAO();
+	public ValidarLogin validarLogin = new ValidarLogin(); 
+	public PessoaDAO pessoaDAO = new PessoaDAO();
 	public TelaGerarCracha telaGerarCracha= new TelaGerarCracha();
 	public ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
 	public ControlTelaCadastro controlTelaCadastro = new ControlTelaCadastro(this);
@@ -31,6 +33,7 @@ public class ControlTelaLogin {
 
 public void Login() {
 	TelaLogin.getFrameLogin().setVisible(true);
+	//validarLogin.Validar();
 }
 
 public void todosEventos(){
