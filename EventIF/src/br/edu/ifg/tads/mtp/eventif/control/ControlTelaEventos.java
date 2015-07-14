@@ -21,7 +21,7 @@ public class ControlTelaEventos {
 	//private Action excluirAction;
 
 	public ControlTelaEventos(ControlTelaLogin controlTelaLogin) {
-
+   
 		this.controlTelaLogin = controlTelaLogin;
 	}
 
@@ -49,22 +49,20 @@ public class ControlTelaEventos {
 					
 					controlTelaLogin.evento.setIdEvento((long)ID_evento);
 					System.out.println(ID_evento);
-					Evento eve = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
+					controlTelaLogin.evento = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
 					
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.initialize();
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().setVisible(true);
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTextOrganizador().setText(eve.getOrganizador());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDescricao().setText(eve.getDescricao());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtTelefone().setText(""+eve.getContato().getTelefone());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEmail().setText(eve.getContato().getEmail());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEndereco().setText(eve.getEndereco_eve().getLogradouro());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCep().setText(eve.getEndereco_eve().getCep());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtNumero().setText(""+eve.getEndereco_eve().getNumero());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCidade().setText(eve.getEndereco_eve().getCidade().getNome());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtUF().setText(eve.getEndereco_eve().getCidade().getEstado().getUf());
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtBairro().setText(eve.getEndereco_eve().getBairro());
-				//controlTelaLogin.controlTelaEventos.preencheTabela();	
-				//controlTelaLogin.eventoDao.altera_Evento(eve);
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTextOrganizador().setText(""+controlTelaLogin.evento.getOrganizador());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDescricao().setText(""+controlTelaLogin.evento.getDescricao());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtTelefone().setText(""+controlTelaLogin.evento.getContato().getTelefone());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEmail().setText(""+controlTelaLogin.evento.getContato().getEmail());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEndereco().setText(""+controlTelaLogin.evento.getEndereco_eve().getLogradouro());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCep().setText(""+controlTelaLogin.evento.getEndereco_eve().getCep());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtNumero().setText(""+controlTelaLogin.evento.getEndereco_eve().getNumero());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCidade().setText(""+controlTelaLogin.evento.getEndereco_eve().getCidade().getNome());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtUF().setText(""+controlTelaLogin.evento.getEndereco_eve().getCidade().getEstado().getUf());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtBairro().setText(""+controlTelaLogin.evento.getEndereco_eve().getBairro());
 				telaEventos.getFrmEventos().dispose();
 				}catch(ArrayIndexOutOfBoundsException e){
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
@@ -79,8 +77,8 @@ public class ControlTelaEventos {
 				
 				controlTelaLogin.evento.setIdEvento((long)ID_evento);
 				System.out.println(ID_evento);
-				Evento eve = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
-				controlTelaLogin.eventoDao.remove_evento(eve);
+				controlTelaLogin.evento = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
+				controlTelaLogin.eventoDao.remove_evento(controlTelaLogin.evento);
 				
 				}catch(ArrayIndexOutOfBoundsException e){
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
@@ -97,7 +95,6 @@ public class ControlTelaEventos {
 		telaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlTelaLogin.controlTelaAtividades.preencheTabela();
-				System.out.println("bbb");
 				controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);
 				telaEventos.getFrmEventos().dispose();
