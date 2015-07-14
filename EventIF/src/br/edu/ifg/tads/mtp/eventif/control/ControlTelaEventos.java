@@ -7,6 +7,9 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
+import br.edu.ifg.tads.mtp.eventif.model.Evento;
+import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
 
@@ -47,8 +50,12 @@ public class ControlTelaEventos {
 				try{
 				int linhaselect = telaEventos.getTable().getSelectedRow();
 				int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
+				Evento e = new Evento();
+				e.setIdEvento((long)ID_evento);
 				System.out.println(ID_evento);
-				controlTelaLogin.eventoDao.remove_evento(ID_evento);
+				Evento eve = controlTelaLogin.eventoDao.buscar_evento(e);
+				controlTelaLogin.eventoDao.remove_evento(eve);
+				
 				}catch(ArrayIndexOutOfBoundsException e){
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
 				}}
