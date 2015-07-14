@@ -151,7 +151,7 @@ public class PessoaDAO {
 				pessoa.setRg(rs.getString("rg"));
 				pessoa.setSenha(rs.getString("senha"));
 				c.setIdContato(rs.getLong("idContato"));
-				ep.setIdEndereco_Pes(rs.getLong("idEndereoc_pes"));
+				ep.setIdEndereco_Pes(rs.getLong("idEndereco_pes"));
 				
 			}
 			rs.close();
