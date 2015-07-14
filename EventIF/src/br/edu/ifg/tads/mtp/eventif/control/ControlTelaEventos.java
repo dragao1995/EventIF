@@ -69,7 +69,7 @@ public class ControlTelaEventos {
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
 				}
 			}
-		});
+		}); 
 		telaEventos.getBtnExcluir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
