@@ -42,7 +42,32 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnEditar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				telaEventos.getFrmEventos().dispose();
+				try{
+					int linhaselect = telaEventos.getTable().getSelectedRow();
+					int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
+					
+					controlTelaLogin.evento.setIdEvento((long)ID_evento);
+					System.out.println(ID_evento);
+					Evento eve = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
+					
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.initialize();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().setVisible(true);
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTextOrganizador().setText(eve.getOrganizador());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDescricao().setText(eve.getDescricao());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtTelefone().setText(""+eve.getContato().getTelefone());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEmail().setText(eve.getContato().getEmail());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEndereco().setText(eve.getEndereco_eve().getLogradouro());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCep().setText(eve.getEndereco_eve().getCep());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtNumero().setText(""+eve.getEndereco_eve().getNumero());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCidade().setText(eve.getEndereco_eve().getCidade().getNome());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtUF().setText(eve.getEndereco_eve().getCidade().getEstado().getUf());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtBairro().setText(eve.getEndereco_eve().getBairro());
+				controlTelaLogin.controlTelaEventos.preencheTabela();	
+				controlTelaLogin.eventoDao.altera_Evento(eve);
+				}catch(ArrayIndexOutOfBoundsException e){
+					JOptionPane.showMessageDialog(null, "Escolha um evento!");
+				}
 			}
 		});
 		telaEventos.getBtnExcluir().addActionListener(new ActionListener() {
@@ -50,10 +75,10 @@ public class ControlTelaEventos {
 				try{
 				int linhaselect = telaEventos.getTable().getSelectedRow();
 				int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
-				Evento e = new Evento();
-				e.setIdEvento((long)ID_evento);
+				
+				controlTelaLogin.evento.setIdEvento((long)ID_evento);
 				System.out.println(ID_evento);
-				Evento eve = controlTelaLogin.eventoDao.buscar_evento(e);
+				Evento eve = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
 				controlTelaLogin.eventoDao.remove_evento(eve);
 				
 				}catch(ArrayIndexOutOfBoundsException e){
