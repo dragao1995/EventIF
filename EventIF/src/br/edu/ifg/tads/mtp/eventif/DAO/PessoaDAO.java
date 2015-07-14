@@ -95,7 +95,7 @@ public class PessoaDAO {
 			con = new ConnectionFactory().getConnection();
 			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
-			stmt.setInt(1, pessoa.getContato().getTelefone());
+			stmt.setLong(1, pessoa.getContato().getTelefone());
 			stmt.setString(2, pessoa.getContato().getEmail());
 
 			// executa
@@ -209,7 +209,7 @@ public class PessoaDAO {
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
-			stmt.setInt(1, cont.getTelefone());
+			stmt.setLong(1, cont.getTelefone());
 			stmt.setString(2, cont.getEmail());
 			stmt.executeUpdate();
 			stmt.close();

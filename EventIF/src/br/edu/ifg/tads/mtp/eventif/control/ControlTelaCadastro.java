@@ -52,7 +52,7 @@ public void EventosTelaCadastro(){
 				//fim cracha
 				controlTelaLogin.pessoa.setNome(telaCadastro.getTxtNome().getText());
 				controlTelaLogin.pessoa.setRg(telaCadastro.getTxtRg().getText());
-				controlTelaLogin.pessoa.getContato().setTelefone(Integer.parseInt(telaCadastro.getTxtTelefone().getText()));
+				controlTelaLogin.pessoa.getContato().setTelefone(Long.parseLong(telaCadastro.getTxtTelefone().getText()));
 				controlTelaLogin.pessoa.getContato().setEmail(telaCadastro.getTxtEmail().getText());
 				controlTelaLogin.pessoa.getEndereco_pes().setCep(telaCadastro.getTxtCep().getText());
 				int numeroo =Integer.parseInt(telaCadastro.getTxtNumero().getText());
