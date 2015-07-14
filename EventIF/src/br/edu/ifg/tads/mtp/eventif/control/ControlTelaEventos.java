@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
@@ -43,8 +44,14 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnExcluir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-			}
+				try{
+				int linhaselect = telaEventos.getTable().getSelectedRow();
+				int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
+				System.out.println(ID_evento);
+				controlTelaLogin.eventoDao.remove_evento(ID_evento);
+				}catch(ArrayIndexOutOfBoundsException e){
+					JOptionPane.showMessageDialog(null, "Escolha um evento!");
+				}}
 		});
 		telaEventos.getBtnLogout().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
