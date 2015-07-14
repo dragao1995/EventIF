@@ -31,6 +31,7 @@ public class ControlTelaADDMonitor {
 		
 		telaADDMonitor.getBtnVoltar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				controlTelaLogin.controlTelaADDMonitor.preencheTabela();
 				controlTelaLogin.controlTelaADDMonitor.telaADDMonitor.getFrmEventif().dispose();
 				controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().setVisible(true);
 			}
@@ -51,7 +52,7 @@ public class ControlTelaADDMonitor {
 			colunas.add("idPessoa");
 			colunas.add("nome");
 			colunas.add("cpf");
-			colunas.add("rg");
+			//colunas.add("rg");
 			//colunas.add("Data Inico");
 			//colunas.add("Data Fim");
 			

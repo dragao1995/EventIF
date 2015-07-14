@@ -59,6 +59,7 @@ public class ControlTelaAtividades {
 	 
 	 telaAtividades.getBtnAddMonitor().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+					controlTelaLogin.controlTelaADDMonitor.preencheTabela();
 					controlTelaLogin.controlTelaADDMonitor.telaADDMonitor.getFrmEventif().setVisible(true);
 					controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().dispose();
 				}
