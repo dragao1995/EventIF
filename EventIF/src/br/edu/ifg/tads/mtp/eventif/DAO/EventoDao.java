@@ -420,6 +420,7 @@ public class EventoDao {
 			stmt.setDate(4, new Date(evento.getData_Inicio().getTime()));
 			stmt.setDate(5, new Date (evento.getData_Fim().getTime()));
 			
+			
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (SQLException e) {
