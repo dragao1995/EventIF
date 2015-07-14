@@ -44,6 +44,9 @@ public void todosEventos(){
 	
 	TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
+
+			controlTelaCadastro.telaCadastro.initialize();
+			controlTelaCadastro.telaCadastro.getFrame().repaint();
 			controlTelaCadastro.telaCadastro.getFrame().setVisible(true);
 			TelaLogin.getFrameLogin().dispose();  
 		}

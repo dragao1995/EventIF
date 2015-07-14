@@ -54,6 +54,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				controlTelaLogin.controlTelaAtividades.preencheTabela();
 				System.out.println("bbb");
 				controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);

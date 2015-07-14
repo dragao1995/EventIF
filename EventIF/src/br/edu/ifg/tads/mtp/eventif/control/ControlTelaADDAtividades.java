@@ -21,6 +21,7 @@ public class ControlTelaADDAtividades {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().dispose();
+						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().removeAll();
 						controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().setVisible(true);
 					}
 				});
@@ -57,7 +58,9 @@ public class ControlTelaADDAtividades {
 						controlTelaLogin.atividade.setData(datas);
 						controlTelaLogin.eventoDao.inserir_Atividade(controlTelaLogin.atividade);
 						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().dispose();
+						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().removeAll();
 						controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().setVisible(true);
+						
 						
 					}
 				});

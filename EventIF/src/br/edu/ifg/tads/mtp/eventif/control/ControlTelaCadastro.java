@@ -67,6 +67,9 @@ public void EventosTelaCadastro(){
 				
 				controlTelaLogin.pessoaDAO.inserir(controlTelaLogin.pessoa);
 				System.out.println(controlTelaLogin.pessoa.getSenha());
+				telaCadastro.getFrame().removeAll();
+				telaCadastro.getFrame().dispose();
+				controlTelaLogin.Login();
 				
 				
 			}else {
@@ -77,8 +80,9 @@ public void EventosTelaCadastro(){
 	telaCadastro.getBtnCancelar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
-			controlTelaLogin.Login();
+			telaCadastro.getFrame().removeAll();
 			telaCadastro.getFrame().dispose();
+			controlTelaLogin.Login();
 			
 		}
 	});

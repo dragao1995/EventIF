@@ -35,14 +35,7 @@ public class TelaADDAtividades {
 	private JComboBox comboBoxTipo = new JComboBox();
 
 	
-	public TelaADDAtividades() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+	public void initialize() {
 		frmEventif = new JFrame();
 		frmEventif.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDAtividades.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
 		frmEventif.setTitle("EventIF");
@@ -84,7 +77,7 @@ public class TelaADDAtividades {
 		lblDescrio.setBounds(77, 212, 80, 24);
 		frmEventif.getContentPane().add(lblDescrio);
 		
-		txtNomeativ = new JTextField();
+		txtNomeativ = new JTextField("");
 		txtNomeativ.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtNomeativ.setBackground(Color.WHITE);
 		txtNomeativ.setBounds(182, 72, 273, 31);
@@ -105,21 +98,21 @@ public class TelaADDAtividades {
 		frmEventif.getContentPane().add(txtHorafinal);
 		txtHorafinal.setColumns(10);
 		
-		txtCargahor = new JTextField();
+		txtCargahor = new JTextField("");
 		txtCargahor.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtCargahor.setBackground(Color.WHITE);
 		txtCargahor.setBounds(389, 167, 114, 31);
 		frmEventif.getContentPane().add(txtCargahor);
 		txtCargahor.setColumns(10);
 		
-		txtNvagas = new JTextField();
+		txtNvagas = new JTextField("");
 		txtNvagas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtNvagas.setBackground(Color.WHITE);
 		txtNvagas.setColumns(10);
 		txtNvagas.setBounds(603, 167, 101, 29);
 		frmEventif.getContentPane().add(txtNvagas);
 		
-		txtDescricao = new JTextArea();
+		txtDescricao = new JTextArea("");
 		txtDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtDescricao.setBackground(Color.WHITE);
 		txtDescricao.setBounds(182, 213, 522, 124);
@@ -166,7 +159,7 @@ public class TelaADDAtividades {
 		lblMinistrante.setBounds(465, 80, 80, 22);
 		frmEventif.getContentPane().add(lblMinistrante);
 		
-		txtMinistrante = new JTextField();
+		txtMinistrante = new JTextField("");
 		txtMinistrante.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		txtMinistrante.setBounds(542, 74, 162, 27);
 		frmEventif.getContentPane().add(txtMinistrante);

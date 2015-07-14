@@ -34,11 +34,7 @@ public class TelaCadastro {
 	private JTextField txtSenha;
 	private JTextField txtCsenha;
 
-	public TelaCadastro() {
-		initialize();
-	}
-
-	private void initialize() {
+	public void initialize() {
 		setFrame(new JFrame());
 		getFrame().getContentPane().setBackground(new Color(102, 204, 102));
 		getFrame().getContentPane().setForeground(Color.WHITE);
@@ -62,7 +58,7 @@ public class TelaCadastro {
 		lblNome.setBounds(94, 220, 68, 23);
 		frmCadastroEventif.getContentPane().add(lblNome);
 		
-		
+		txtNome = new JTextField("");
 		txtNome.setBackground(new Color(255, 255, 255));
 		txtNome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNome.setBounds(160, 224, 485, 23);
@@ -74,7 +70,7 @@ public class TelaCadastro {
 		lblRg.setBounds(94, 257, 53, 23);
 		frmCadastroEventif.getContentPane().add(lblRg);
 		
-		txtRg = new JTextField();
+		txtRg = new JTextField("");
 		txtRg.setBackground(new Color(255, 255, 255));
 		txtRg.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtRg.setBounds(160, 254, 169, 26);
@@ -98,7 +94,7 @@ public class TelaCadastro {
 		lblEmail.setBounds(339, 288, 68, 21);
 		frmCadastroEventif.getContentPane().add(lblEmail);
 		
-		txtEmail = new JTextField();
+		txtEmail = new JTextField("");
 		txtEmail.setBackground(new Color(255, 255, 255));
 		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEmail.setBounds(400, 285, 245, 24);
@@ -123,7 +119,7 @@ public class TelaCadastro {
 		lblCep.setBounds(94, 321, 53, 23);
 		frmCadastroEventif.getContentPane().add(lblCep);
 		
-		txtCep = new JTextField();
+		txtCep = new JTextField("");
 		txtCep.setBackground(new Color(255, 255, 255));
 		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCep.setBounds(160, 321, 169, 26);
@@ -135,7 +131,7 @@ public class TelaCadastro {
 		lblEndereco.setBounds(76, 355, 86, 23);
 		frmCadastroEventif.getContentPane().add(lblEndereco);
 		
-		txtEndereco = new JTextField();
+		txtEndereco = new JTextField("");
 		txtEndereco.setBackground(new Color(255, 255, 255));
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEndereco.setBounds(160, 355, 347, 26);
@@ -147,7 +143,7 @@ public class TelaCadastro {
 		lblNumero.setBounds(517, 355, 35, 30);
 		frmCadastroEventif.getContentPane().add(lblNumero);
 		
-		txtNumero = new JTextField();
+		txtNumero = new JTextField("");
 		txtNumero.setBackground(new Color(255, 255, 255));
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNumero.setBounds(550, 356, 95, 29);
@@ -159,7 +155,7 @@ public class TelaCadastro {
 		lblBairro.setBounds(76, 394, 71, 23);
 		frmCadastroEventif.getContentPane().add(lblBairro);
 		
-		txtBairro = new JTextField();
+		txtBairro = new JTextField("");
 		txtBairro.setBackground(new Color(255, 255, 255));
 		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtBairro.setBounds(160, 389, 133, 28);
@@ -171,7 +167,7 @@ public class TelaCadastro {
 		lblCidade.setBounds(306, 392, 71, 24);
 		frmCadastroEventif.getContentPane().add(lblCidade);
 		
-		txtCidade = new JTextField();
+		txtCidade = new JTextField("");
 		txtCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCidade.setBackground(new Color(255, 255, 255));
 		txtCidade.setBounds(375, 392, 132, 27);
@@ -183,7 +179,7 @@ public class TelaCadastro {
 		lblUf.setBounds(517, 395, 46, 24);
 		frmCadastroEventif.getContentPane().add(lblUf);
 		
-		txtUf = new JTextField();
+		txtUf = new JTextField("");
 		txtUf.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtUf.setBackground(new Color(255, 255, 255));
 		txtUf.setBounds(560, 395, 85, 24);
@@ -209,7 +205,7 @@ public class TelaCadastro {
 		lblSenha.setBounds(76, 428, 71, 23);
 		frmCadastroEventif.getContentPane().add(lblSenha);
 		
-		txtSenha = new JPasswordField();
+		txtSenha = new JPasswordField("");
 		txtSenha.setBounds(160, 425, 133, 26);
 		frmCadastroEventif.getContentPane().add(txtSenha);
 		txtSenha.setColumns(10);
@@ -219,7 +215,7 @@ public class TelaCadastro {
 		lblConfirmarSenha.setBounds(306, 427, 160, 24);
 		frmCadastroEventif.getContentPane().add(lblConfirmarSenha);
 		
-		txtCsenha = new JPasswordField();
+		txtCsenha = new JPasswordField("");
 		txtCsenha.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCsenha.setBounds(461, 425, 184, 26);
 		frmCadastroEventif.getContentPane().add(txtCsenha);
