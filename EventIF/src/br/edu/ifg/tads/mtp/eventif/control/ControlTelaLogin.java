@@ -56,6 +56,7 @@ public void todosEventos(){
 		public void actionPerformed(ActionEvent arg0) {
 			
 			if (TelaLogin.getRdbtnGerente().isSelected() || TelaLogin.getRdbtnMonitor().isSelected() ||TelaLogin.getRdbtnParticipante().isSelected()) {			
+				controlTelaEventos.preencheTabela();
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(false);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(false);
 				controlTelaEventos.telaEventos.getBtnEditar().setVisible(false);
@@ -86,7 +87,7 @@ public void todosEventos(){
 				
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
 			}
-		controlTelaEventos.telaEventos.setTable(eventoDao.buscaEvento());
+		
 		}
 	});
 

@@ -45,6 +45,9 @@ public class ControlTelaADDEvento {
 				controlTelaLogin.evento.getEndereco_eve().getCidade().getEstado().setUf(telaADDEvento.getTxtUF().getText());
 				controlTelaLogin.evento.getEndereco_eve().setBairro(telaADDEvento.getTxtBairro().getText());
 				controlTelaLogin.eventoDao.inserir_evento(controlTelaLogin.evento);
+				controlTelaLogin.controlTelaEventos.preencheTabela();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().dispose();
+				controlTelaLogin.controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 			}
 		});
 		telaADDEvento.getBtnCancelar().addActionListener(new ActionListener() {

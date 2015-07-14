@@ -277,7 +277,7 @@ public class EventoDao {
 				colunas.add(""+evento.getData_Inicio());
 				colunas.add(""+evento.getData_Fim());
 				colunas.add("" + ee.getIdEndereco_Eve());
-				colunas.add("" + contato.getIdContato());
+			//	colunas.add("" + contato.getIdContato());
 				colunas.add("alterar");
 				colunas.add("excluir");
 				Evento.add(colunas);

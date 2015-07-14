@@ -83,11 +83,10 @@ public class ControlTelaEventos {
 		Vector<String> colunas = new Vector<String>();
 		colunas.add("idEvento");
 		colunas.add("nome");
-		colunas.add("idContato");
-		colunas.add("idEndereco_eve");
-		colunas.add("Data");
-		colunas.add("");
-		colunas.add("");
+		colunas.add("Descrição");
+		colunas.add("Organizador");
+		colunas.add("Data Inico");
+		colunas.add("Data Fim");
 		
 		DefaultTableModel model = new DefaultTableModel(listaContatos, colunas);
 		telaEventos.getTable().setModel(model);
