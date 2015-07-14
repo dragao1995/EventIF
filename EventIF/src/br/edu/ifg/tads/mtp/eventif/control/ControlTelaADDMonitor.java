@@ -58,7 +58,7 @@ public class ControlTelaADDMonitor {
 			
 			DefaultTableModel model = new DefaultTableModel(listaContatos, colunas);
 			telaADDMonitor.getTable().setModel(model);
-			telaADDMonitor.getTable().getColumn("idEvento").setMaxWidth(25);
+			telaADDMonitor.getTable().getColumn("idPesso").setMaxWidth(25);
 			//new ButtonColumn(contatoView.getTable(),alterarAction, 5); 
 			//new ButtonColumn(contatoView.getTable(),excluirAction, 6);
 			//procurar como trazer vetor em tabela
