@@ -42,7 +42,7 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnEditar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				telaEventos.getFrmEventos().dispose();
+				
 				try{
 					int linhaselect = telaEventos.getTable().getSelectedRow();
 					int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
@@ -63,8 +63,9 @@ public class ControlTelaEventos {
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtCidade().setText(eve.getEndereco_eve().getCidade().getNome());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtUF().setText(eve.getEndereco_eve().getCidade().getEstado().getUf());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtBairro().setText(eve.getEndereco_eve().getBairro());
-				controlTelaLogin.controlTelaEventos.preencheTabela();	
-				controlTelaLogin.eventoDao.altera_Evento(eve);
+				//controlTelaLogin.controlTelaEventos.preencheTabela();	
+				//controlTelaLogin.eventoDao.altera_Evento(eve);
+				telaEventos.getFrmEventos().dispose();
 				}catch(ArrayIndexOutOfBoundsException e){
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
 				}

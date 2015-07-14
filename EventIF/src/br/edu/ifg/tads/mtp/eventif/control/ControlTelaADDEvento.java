@@ -26,10 +26,8 @@ public class ControlTelaADDEvento {
 					di = new Date ((formater.parse(telaADDEvento.getTxtDatainicial().getText())).getTime());
 					df = new Date ((formater.parse(telaADDEvento.getTxtDataf().getText())).getTime());
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
 				controlTelaLogin.evento.setData_Inicio(di);
 				controlTelaLogin.evento.setData_Fim(df);
 				
