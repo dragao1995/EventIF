@@ -58,7 +58,9 @@ public class ControlTelaEventos {
 				
 				}catch(ArrayIndexOutOfBoundsException e){
 					JOptionPane.showMessageDialog(null, "Escolha um evento!");
-				}}
+				}
+				controlTelaLogin.controlTelaEventos.preencheTabela();	
+			}
 		});
 		telaEventos.getBtnLogout().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
