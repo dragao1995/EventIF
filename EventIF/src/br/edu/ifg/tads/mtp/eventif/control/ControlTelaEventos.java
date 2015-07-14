@@ -14,7 +14,6 @@ import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 public class ControlTelaEventos {
 	
 	TelaEventos telaEventos = new TelaEventos();
-	private EventoDao ed = new EventoDao();
 	ControlTelaLogin controlTelaLogin;
 	//private Action alterarAction;
 	//private Action excluirAction;
@@ -71,7 +70,7 @@ public class ControlTelaEventos {
 	}
 	public void preencheTabela(){
 			
-			Vector<Vector<String>> listaContatos = ed.buscaEvento();
+			Vector<Vector<String>> listaContatos = controlTelaLogin.eventoDao.buscaEvento();
 			preencheTabela(listaContatos);
 				
 	}

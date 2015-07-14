@@ -22,7 +22,6 @@ public class ControlTelaCadastro {
 	Mascaras mascaras =new Mascaras();
 		public TelaCadastro telaCadastro = new TelaCadastro();
 		ControlTelaLogin controlTelaLogin;
-		public PessoaDAO pessoaDAO = new PessoaDAO();
 		public JLabel llblNome;
 		public CriarQRCode ccriarQRCode = new CriarQRCode();
 		
@@ -66,7 +65,7 @@ public void EventosTelaCadastro(){
 				try {controlTelaLogin.pessoa.setSenha(mascaras.MD5(telaCadastro.getTxtSenha().getText()));
 				} catch (NoSuchAlgorithmException e) {e.printStackTrace();}
 				
-				pessoaDAO.inserir(controlTelaLogin.pessoa);
+				controlTelaLogin.pessoaDAO.inserir(controlTelaLogin.pessoa);
 				System.out.println(controlTelaLogin.pessoa.getSenha());
 				
 				
