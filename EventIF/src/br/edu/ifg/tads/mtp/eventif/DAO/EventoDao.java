@@ -169,6 +169,7 @@ public class EventoDao {
 			stmt.setDate(6, new Date (atividade.getHora_Fim().getTime()));
 			stmt.setInt(7,atividade.getCarga_Horaria());
 			stmt.setInt(8,atividade.getNumero_Vagas());
+			System.out.println(idEvento);
 			stmt.setInt(9, idEvento);
 			stmt.setInt(10, idTipo);
 			
