@@ -4,12 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
-import javax.swing.Action;
 import javax.swing.table.DefaultTableModel;
 
 import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
-import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 
 public class ControlTelaEventos {
 	
@@ -31,8 +29,9 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnAdicionar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.controlTelaADDEvento.telaADDEvento
-						.getFrmCadastrarEvento().setVisible(true);
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.initialize();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().repaint();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().setVisible(true);
 				telaEventos.getFrmEventos().dispose();
 
 			}

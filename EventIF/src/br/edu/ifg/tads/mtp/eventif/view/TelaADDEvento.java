@@ -34,11 +34,7 @@ public class TelaADDEvento {
 	private JTextField txtCidade;
 	private JTextField txtUF;
 	
-	public TelaADDEvento() {
-		initialize();
-	}
-
-	private void initialize() {
+	public void initialize() {
 		frmCadastrarEvento = new JFrame();
 		frmCadastrarEvento.getContentPane().setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
 		frmCadastrarEvento.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaADDEvento.class.getResource("/br/edu/ifg/tads/mtp/eventif/view/if.png")));
@@ -81,14 +77,14 @@ public class TelaADDEvento {
 		lblDescricao.setBounds(69, 280, 82, 24);
 		frmCadastrarEvento.getContentPane().add(lblDescricao);
 		
-		txtNomeev = new JTextField();
+		txtNomeev = new JTextField("");
 		txtNomeev.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNomeev.setBackground(Color.WHITE);
 		txtNomeev.setBounds(176, 64, 539, 26);
 		frmCadastrarEvento.getContentPane().add(txtNomeev);
 		txtNomeev.setColumns(10);
 		
-		txtEndereco = new JTextField();
+		txtEndereco = new JTextField("");
 		txtEndereco.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEndereco.setBackground(Color.WHITE);
 		txtEndereco.setBounds(176, 245, 226, 26);
@@ -108,14 +104,14 @@ public class TelaADDEvento {
 		frmCadastrarEvento.getContentPane().add(txtDataf);
 		txtDataf.setColumns(10);
 		
-		textOrganizador = new JTextField();
+		textOrganizador = new JTextField("");
 		textOrganizador.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		textOrganizador.setBackground(Color.WHITE);
 		textOrganizador.setBounds(176, 138, 539, 26);
 		frmCadastrarEvento.getContentPane().add(textOrganizador);
 		textOrganizador.setColumns(10);
 		
-		txtDescricao = new JTextArea();
+		txtDescricao = new JTextArea("");
 		txtDescricao.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtDescricao.setBackground(Color.WHITE);
 		txtDescricao.setBounds(178, 282, 539, 99);
@@ -140,7 +136,7 @@ public class TelaADDEvento {
 		lblTelefone.setBounds(67, 175, 92, 26);
 		frmCadastrarEvento.getContentPane().add(lblTelefone);
 		
-		txtTelefone = new JTextField();
+		txtTelefone = new JTextField("");
 		txtTelefone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtTelefone.setColumns(10);
 		txtTelefone.setBackground(Color.WHITE);
@@ -152,7 +148,7 @@ public class TelaADDEvento {
 		lblEmail.setBounds(355, 176, 68, 26);
 		frmCadastrarEvento.getContentPane().add(lblEmail);
 		
-		txtEmail = new JTextField();
+		txtEmail = new JTextField("");
 		txtEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtEmail.setColumns(10);
 		txtEmail.setBackground(Color.WHITE);
@@ -164,14 +160,14 @@ public class TelaADDEvento {
 		lblCep.setBounds(67, 208, 53, 26);
 		frmCadastrarEvento.getContentPane().add(lblCep);
 		
-		txtCep = new JTextField();
+		txtCep = new JTextField("");
 		txtCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCep.setColumns(10);
 		txtCep.setBackground(Color.WHITE);
 		txtCep.setBounds(176, 208, 169, 26);
 		frmCadastrarEvento.getContentPane().add(txtCep);
 		
-		txtNumero = new JTextField();
+		txtNumero = new JTextField("");
 		txtNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtNumero.setColumns(10);
 		txtNumero.setBackground(Color.WHITE);
@@ -188,7 +184,7 @@ public class TelaADDEvento {
 		lblBairro.setBounds(502, 245, 60, 26);
 		frmCadastrarEvento.getContentPane().add(lblBairro);
 		
-		txtBairro = new JTextField();
+		txtBairro = new JTextField("");
 		txtBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtBairro.setColumns(10);
 		txtBairro.setBackground(Color.WHITE);
@@ -200,7 +196,7 @@ public class TelaADDEvento {
 		lblCidade.setBounds(355, 211, 68, 24);
 		frmCadastrarEvento.getContentPane().add(lblCidade);
 		
-		txtCidade = new JTextField();
+		txtCidade = new JTextField("");
 		txtCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtCidade.setColumns(10);
 		txtCidade.setBackground(Color.WHITE);
@@ -212,7 +208,7 @@ public class TelaADDEvento {
 		lblUF.setBounds(624, 212, 35, 24);
 		frmCadastrarEvento.getContentPane().add(lblUF);
 		
-		txtUF = new JTextField();
+		txtUF = new JTextField("");
 		txtUF.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		txtUF.setColumns(10);
 		txtUF.setBackground(Color.WHITE);

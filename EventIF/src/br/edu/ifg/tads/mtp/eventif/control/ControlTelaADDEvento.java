@@ -47,12 +47,14 @@ public class ControlTelaADDEvento {
 				controlTelaLogin.eventoDao.inserir_evento(controlTelaLogin.evento);
 				controlTelaLogin.controlTelaEventos.preencheTabela();
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().dispose();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().removeAll();
 				controlTelaLogin.controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 			}
 		});
 		telaADDEvento.getBtnCancelar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().dispose();
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().removeAll();
 				controlTelaLogin.controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 			}
 		});

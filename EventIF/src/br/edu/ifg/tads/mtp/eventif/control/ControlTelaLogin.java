@@ -8,12 +8,8 @@ import javax.swing.JOptionPane;
 import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
 import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
-import br.edu.ifg.tads.mtp.eventif.model.Contato;
-import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
-import br.edu.ifg.tads.mtp.eventif.model.Estado;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
-import br.edu.ifg.tads.mtp.eventif.view.TelaADDMonitor;
 import br.edu.ifg.tads.mtp.eventif.view.TelaGerarCracha;
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
@@ -48,7 +44,6 @@ public void todosEventos(){
 	
 	TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			
 			controlTelaCadastro.telaCadastro.getFrame().setVisible(true);
 			TelaLogin.getFrameLogin().dispose();  
 		}
