@@ -1,25 +1,25 @@
 package br.edu.ifg.tads.mtp.eventif.util;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.security.NoSuchAlgorithmException;
 
-import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
-import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
-import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
-import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
+import br.edu.ifg.tads.mtp.eventif.control.ControlTelaLogin;
 
 public class ValidarLogin {
-	
-	PessoaDAO pd = new PessoaDAO();
-	TelaLogin tl = new TelaLogin();
-	
-	
+	ControlTelaLogin controlTelaLogin;
+	public ValidarLogin(ControlTelaLogin controlTelaLogin) {
+		   
+		this.controlTelaLogin = controlTelaLogin;
+	}
 	public void Validar(){
 		
-		tl.getTxtUsuario().toString();
-		pd.validar(tl.getTxtUsuario().toString(), tl.getTxtSenha().toString());
+		try {
+			System.out.println(controlTelaLogin.senha);
+			System.out.println(controlTelaLogin.login.replace(".", "").replace("-", ""));
+
+			controlTelaLogin.pessoaDAO.validar(controlTelaLogin.login.replace(".", "").replace("-", ""),controlTelaLogin.mascaras.MD5(controlTelaLogin.senha) );
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

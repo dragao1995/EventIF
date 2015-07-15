@@ -10,17 +10,19 @@ import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 import br.edu.ifg.tads.mtp.eventif.model.Atividade;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
+import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 import br.edu.ifg.tads.mtp.eventif.util.ValidarLogin;
 import br.edu.ifg.tads.mtp.eventif.view.TelaGerarCracha;
 import br.edu.ifg.tads.mtp.eventif.view.TelaLogin;
 
 public class ControlTelaLogin {
 	Evento evento = new Evento();
-	TelaLogin TelaLogin = new TelaLogin();
-	 Pessoa pessoa = new Pessoa();
-	 Atividade atividade= new Atividade();
-	 EventoDao eventoDao= new EventoDao();
-	public ValidarLogin validarLogin = new ValidarLogin(); 
+	public TelaLogin telaLogin = new TelaLogin();
+	public Pessoa pessoa = new Pessoa();
+	public Atividade atividade= new Atividade();
+	public EventoDao eventoDao= new EventoDao();
+	public ValidarLogin validarLogin = new ValidarLogin(this); 
+	public Mascaras mascaras= new Mascaras();
 	public PessoaDAO pessoaDAO = new PessoaDAO();
 	public TelaGerarCracha telaGerarCracha= new TelaGerarCracha();
 	public ControlTelaEventos controlTelaEventos = new ControlTelaEventos(this);
@@ -29,11 +31,11 @@ public class ControlTelaLogin {
 	public ControlTelaADDEvento controlTelaADDEvento = new ControlTelaADDEvento(this);
 	public ControlTelaADDAtividades controlTelaADDAtividades = new ControlTelaADDAtividades(this);
 	public ControlTelaADDMonitor controlTelaADDMonitor = new ControlTelaADDMonitor(this);
-		
+	public String login="";
+	public String senha="";
 
 public void Login() {
-	TelaLogin.getFrameLogin().setVisible(true);
-	//validarLogin.Validar();
+	telaLogin.getFrameLogin().setVisible(true);
 }
 
 public void todosEventos(){
@@ -45,20 +47,24 @@ public void todosEventos(){
 	controlTelaADDAtividades.EventosTelaADDAtividades();
 	controlTelaADDMonitor.EventosTelaADDMonitor();
 	
-	TelaLogin.getBtnCadastro().addActionListener(new ActionListener() {
+	telaLogin.getBtnCadastro().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-
+			
 			controlTelaCadastro.telaCadastro.initialize();
 			controlTelaCadastro.telaCadastro.getFrame().repaint();
 			controlTelaCadastro.telaCadastro.getFrame().setVisible(true);
-			TelaLogin.getFrameLogin().dispose();  
+			telaLogin.getFrameLogin().dispose();  
 		}
 	});
 
-	TelaLogin.getBtnLogin().addActionListener(new ActionListener() {
+	telaLogin.getBtnLogin().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			
-			if (TelaLogin.getRdbtnGerente().isSelected() || TelaLogin.getRdbtnMonitor().isSelected() ||TelaLogin.getRdbtnParticipante().isSelected()) {			
+			if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
+				senha = telaLogin.getTxtSenha().getText() ;
+				login = telaLogin.getTxtUsuario().getText();
+
+				validarLogin.Validar();
 				controlTelaEventos.preencheTabela();
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(false);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(false);
@@ -69,7 +75,7 @@ public void todosEventos(){
 				controlTelaEventos.telaEventos.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(false);
-				if (TelaLogin.getRdbtnGerente().isSelected()) {
+				if (telaLogin.getRdbtnGerente().isSelected()) {
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnEditar().setVisible(true);
@@ -79,13 +85,13 @@ public void todosEventos(){
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(true);
 				
 			}
-			if ( TelaLogin.getRdbtnMonitor().isSelected() ) {
+			if ( telaLogin.getRdbtnMonitor().isSelected() ) {
 				controlTelaEventos.telaEventos.getBtnLerQrcode().setVisible(true);
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(true);
 			}
 			
 			controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
-			TelaLogin.getFrameLogin().dispose();  
+			telaLogin.getFrameLogin().dispose();  
 			}else {
 				
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
