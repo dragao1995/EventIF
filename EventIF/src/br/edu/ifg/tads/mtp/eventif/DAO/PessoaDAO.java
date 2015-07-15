@@ -22,14 +22,15 @@ import br.edu.ifg.tads.mtp.eventif.model.Estado;
 import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
-import br.edu.ifg.tads.mtp.eventif.model.Contato;;
+import br.edu.ifg.tads.mtp.eventif.model.Contato;
+import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Monitor;
 
 public class PessoaDAO {
 	
 	Contato c = new Contato();
 	Endereco_Pessoa ep = new Endereco_Pessoa();
 	Pessoa pessoa = new Pessoa();
-	
+	int idPessoa = 0;
 	public void inserir(Pessoa pessoa){
 		
 		Connection con = null;
@@ -110,7 +111,7 @@ public class PessoaDAO {
 					+ "(nome,cpf,rg,senha,idEndereco_pes,idContato)" + " values (?,?,?,?,?,?)";
 			
 			con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement(sql);
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, pessoa.getNome());
 			stmt.setString(2, pessoa.getCpf());
@@ -118,8 +119,41 @@ public class PessoaDAO {
 			stmt.setString(4, pessoa.getSenha());
 			stmt.setInt(5, idEndereco_pes);
 			stmt.setInt(6, idContato);
+			
+			idPessoa = 0;
+			if(rs.next()){
+				idPessoa = rs.getInt("idPessoa");
+			}
 
-			// executa
+			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
+		} catch (Exception e) {
+			throw new RuntimeException(
+					"falha ao tentar executar um comando no BD. Verifique sua conexão " + e.getMessage());
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e) {
+				throw new RuntimeException(
+						"não foi possível fechar a conexão com o BD");
+			}
+		}
+		
+	}
+	public void inserir_Monitor(Pessoa_Monitor pm){
+		
+		Connection con = null;
+		try {
+			
+			String sql = "insert into PESSOA_MONITOR "
+					+ "(idPessoa)" + " Select idPessoa from Pessoa where cpf = ?";
+			
+			con = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = con.prepareStatement(sql);
+
+			stmt.setLong(1, pessoa.getIdPessoa());
+			stmt.setString(2,pessoa.getCpf());
+			
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw new RuntimeException(
@@ -134,7 +168,6 @@ public class PessoaDAO {
 		}
 		
 	}
-	// terminar
 	public Pessoa buscar(Pessoa p){
 		PreparedStatement stmt;
 		
