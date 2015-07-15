@@ -43,6 +43,8 @@ public class ControlTelaAtividades {
 	 telaAtividades.getBtnInscrever().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				
+				
 			}
 		});
 	 telaAtividades.getBtnVoltar().addActionListener(new ActionListener() {
