@@ -293,6 +293,46 @@ public class EventoDao {
 		}
 
 	}
+	
+	public Vector<Vector<String>> buscaEventoNome(Evento e) {
+
+		try {
+			Vector<Vector<String>> eventos = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(
+							"select * from EVENTO where nome like '%"
+									+ e.getNome() + "%'");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				// criando o objeto Contato
+				Evento evento = new Evento();
+				evento.setIdEvento(rs.getLong("idEvento"));
+				evento.setNome(rs.getString("nome"));
+				evento.setOrganizador(rs.getString("Organizador"));
+				evento.setData_Inicio(rs.getDate("data_incio"));
+				evento.setData_Fim(rs.getDate("data_fim"));
+
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + evento.getIdEvento());
+				colunas.add(evento.getNome());
+				colunas.add(evento.getOrganizador());
+				colunas.add(""+evento.getData_Inicio());
+				colunas.add(""+evento.getData_Fim());
+				colunas.add("alterar");
+				colunas.add("excluir");
+
+				// adicionando o objeto à lista
+				eventos.add(colunas);
+			}
+			rs.close();
+			stmt.close();
+			return eventos;
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	
+	
 	public Vector<Vector<String>> buscaAtividade(){
 		try {
 			Vector<Vector<String>> Atividade = new Vector<Vector<String>>();
@@ -337,6 +377,46 @@ public class EventoDao {
 			throw new RuntimeException(e);
 		}
 				
+	}
+	
+	public Vector<Vector<String>> buscaAtividadeNome(Atividade a) {
+
+		try {
+			Vector<Vector<String>> eventos = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(
+							"select * from ATIVIDADE where nome like '%"
+									+ a.getNome() + "%'");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				// criando o objeto Contato
+				Atividade atividade = new Atividade();
+				atividade.setIdAtividade(rs.getLong("idAtividade"));
+				atividade.setNome(rs.getString("nome"));
+				atividade.setMinistrante(rs.getString("ministrante"));
+				atividade.setDescricao(rs.getString("descricao"));
+				atividade.setHora_Inicio(rs.getDate("hora_incio"));
+				atividade.setHora_Inicio(rs.getDate("hora_fim"));
+
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + atividade.getIdAtividade());
+				colunas.add(atividade.getNome());
+				colunas.add(atividade.getMinistrante());
+				colunas.add(atividade.getDescricao());
+				colunas.add(""+atividade.getHora_Inicio());
+				colunas.add(""+atividade.getHora_Fim());
+				colunas.add("alterar");
+				colunas.add("excluir");
+
+				// adicionando o objeto à lista
+				eventos.add(colunas);
+			}
+			rs.close();
+			stmt.close();
+			return eventos;
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
 	}
 	
 	public void altera_contado(Contato cont){

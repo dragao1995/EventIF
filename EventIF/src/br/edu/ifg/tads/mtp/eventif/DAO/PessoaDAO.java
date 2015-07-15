@@ -203,6 +203,41 @@ public class PessoaDAO {
 		}
 
 	}
+	
+	public Vector<Vector<String>> buscaNome(Pessoa p) {
+
+		try {
+			Vector<Vector<String>> pessoas = new Vector<Vector<String>>();
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(
+							"select * from NOME where nome like '%"
+									+ p.getNome() + "%'");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				// criando o objeto Contato
+				Pessoa pessoa = new Pessoa();
+				pessoa.setIdPessoa(rs.getLong("idPessoa"));
+				pessoa.setNome(rs.getString("nome"));
+				pessoa.setCpf(rs.getString("cpf"));
+
+				Vector<String> colunas = new Vector<String>();
+				colunas.add("" + pessoa.getIdPessoa());
+				colunas.add(pessoa.getNome());
+				colunas.add(pessoa.getCpf());
+				colunas.add("alterar");
+				colunas.add("excluir");
+
+				// adicionando o objeto à lista
+				pessoas.add(colunas);
+			}
+			rs.close();
+			stmt.close();
+			return pessoas;
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
+	
 	public void altera_contado(Contato cont){
 		String sql = "update CONTATO set telefone=?,email=?"
 				+ "where idContato=?";
