@@ -218,6 +218,7 @@ public class EventoDao {
 
 		return evento;
 	}
+	
 	public Atividade buscar_Atividade(Atividade a){
 		PreparedStatement stmt;
 		
@@ -333,11 +334,12 @@ public class EventoDao {
 	}
 	
 	
-	public Vector<Vector<String>> buscaAtividade(){
+	public Vector<Vector<String>> buscaAtividade(Evento e){
 		try {
 			Vector<Vector<String>> Atividade = new Vector<Vector<String>>();
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
-					.prepareStatement("select * from ATIVIDADE order by idAtividade");
+					.prepareStatement("select * from ATIVIDADE where idEvento=? order by idAtividade");
+			stmt.setLong(1, e.getIdEvento());
 			ResultSet rs = stmt.executeQuery();
 			
 			while (rs.next()) {
@@ -373,8 +375,8 @@ public class EventoDao {
 			rs.close();
 			stmt.close();
 			return Atividade;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
 		}
 				
 	}

@@ -2,6 +2,7 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.NoSuchAlgorithmException;
 
 import javax.swing.JOptionPane;
 
@@ -59,12 +60,18 @@ public void todosEventos(){
 
 	telaLogin.getBtnLogin().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			
-			if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
-				senha = telaLogin.getTxtSenha().getText() ;
-				login = telaLogin.getTxtUsuario().getText();
+			//validar
+			try {senha = mascaras.MD5(telaLogin.getTxtSenha().getText()) ;
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
+			login = telaLogin.getTxtUsuario().getText();
+			;
+			if (validarLogin.Validar()) {
+				
+			//validarfim
+			//if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
 
-				validarLogin.Validar();
 				controlTelaEventos.preencheTabela();
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(false);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(false);
@@ -75,6 +82,7 @@ public void todosEventos(){
 				controlTelaEventos.telaEventos.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(false);
+				
 				if (telaLogin.getRdbtnGerente().isSelected()) {
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
@@ -92,12 +100,14 @@ public void todosEventos(){
 			
 			controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 			telaLogin.getFrameLogin().dispose();  
+			
 			}else {
 				
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
-			}
-		
+			
 		}
+			//}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
+			}
 	});
 
 }

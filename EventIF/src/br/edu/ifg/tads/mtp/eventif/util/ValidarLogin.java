@@ -10,17 +10,16 @@ public class ValidarLogin {
 		   
 		this.controlTelaLogin = controlTelaLogin;
 	}
-	public void Validar(){
+	public boolean Validar(){
 		
-		try {
-			System.out.println(controlTelaLogin.senha);
+			
 			System.out.println(controlTelaLogin.login.replace(".", "").replace("-", ""));
-
-			controlTelaLogin.pessoaDAO.validar(controlTelaLogin.login.replace(".", "").replace("-", ""),controlTelaLogin.mascaras.MD5(controlTelaLogin.senha) );
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+			System.out.println(controlTelaLogin.senha);
+			if(controlTelaLogin.pessoaDAO.validar(controlTelaLogin.login.replace(".", "").replace("-", ""),controlTelaLogin.senha)){
+				return true;
+			}
 		
+		return false;
 	}
 
 }

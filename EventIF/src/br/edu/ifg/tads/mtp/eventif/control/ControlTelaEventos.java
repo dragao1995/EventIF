@@ -19,6 +19,7 @@ public class ControlTelaEventos {
 	ControlTelaLogin controlTelaLogin;
 	//private Action alterarAction;
 	//private Action excluirAction;
+	int ID_evento = 0;
 
 	public ControlTelaEventos(ControlTelaLogin controlTelaLogin) {
    
@@ -45,7 +46,7 @@ public class ControlTelaEventos {
 				
 				try{
 					int linhaselect = telaEventos.getTable().getSelectedRow();
-					int ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
+					ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
 					
 					controlTelaLogin.evento.setIdEvento((long)ID_evento);
 					System.out.println(ID_evento);
@@ -53,7 +54,10 @@ public class ControlTelaEventos {
 					
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.initialize();
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getFrmCadastrarEvento().setVisible(true);
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtNomeev().setText(""+controlTelaLogin.evento.getNome());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTextOrganizador().setText(""+controlTelaLogin.evento.getOrganizador());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDatainicial().setText(""+controlTelaLogin.evento.getData_Inicio());
+				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDataf().setText(""+controlTelaLogin.evento.getData_Fim());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtDescricao().setText(""+controlTelaLogin.evento.getDescricao());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtTelefone().setText(""+controlTelaLogin.evento.getContato().getTelefone());
 				controlTelaLogin.controlTelaADDEvento.telaADDEvento.getTxtEmail().setText(""+controlTelaLogin.evento.getContato().getEmail());
@@ -94,11 +98,21 @@ public class ControlTelaEventos {
 		});
 		telaEventos.getBtnAtividades().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controlTelaLogin.controlTelaAtividades.preencheTabela();
-				controlTelaLogin.controlTelaAtividades.telaAtividades
+				try{
+					int linhaselect = telaEventos.getTable().getSelectedRow();
+					ID_evento= Integer.parseInt(telaEventos.getTable().getValueAt(linhaselect, 0).toString());
+					
+					controlTelaLogin.evento.setIdEvento((long)ID_evento);
+					System.out.println(ID_evento);
+					controlTelaLogin.evento = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
+					controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);
 				telaEventos.getFrmEventos().dispose();
-
+					
+					controlTelaLogin.controlTelaAtividades.preencheTabela();
+					}catch(ArrayIndexOutOfBoundsException e){
+						JOptionPane.showMessageDialog(null, "Escolha um evento!");
+					}
 			}
 		});
 		telaEventos.getBtnLerQrcode().addActionListener(new ActionListener() {

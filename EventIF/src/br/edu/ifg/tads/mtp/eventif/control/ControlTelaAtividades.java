@@ -69,7 +69,7 @@ public class ControlTelaAtividades {
  
  public void preencheTabela(){
 		
-		Vector<Vector<String>> listaContatos = controlTelaLogin.eventoDao.buscaAtividade();
+		Vector<Vector<String>> listaContatos = controlTelaLogin.eventoDao.buscaAtividade(controlTelaLogin.evento);
 		preencheTabela(listaContatos);
 			
 }
@@ -83,8 +83,8 @@ public void preencheTabela(Vector<Vector<String>> listaContatos){
 	colunas.add("nome");
 	colunas.add("Descrição");
 	colunas.add("Organizador");
-	colunas.add("Data Inico");
-	colunas.add("Data Fim");
+	colunas.add("Data");
+	//colunas.add("Data Fim");
 	
 	DefaultTableModel model = new DefaultTableModel(listaContatos, colunas);
 	telaAtividades.getTable().setModel(model);

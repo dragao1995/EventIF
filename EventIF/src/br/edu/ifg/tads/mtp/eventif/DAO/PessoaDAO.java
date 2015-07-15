@@ -325,20 +325,24 @@ public class PessoaDAO {
 		}
 	}
 	
-	public void validar(String cpf,String senha) {
+	public boolean validar(String cpf,String senha) {
 		Connection con = new ConnectionFactory().getConnection();
-		String sql = "SELECT*FROM PESSOA WHERE cpf = " + cpf;
+		String sql = "SELECT * FROM PESSOA WHERE cpf = ?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
+			stmt.setString(1, cpf);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()){
 				String lc = rs.getString("cpf");
 				String ls = rs.getString("senha");
 				if(senha.equals(ls)){
 					System.out.println("Senha correta");
+					return true;
+					
 				}else{
 					System.out.println("Senha incorreta ou cpf");
+					return false;
 				}
 			}
 			rs.close();
@@ -348,6 +352,7 @@ public class PessoaDAO {
 			ex.printStackTrace();
 			System.out.println("erro no validar "+ex.getMessage());
 		}
+		return false;
 		
 	}
 
