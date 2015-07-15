@@ -30,7 +30,7 @@ public class PessoaDAO {
 	Contato c = new Contato();
 	Endereco_Pessoa ep = new Endereco_Pessoa();
 	Pessoa pessoa = new Pessoa();
-	int idPessoa = 0;
+	public int idPessoa;
 	public void inserir(Pessoa pessoa){
 		
 		Connection con = null;
@@ -140,6 +140,7 @@ public class PessoaDAO {
 		}
 		
 	}
+	/*
 	public void inserir_Monitor(Pessoa_Monitor pm){
 		
 		Connection con = null;
@@ -168,6 +169,7 @@ public class PessoaDAO {
 		}
 		
 	}
+	*/
 	public Pessoa buscar(Pessoa p){
 		PreparedStatement stmt;
 		

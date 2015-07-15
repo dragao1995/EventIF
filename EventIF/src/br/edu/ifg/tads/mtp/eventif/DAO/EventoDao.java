@@ -24,7 +24,9 @@ public class EventoDao {
 	Contato contato = new Contato();
 	Endereco_Evento ee = new Endereco_Evento();
 	
-	int idEvento = 0;
+	public int idEvento;
+	public int idAtividade;
+	
 	public void inserir_evento(Evento evento){
 		
 		Connection con = null;
@@ -159,7 +161,7 @@ public class EventoDao {
 					+"(values (?,?,?,?,?,?,?,?,?,?))";
 			
 			con = new ConnectionFactory().getConnection();
-			stmt = con.prepareStatement(sql);
+			stmt = con.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);
 			
 			stmt.setString(1, atividade.getNome());
 			stmt.setString(2, atividade.getDescricao());
@@ -173,7 +175,12 @@ public class EventoDao {
 			stmt.setInt(9, idEvento);
 			stmt.setInt(10, idTipo);
 			
+			idAtividade = 0;
+			if(rs.next()){
+				idAtividade = rs.getInt("idAtividade");
+			}
 			stmt.executeUpdate();
+			rs = stmt.getGeneratedKeys();
 	} catch (Exception e) {
 		throw new RuntimeException(
 				"falha ao tentar executar um comando no BD. Verifique sua conexão "+e.getMessage());
