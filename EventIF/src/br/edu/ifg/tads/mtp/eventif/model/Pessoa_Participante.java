@@ -5,6 +5,7 @@ public class Pessoa_Participante {
 	private long idPessoa_Part;
 	private Pessoa pessoa = new Pessoa();
 	
+	
 	public long getIdPessoa_Part() {
 		return idPessoa_Part;
 	}
