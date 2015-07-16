@@ -19,7 +19,7 @@ public class ControlTelaEventos {
 	ControlTelaLogin controlTelaLogin;
 	//private Action alterarAction;
 	//private Action excluirAction;
-	int ID_evento = 0;
+	int ID_evento;
  
 	public ControlTelaEventos(ControlTelaLogin controlTelaLogin) {
    

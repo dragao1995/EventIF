@@ -22,7 +22,11 @@ public class ControlTelaAtividades {
  public void EventosTelaAtividades(){
 	 telaAtividades.getBtnAdicionar().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
+			System.out.println(controlTelaLogin.controlTelaEventos.ID_evento);
+
+			controlTelaLogin.evento.setIdEvento(controlTelaLogin.controlTelaEventos.ID_evento);
 			
+			controlTelaLogin.evento = controlTelaLogin.eventoDao.buscar_evento(controlTelaLogin.evento);
 			controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.initialize();
 			controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().setVisible(true);
 			controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().repaint();
