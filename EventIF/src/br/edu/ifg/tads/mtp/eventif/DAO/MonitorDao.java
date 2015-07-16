@@ -52,19 +52,19 @@ public class MonitorDao {
 		
 	}
 
-	public void inserir_monitor_atividade(Pessoa_Monitor pm){
+	public void inserir_monitor_atividade(Monitor_Evento me){
 		
 		Connection con = null;
 		try {
 			
 			String sql = "insert into MONITOR_ATIVIDADE "
-					+ "(idPessoa_mon)" + " Select idPessoa_mon from Pessoa_Monitor " +
-							"where idPessoa_mon = pessoa.idPessoa and pessoa.cpf = ?";
+					+ "(idPessoa_mon)" + " Select idPessoa_mon from PESSOA_MONITOR,PESSOA " +
+							"where idPessoa_mon = PESSOA.idPessoa and PESSOA.cpf = ?";
 			
 			con = new ConnectionFactory().getConnection();
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setLong(1, pm.getIdPessoa_Mon());
+			stmt.setLong(1, me.getPessoa_mon().getIdPessoa_Mon());
 			stmt.setString(2,pessoa.getCpf());
 			
 			stmt.executeUpdate();
@@ -80,7 +80,33 @@ public class MonitorDao {
 			}
 		}
 		
-		
 	}
+		public void inserir_atividade_monitor(Monitor_Evento me){
+		
+		Connection con = null;
+		try {
+			
+			String sql = "insert into MONITOR_ATIVIDADE "
+					+ "(idAtividade)" + " Select idAtividade from ATIVIDADE,EVENTO " +
+							"where idAtividade =  ?";
+			
+			con = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = con.prepareStatement(sql);
 
-}
+			stmt.setLong(1, me.getAtividade().getIdAtividade());
+			
+			stmt.executeUpdate();
+		} catch (Exception e) {
+			throw new RuntimeException(
+					"falha ao tentar executar um comando no BD. Verifique sua conexão " + e.getMessage());
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e) {
+				throw new RuntimeException(
+						"não foi possível fechar a conexão com o BD");
+			}
+		}
+
+		}
+	}
