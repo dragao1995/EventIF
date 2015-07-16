@@ -67,7 +67,7 @@ public void todosEventos(){
 			}
 			login = telaLogin.getTxtUsuario().getText();
 			;
-			if (validarLogin.Validar()) {
+			//if (validarLogin.Validar()) {
 				
 			//validarfim
 			if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
@@ -83,7 +83,7 @@ public void todosEventos(){
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(false);
 				
-				if (telaLogin.getRdbtnGerente().isSelected()) {
+				if (telaLogin.getRdbtnGerente().isSelected()&& validarLogin.ValidarGerente()) {
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnEditar().setVisible(true);
@@ -106,7 +106,7 @@ public void todosEventos(){
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
 			
 		}
-			}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
+			//}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
 			}
 	});
 

@@ -10,16 +10,26 @@ public class ValidarLogin {
 		   
 		this.controlTelaLogin = controlTelaLogin;
 	}
+	
+	
+	
+	
 	public boolean Validar(){
-		
-			
-			System.out.println(controlTelaLogin.login.replace(".", "").replace("-", ""));
-			System.out.println(controlTelaLogin.senha);
 			if(controlTelaLogin.pessoaDAO.validar(controlTelaLogin.login.replace(".", "").replace("-", ""),controlTelaLogin.senha)){
 				return true;
 			}
-		
 		return false;
 	}
+	
+	
+	
+	
+	public boolean ValidarGerente(){
+		if(controlTelaLogin.pessoaDAO.validar_gerente(controlTelaLogin.login.replace(".", "").replace("-", ""),controlTelaLogin.senha)){
+			return true;
+		}
+	return false;
+}
+	
 
 }
