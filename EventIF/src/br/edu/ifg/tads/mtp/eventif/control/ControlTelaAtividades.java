@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import br.edu.ifg.tads.mtp.eventif.DAO.EventoDao;
@@ -40,6 +41,19 @@ public class ControlTelaAtividades {
 		});
 	 telaAtividades.getBtnExcluir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				try{
+					controlTelaLogin.eventoDao.idEvento=controlTelaLogin.controlTelaEventos.ID_evento;
+					int linhaselect = telaAtividades.getTable().getSelectedRow();
+					int ID_ativ= Integer.parseInt(telaAtividades.getTable().getValueAt(linhaselect, 0).toString());
+					controlTelaLogin.eventoDao.idAtividade=ID_ativ;
+					controlTelaLogin.eventoDao.remove_atividade(controlTelaLogin.eventoDao.atividade);
+					
+					
+					}catch(ArrayIndexOutOfBoundsException e){
+						JOptionPane.showMessageDialog(null, "Escolha uma atividade!");
+					}
+					controlTelaLogin.controlTelaEventos.preencheTabela();	
 				
 			}
 		});

@@ -19,7 +19,7 @@ import br.edu.ifg.tads.mtp.eventif.model.Tipo;
 public class EventoDao {
 	
 	Evento evento = new Evento();
-	Atividade atividade = new Atividade();
+	public Atividade atividade = new Atividade();
 	Tipo tipo = new Tipo();
 	Contato contato = new Contato();
 	Endereco_Evento ee = new Endereco_Evento();
