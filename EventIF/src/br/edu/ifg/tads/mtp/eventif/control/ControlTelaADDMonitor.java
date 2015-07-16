@@ -32,7 +32,7 @@ public class ControlTelaADDMonitor {
 					ID_Atividade= Integer.parseInt(telaADDMonitor.getTable().getValueAt(linhaselect, 0).toString());
 					
 					controlTelaLogin.atividade.setIdAtividade((long)ID_Atividade);
-					System.out.println(ID_Atividade);
+
 					controlTelaLogin.atividade = controlTelaLogin.eventoDao.buscar_Atividade(controlTelaLogin.atividade);
 					controlTelaLogin.controlTelaAtividades.telaAtividades
 						.getFrmEventos().setVisible(true);

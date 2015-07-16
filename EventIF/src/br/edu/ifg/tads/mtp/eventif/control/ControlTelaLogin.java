@@ -84,7 +84,7 @@ public void todosEventos(){
 				if (telaLogin.getRdbtnParticipante().isSelected()&&validarLogin.Validar()) {
 					controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
 					telaLogin.getFrameLogin().dispose();
-				}else if (telaLogin.getRdbtnGerente().isSelected()/*&& validarLogin.ValidarGerente()*/) {
+				}else if (telaLogin.getRdbtnGerente().isSelected()&& validarLogin.ValidarGerente()) {
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnEditar().setVisible(true);
