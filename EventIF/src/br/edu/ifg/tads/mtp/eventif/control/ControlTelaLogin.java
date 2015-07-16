@@ -70,7 +70,7 @@ public void todosEventos(){
 			if (validarLogin.Validar()) {
 				
 			//validarfim
-			//if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
+			if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
 
 				controlTelaEventos.preencheTabela();
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(false);
@@ -106,7 +106,7 @@ public void todosEventos(){
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
 			
 		}
-			//}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
+			}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
 			}
 	});
 
