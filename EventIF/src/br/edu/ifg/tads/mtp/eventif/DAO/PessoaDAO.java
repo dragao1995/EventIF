@@ -353,13 +353,12 @@ public class PessoaDAO {
 	}
 	public boolean validar_gerente(String cpf,String senha) {
 		Connection con = new ConnectionFactory().getConnection();
-		String sql = "SELECT * FROM PESSOA,PESSOA_GERENTE WHERE PESSOA.idPessoa = ? and PESSOA.cpf=?";
+		String sql = "SELECT * FROM PESSOA,PESSOA_GERENTE WHERE PESSOA.cpf=?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
 			
-			stmt.setLong(1, pg.getIdPessoa_Ger());
-			stmt.setString(2, cpf);
+			stmt.setString(1, cpf);
 			
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()){
