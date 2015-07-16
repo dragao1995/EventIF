@@ -66,8 +66,6 @@ public void todosEventos(){
 				e.printStackTrace();
 			}
 			login = telaLogin.getTxtUsuario().getText();
-			;
-			//if (validarLogin.Validar()) {
 				
 			//validarfim
 			if (telaLogin.getRdbtnGerente().isSelected() || telaLogin.getRdbtnMonitor().isSelected() ||telaLogin.getRdbtnParticipante().isSelected()) {			
@@ -83,7 +81,10 @@ public void todosEventos(){
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(false);
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(false);
 				
-				if (telaLogin.getRdbtnGerente().isSelected()&& validarLogin.ValidarGerente()) {
+				if (telaLogin.getRdbtnParticipante().isSelected()&&validarLogin.Validar()) {
+					controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
+					telaLogin.getFrameLogin().dispose();
+				}else if (telaLogin.getRdbtnGerente().isSelected()&& validarLogin.ValidarGerente()) {
 				controlTelaEventos.telaEventos.getBtnAdicionar().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnExcluir().setVisible(true);
 				controlTelaEventos.telaEventos.getBtnEditar().setVisible(true);
@@ -91,22 +92,23 @@ public void todosEventos(){
 				controlTelaAtividades.telaAtividades.getBtnEditar().setVisible(true);
 				controlTelaAtividades.telaAtividades.getBtnExcluir().setVisible(true);
 				controlTelaAtividades.telaAtividades.getBtnAddMonitor().setVisible(true);
+				controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
+				telaLogin.getFrameLogin().dispose(); 
 				
-			}
-			if ( telaLogin.getRdbtnMonitor().isSelected() ) {
+			}else if ( telaLogin.getRdbtnMonitor().isSelected() ) {
 				controlTelaEventos.telaEventos.getBtnLerQrcode().setVisible(true);
 				controlTelaAtividades.telaAtividades.getBtnLerQrcode().setVisible(true);
-			}
+				controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
+				telaLogin.getFrameLogin().dispose();  
+			}else {JOptionPane.showMessageDialog(null, "Senha/login invalido ou Modulo marcado errado");}
 			
-			controlTelaEventos.telaEventos.getFrmEventos().setVisible(true);
-			telaLogin.getFrameLogin().dispose();  
 			
 			}else {
 				
 				JOptionPane.showMessageDialog(null, "Selecione o modulo");
 			
 		}
-			//}else{JOptionPane.showMessageDialog(null, "Senha/login invalido");}
+			
 			}
 	});
 
