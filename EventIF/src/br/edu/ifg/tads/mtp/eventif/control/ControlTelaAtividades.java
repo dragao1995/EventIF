@@ -53,7 +53,7 @@ public class ControlTelaAtividades {
 					}catch(ArrayIndexOutOfBoundsException e){
 						JOptionPane.showMessageDialog(null, "Escolha uma atividade!");
 					}
-					controlTelaLogin.controlTelaEventos.preencheTabela();	
+					controlTelaLogin.controlTelaAtividades.preencheTabela();
 				
 			}
 		});
