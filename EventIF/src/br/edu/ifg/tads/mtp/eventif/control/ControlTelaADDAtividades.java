@@ -11,7 +11,7 @@ import br.edu.ifg.tads.mtp.eventif.view.TelaADDAtividades;
 public class ControlTelaADDAtividades {
 	TelaADDAtividades telaADDAtividades = new TelaADDAtividades();
 	ControlTelaLogin controlTelaLogin;
-
+ 
 	public ControlTelaADDAtividades(ControlTelaLogin controlTelaLogin) {
 		this.controlTelaLogin = controlTelaLogin;
 	};
