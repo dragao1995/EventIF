@@ -59,6 +59,7 @@ public class ControlTelaADDAtividades {
 						controlTelaLogin.eventoDao.inserir_Atividade(controlTelaLogin.atividade);
 						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().dispose();
 						controlTelaLogin.controlTelaADDAtividades.telaADDAtividades.getFrmEventif().removeAll();
+						controlTelaLogin.controlTelaAtividades.preencheTabela();
 						controlTelaLogin.controlTelaAtividades.telaAtividades.getFrmEventos().setVisible(true);
 						
 						
