@@ -2,7 +2,6 @@ package br.edu.ifg.tads.mtp.eventif.control;
 
 
 import java.awt.Font;
-import javax.swing.SwingConstants;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -10,8 +9,8 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
-import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
 import br.edu.ifg.tads.mtp.eventif.util.Cracha;
 import br.edu.ifg.tads.mtp.eventif.util.CriarQRCode;
 import br.edu.ifg.tads.mtp.eventif.util.Mascaras;

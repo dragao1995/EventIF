@@ -3,7 +3,7 @@ package br.edu.ifg.tads.mtp.eventif.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -11,7 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.text.MaskFormatter;
 
 import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 

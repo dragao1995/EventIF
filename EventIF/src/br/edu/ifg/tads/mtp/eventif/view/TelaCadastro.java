@@ -1,17 +1,15 @@
 package br.edu.ifg.tads.mtp.eventif.view;
-import javax.swing.JFrame;
 import java.awt.Color;
-
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JPasswordField;
-
 import java.awt.Font;
-import javax.swing.JTextField;
 import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.text.MaskFormatter;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 

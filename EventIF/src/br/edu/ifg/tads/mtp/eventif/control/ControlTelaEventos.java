@@ -7,9 +7,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import br.edu.ifg.tads.mtp.eventif.DAO.PessoaDAO;
-import br.edu.ifg.tads.mtp.eventif.model.Evento;
-import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.util.LerQrcode;
 import br.edu.ifg.tads.mtp.eventif.view.TelaEventos;
 

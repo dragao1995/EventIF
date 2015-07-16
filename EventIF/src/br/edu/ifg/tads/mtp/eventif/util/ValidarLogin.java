@@ -1,7 +1,5 @@
 package br.edu.ifg.tads.mtp.eventif.util;
 
-import java.security.NoSuchAlgorithmException;
-
 import br.edu.ifg.tads.mtp.eventif.control.ControlTelaLogin;
 
 public class ValidarLogin {

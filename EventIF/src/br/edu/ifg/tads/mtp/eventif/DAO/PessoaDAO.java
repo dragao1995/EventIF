@@ -1,29 +1,18 @@
 package br.edu.ifg.tads.mtp.eventif.DAO;
 
-import java.beans.Statement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 import java.util.Vector;
-
-import javax.sql.ConnectionEvent;
 
 import br.edu.ifg.tads.mtp.eventif.bd.ConnectionFactory;
 import br.edu.ifg.tads.mtp.eventif.model.Cidade;
-import br.edu.ifg.tads.mtp.eventif.model.Endereco_Evento;
+import br.edu.ifg.tads.mtp.eventif.model.Contato;
 import br.edu.ifg.tads.mtp.eventif.model.Endereco_Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Estado;
-import br.edu.ifg.tads.mtp.eventif.model.Evento;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa;
 import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Gerente;
-import br.edu.ifg.tads.mtp.eventif.model.Contato;
-import br.edu.ifg.tads.mtp.eventif.model.Pessoa_Monitor;
 
 public class PessoaDAO {
 	

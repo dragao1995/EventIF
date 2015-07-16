@@ -1,21 +1,18 @@
 package br.edu.ifg.tads.mtp.eventif.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.Color;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import javax.swing.text.MaskFormatter;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
 import br.edu.ifg.tads.mtp.eventif.util.Mascaras;
 

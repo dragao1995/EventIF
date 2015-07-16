@@ -1,6 +1,5 @@
 package br.edu.ifg.tads.mtp.eventif.model;
 
-import java.sql.PreparedStatement;
 
 public class Pessoa_Gerente {
 	

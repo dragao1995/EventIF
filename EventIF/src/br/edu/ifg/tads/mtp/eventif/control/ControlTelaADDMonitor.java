@@ -29,18 +29,10 @@ public class ControlTelaADDMonitor {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					int linhaselect = telaADDMonitor.getTable().getSelectedRow();
-					ID_Atividade= Integer.parseInt(telaADDMonitor.getTable().getValueAt(linhaselect, 0).toString());
+					int ID_Pessoa= Integer.parseInt(telaADDMonitor.getTable().getValueAt(linhaselect, 0).toString());
 					
-					controlTelaLogin.atividade.setIdAtividade((long)ID_Atividade);
-
-					controlTelaLogin.atividade = controlTelaLogin.eventoDao.buscar_Atividade(controlTelaLogin.atividade);
-					controlTelaLogin.controlTelaAtividades.telaAtividades
-						.getFrmEventos().setVisible(true);
-				telaADDMonitor.getFrmEventif().dispose();
-					
-					controlTelaLogin.controlTelaAtividades.preencheTabela();
 					}catch(ArrayIndexOutOfBoundsException e){
-						JOptionPane.showMessageDialog(null, "Escolha uma atividade!");
+						JOptionPane.showMessageDialog(null, "Escolha um Participante!");
 					}
 			}
 		});
