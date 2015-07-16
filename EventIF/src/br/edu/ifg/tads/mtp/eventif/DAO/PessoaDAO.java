@@ -390,5 +390,35 @@ public class PessoaDAO {
 		return false;
 		
 	}
+	public boolean validar_gerente(String cpf,String senha) {
+		Connection con = new ConnectionFactory().getConnection();
+		String sql = "SELECT * FROM PESSOA_GERENTE,PESSOA WHERE idPessoa = PESSOA.idPessoa and cpf = ?";
+		try {
+			PreparedStatement stmt = new ConnectionFactory().getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, cpf);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()){
+				String lc = rs.getString("cpf");
+				String ls = rs.getString("senha");
+				if(senha.equals(ls)){
+					System.out.println("Senha correta");
+					return true;
+					
+				}else{
+					System.out.println("Senha incorreta ou cpf");
+					return false;
+				}
+			}
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			System.out.println("erro no validar "+ex.getMessage());
+		}
+		return false;
+		
+	}
 
 }
