@@ -20,7 +20,7 @@ public class ControlTelaEventos {
 	//private Action alterarAction;
 	//private Action excluirAction;
 	int ID_evento = 0;
-
+ 
 	public ControlTelaEventos(ControlTelaLogin controlTelaLogin) {
    
 		this.controlTelaLogin = controlTelaLogin;
