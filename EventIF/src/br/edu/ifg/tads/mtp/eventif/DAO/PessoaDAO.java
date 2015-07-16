@@ -396,8 +396,10 @@ public class PessoaDAO {
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
+			
 			stmt.setLong(1, pessoa.getIdPessoa());
 			stmt.setString(2, cpf);
+			
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()){
 				String lc = rs.getString("cpf");
