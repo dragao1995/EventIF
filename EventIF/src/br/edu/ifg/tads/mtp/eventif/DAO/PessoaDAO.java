@@ -30,6 +30,7 @@ public class PessoaDAO {
 	Contato c = new Contato();
 	Endereco_Pessoa ep = new Endereco_Pessoa();
 	Pessoa pessoa = new Pessoa();
+	Pessoa_Gerente pg = new Pessoa_Gerente();
 	public int idPessoa;
 	public void inserir(Pessoa pessoa){
 		
@@ -140,36 +141,7 @@ public class PessoaDAO {
 		}
 		
 	}
-	/*
-	public void inserir_Monitor(Pessoa_Monitor pm){
-		
-		Connection con = null;
-		try {
-			
-			String sql = "insert into PESSOA_MONITOR "
-					+ "(idPessoa)" + " Select idPessoa from Pessoa where cpf = ?";
-			
-			con = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = con.prepareStatement(sql);
-
-			stmt.setLong(1, pessoa.getIdPessoa());
-			stmt.setString(2,pessoa.getCpf());
-			
-			stmt.executeUpdate();
-		} catch (Exception e) {
-			throw new RuntimeException(
-					"falha ao tentar executar um comando no BD. Verifique sua conexão " + e.getMessage());
-		} finally {
-			try {
-				con.close();
-			} catch (Exception e) {
-				throw new RuntimeException(
-						"não foi possível fechar a conexão com o BD");
-			}
-		}
-		
-	}
-	*/
+	
 	public Pessoa buscar(Pessoa p){
 		PreparedStatement stmt;
 		
@@ -392,12 +364,12 @@ public class PessoaDAO {
 	}
 	public boolean validar_gerente(String cpf,String senha) {
 		Connection con = new ConnectionFactory().getConnection();
-		String sql = "SELECT * FROM PESSOA_GERENTE,PESSOA WHERE PESSOA_GERENTE.idPessoa = ? and PESSOA.cpf=?";
+		String sql = "SELECT * FROM PESSOA,PESSOA_GERENTE WHERE PESSOA.idPessoa = ? and PESSOA.cpf=?";
 		try {
 			PreparedStatement stmt = new ConnectionFactory().getConnection()
 					.prepareStatement(sql);
 			
-			stmt.setLong(1, pessoa.getIdPessoa());
+			stmt.setLong(1, pg.getIdPessoa_Ger());
 			stmt.setString(2, cpf);
 			
 			ResultSet rs = stmt.executeQuery();
